@@ -1,0 +1,1378 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_standard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "secondary": "#865046",
+          "inverse-on-surface": "#f7efea",
+          "tertiary": "#4b635a",
+          "on-tertiary-container": "#253c34",
+          "on-secondary": "#ffffff",
+          "on-error": "#ffffff",
+          "primary-fixed": "#ffddba",
+          "surface-container-low": "#faf2ed",
+          "on-surface-variant": "#524437",
+          "secondary-container": "#feb8ab",
+          "primary-fixed-dim": "#ffb866",
+          "on-primary-fixed-variant": "#673d00",
+          "secondary-fixed": "#ffdad3",
+          "surface-tint": "#875200",
+          "outline": "#847465",
+          "tertiary-container": "#8da79c",
+          "on-tertiary-fixed": "#072018",
+          "surface-variant": "#e8e1dc",
+          "on-secondary-fixed": "#351009",
+          "primary": "#875200",
+          "on-surface": "#1e1b18",
+          "surface-dim": "#e0d9d4",
+          "on-secondary-container": "#7a473d",
+          "inverse-primary": "#ffb866",
+          "inverse-surface": "#33302d",
+          "surface-container-high": "#eee7e2",
+          "on-tertiary": "#ffffff",
+          "surface-container-highest": "#e8e1dc",
+          "on-primary-fixed": "#2b1700",
+          "outline-variant": "#d7c3b1",
+          "on-background": "#1e1b18",
+          "surface": "#fff8f4",
+          "primary-container": "#d9933b",
+          "on-error-container": "#93000a",
+          "on-secondary-fixed-variant": "#6a3930",
+          "on-tertiary-fixed-variant": "#344c43",
+          "surface-container": "#f4ece7",
+          "surface-container-lowest": "#ffffff",
+          "background": "#fff8f4",
+          "on-primary-container": "#533000",
+          "tertiary-fixed-dim": "#b2ccc1",
+          "surface-bright": "#fff8f4",
+          "on-primary": "#ffffff",
+          "error": "#ba1a1a",
+          "error-container": "#ffdad6",
+          "secondary-fixed-dim": "#fbb6a8",
+          "tertiary-fixed": "#cde9dc"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "space-xl": "2.5rem",
+          "gutter": "1.5rem",
+          "margin": "3rem",
+          "space-lg": "1.5rem",
+          "margin-mobile": "1.25rem",
+          "space-xs": "0.25rem",
+          "space-md": "1rem",
+          "space-sm": "0.5rem",
+          "gutter-mobile": "1rem"
+        },
+        "fontFamily": {
+          "headline-md": [
+            "EB Garamond"
+          ],
+          "headline-lg-mobile": [
+            "EB Garamond"
+          ],
+          "headline-sm": [
+            "EB Garamond"
+          ],
+          "body-lg": [
+            "Manrope"
+          ],
+          "title-md": [
+            "Manrope"
+          ],
+          "label-lg": [
+            "Manrope"
+          ],
+          "body-md": [
+            "Manrope"
+          ],
+          "body-sm": [
+            "Manrope"
+          ],
+          "price-lg": [
+            "Manrope"
+          ],
+          "price-md": [
+            "Manrope"
+          ],
+          "headline-lg": [
+            "EB Garamond"
+          ],
+          "title-lg": [
+            "Manrope"
+          ],
+          "label-md": [
+            "Manrope"
+          ],
+          "display-lg-mobile": [
+            "EB Garamond"
+          ],
+          "label-sm": [
+            "Manrope"
+          ],
+          "display-lg": [
+            "EB Garamond"
+          ]
+        },
+        "fontSize": {
+          "headline-md": [
+            "28px",
+            {
+              "lineHeight": "36px",
+              "fontWeight": "500"
+            }
+          ],
+          "headline-lg-mobile": [
+            "28px",
+            {
+              "lineHeight": "36px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-sm": [
+            "22px",
+            {
+              "lineHeight": "30px",
+              "fontWeight": "500"
+            }
+          ],
+          "body-lg": [
+            "16px",
+            {
+              "lineHeight": "26px",
+              "fontWeight": "400"
+            }
+          ],
+          "title-md": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "600"
+            }
+          ],
+          "label-lg": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "letterSpacing": "0.02em",
+              "fontWeight": "600"
+            }
+          ],
+          "body-md": [
+            "14px",
+            {
+              "lineHeight": "22px",
+              "fontWeight": "400"
+            }
+          ],
+          "body-sm": [
+            "12px",
+            {
+              "lineHeight": "18px",
+              "fontWeight": "400"
+            }
+          ],
+          "price-lg": [
+            "22px",
+            {
+              "lineHeight": "28px",
+              "fontWeight": "700"
+            }
+          ],
+          "price-md": [
+            "16px",
+            {
+              "lineHeight": "22px",
+              "fontWeight": "700"
+            }
+          ],
+          "headline-lg": [
+            "40px",
+            {
+              "lineHeight": "48px",
+              "letterSpacing": "-0.015em",
+              "fontWeight": "600"
+            }
+          ],
+          "title-lg": [
+            "18px",
+            {
+              "lineHeight": "26px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "700"
+            }
+          ],
+          "label-md": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "letterSpacing": "0.03em",
+              "fontWeight": "600"
+            }
+          ],
+          "display-lg-mobile": [
+            "38px",
+            {
+              "lineHeight": "46px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "500"
+            }
+          ],
+          "label-sm": [
+            "10px",
+            {
+              "lineHeight": "14px",
+              "letterSpacing": "0.05em",
+              "fontWeight": "700"
+            }
+          ],
+          "display-lg": [
+            "56px",
+            {
+              "lineHeight": "64px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "500"
+            }
+          ]
+        }
+      }
+    }
+  }</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="bg-primary-container text-on-primary-container px-margin-mobile lg:px-margin py-1.5 text-center font-label-md text-label-md flex items-center justify-center gap-space-sm" style="background: linear-gradient(90deg, rgb(227, 240, 249) 0%, rgb(253, 240, 242) 100%); color: rgb(76, 117, 154);"><span class="material-symbols-outlined text-sm leading-none">local_shipping</span><span class="">Free Shipping on all baby care &amp; clothing orders over ₹999 | Use Code: <span class="font-bold tracking-wider">BABYLOVE</span></span></div><div class="h-28 max-w-[1280px] mx-auto px-margin-mobile lg:px-margin flex flex-col justify-between py-2"><div class="flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-space-sm" data-path="home" href="#"><img alt="Baby Hug Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA19YF0LuLmk2ZxOTd11qzWwtQhe7hEYVvVJroCjlGqDD3Ku71yfZdstMhfoLO2PgwCAUt6RksAbL851GqUOseMaM3tWHQioG5sN2SXBH-1OajVFBg_-rlcnH8EsQ9bGIWHOT2SOlexgp1Gp2ID9W3UADyC_K-fzcP7jZSsuXZQfUum_72pLQeyTrcuY0lq_53VIsyVXQ03Ee2oTKbRKLDnvSPxE3M6xh9I-rBfKo21mmSZ4mKpHFnY"><span class="font-headline-sm text-headline-sm text-primary tracking-tight font-medium">Baby Hug</span></a><div class="hidden xl:flex items-center gap-1.5 bg-surface-container-low px-3 py-1.5 rounded-full text-on-surface-variant hover:bg-surface-container transition-colors cursor-pointer"><span class="material-symbols-outlined text-primary text-base leading-none">location_on</span><div class="flex flex-col text-left leading-none"><span class="font-label-sm text-label-sm text-on-surface-variant">Deliver to</span><span class="font-label-md text-label-md text-on-surface font-semibold">Kochi 682025</span></div><span class="material-symbols-outlined text-xs text-on-surface-variant ml-1">expand_more</span></div></div><div class="flex-1 max-w-xl mx-space-sm"><div class="flex items-center bg-surface-container-low rounded-full px-space-sm py-1 shadow-inner focus-within:bg-surface-container-lowest focus-within:ring-2 focus-within:ring-primary/20 transition-all"><select class="bg-transparent font-label-md text-label-md text-on-surface-variant px-3 py-1.5 rounded-full focus:outline-none cursor-pointer border-none"><option>All Categories</option><option>Baby Dresses</option><option>Rompers &amp; Sets</option><option>Shoes</option><option>Accessories</option><option>Toys</option></select><div class="h-4 w-px bg-outline-variant mx-1"></div><input class="w-full bg-transparent px-3 py-1.5 font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none" placeholder="Search gentle organic apparel, knitted rompers..." type="text"><button class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center hover:bg-on-primary-container transition-colors shrink-0 mr-0.5" style="background-color: rgb(217, 112, 134); color: rgb(255, 255, 255);"><span class="material-symbols-outlined text-base leading-none">search</span></button></div></div><div class="flex items-center gap-space-md shrink-0"><a class="relative p-2 rounded-full hover:bg-surface-container transition-colors text-on-surface flex items-center justify-center" data-path="wishlist" href="#"><span class="material-symbols-outlined text-xl">favorite</span><span class="absolute 0 top-0.5 right-0.5 bg-secondary text-on-secondary font-label-sm text-label-sm w-4 h-4 rounded-full flex items-center justify-center leading-none font-bold">3</span></a><a class="flex items-center gap-space-sm bg-surface-container-low hover:bg-surface-container px-3 py-1.5 rounded-full transition-colors" data-path="cart" href="#"><div class="relative flex items-center justify-center"><span class="material-symbols-outlined text-xl text-on-surface">shopping_bag</span><span class="absolute -top-1.5 -right-1.5 bg-primary-container text-on-primary-container font-label-sm text-label-sm w-4 h-4 rounded-full flex items-center justify-center leading-none font-bold">2</span></div><div class="hidden sm:flex flex-col text-left leading-none"><span class="font-label-sm text-label-sm text-on-surface-variant">Total</span><span class="font-price-md text-price-md text-on-surface font-bold">₹1,849</span></div></a><div class="flex items-center gap-space-sm pl-1 border-l border-outline-variant/30"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAv2hsXOlvc3iSh5CN_Vw0Q4epqQ4OTcO4Jn5WlY4r7CsvHCgMkMluCSjllaZ5VeZP6Vq7DxntrlB938WoofOqtd34v_qOJ0BBTbz0oOiTzjPdphX606vxyVfWACeozzIja3yctoipGx17174wUviUVTT2Z7AoD74P2n2MmJ0QAWBFjT7n7VgBQ_yHsE0AXspu9MjnjxYel--3RVxHpyv_bZvjllPwHxns0bWrWn4M3QutO7BSfQ004"><div class="hidden lg:flex flex-col leading-none"><span class="font-label-sm text-label-sm text-on-surface-variant">Welcome</span><span class="font-label-md text-label-md text-on-surface font-semibold">Jane D.</span></div></div></div></div><nav class="flex items-center justify-center gap-6 overflow-x-auto py-1" data-active-classes="text-primary font-bold"><a aria-current="page" class="transition-colors whitespace-nowrap text-primary font-bold" data-path="home" href="#">Home</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap" data-path="newborn-essentials" href="#">Newborn Essentials</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap" data-path="baby-dresses" href="#">Baby Dresses</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap" data-path="rompers-sets" href="#">Rompers &amp; Sets</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap" data-path="baby-shoes" href="#">Baby Shoes</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap" data-path="accessories-bibs" href="#">Accessories &amp; Bibs</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap" data-path="toys-soft-plush" href="#">Toys &amp; Soft Plush</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap" data-path="age-guide" href="#">Age Guide</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap" data-path="sale-offers" href="#">Sale &amp; Offers</a></nav></div></header><main class="w-full pt-28 bg-background min-h-screen"><div class="flex flex-col w-full">
+<!-- Top Promotional Breadcrumb & Hero Ambient Banner -->
+<section class="relative w-full overflow-hidden bg-gradient-to-b from-surface-container-low/70 via-background to-background py-8 lg:py-12" style="background: linear-gradient(rgb(227, 240, 249) 0%, rgb(250, 248, 245) 50%, rgb(255, 255, 255) 100%);">
+<!-- Subtle warm glow decorations -->
+<div class="absolute -top-24 -left-20 w-96 h-96 rounded-full bg-primary-fixed/25 blur-3xl pointer-events-none" style="background-color: rgba(185, 213, 235, 0.45);"></div>
+<div class="absolute top-1/2 -right-24 w-80 h-80 rounded-full bg-secondary-container/20 blur-3xl pointer-events-none" style="background-color: rgba(236, 161, 172, 0.35);"></div>
+<div class="max-w-[1280px] mx-auto px-margin-mobile lg:px-margin relative z-10">
+<!-- Editorial Hero Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<!-- Text & CTAs Column -->
+<div class="lg:col-span-7 flex flex-col space-y-5">
+<div class="inline-flex items-center gap-2 self-start bg-surface-container px-3.5 py-1.5 rounded-full text-tertiary" style="background-color: rgb(253, 240, 242); color: rgb(156, 63, 82); border: 1px solid rgba(236, 161, 172, 0.4);">
+<span class="material-symbols-outlined text-base">spa</span>
+<span class="font-label-md text-label-md tracking-wide uppercase font-semibold">Heirloom Quality • Handcrafted Softness</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface leading-tight tracking-tight">
+            Pure Cotton Comfort for Little Smiles — <span class="italic font-normal text-primary" style="color: rgb(76, 117, 154);">100% Organic</span>, Dermatologist-Approved Babywear &amp; Keepsake Dresses
+          </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+            Thoughtfully woven with breathable GOTS-certified organic cotton and hypoallergenic herbal dyes. Gentle on fragile newborn skin, tailored with easy-snap seams for ages 0 to 4 years.
+          </p>
+<!-- CTAs & Micro Trust -->
+<div class="flex flex-wrap items-center gap-4 pt-2">
+<a class="bg-primary text-on-primary hover:bg-on-primary-container px-7 py-3 rounded-full font-label-lg text-label-lg font-semibold shadow-md hover:shadow-lg transition-all flex items-center gap-2" href="#catalog-grid" style="background-color: rgb(217, 112, 134); color: rgb(255, 255, 255);">
+<span class="">Shop New Arrivals</span>
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</a>
+<a class="bg-surface-container-high text-on-surface hover:bg-surface-container-highest px-6 py-3 rounded-full font-label-lg text-label-lg font-semibold transition-all" href="#age-filters" style="background-color: rgb(227, 240, 249); color: rgb(76, 117, 154); border: 1px solid rgba(185, 213, 235, 0.8);">
+              Explore Age 0-12M Collections
+            </a>
+</div>
+<!-- Quick Stats Pill List -->
+<div class="pt-4 flex flex-wrap items-center gap-6 text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="">Tested for 100+ washes</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="">Zero Harsh Chemical Residue</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="">Tailored Flat Anti-Chafe Seams</span>
+</div>
+</div>
+</div>
+<!-- Visual Hero Mosaic -->
+<div class="lg:col-span-5 relative">
+<div class="relative mx-auto max-w-md lg:max-w-none">
+<!-- Hero Card Main -->
+<div class="relative rounded-2xl overflow-hidden shadow-xl bg-surface aspect-[4/5] z-10 group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A serene studio photograph of a 6-month-old happy baby smiling gently while wearing an artisanal dusty-rose embroidered organic muslin frock and bonnet. The background features warm cream linen textures, soft morning golden-hour lighting, minimalist nursery aesthetic, delicate eucalyptus sprigs, and tactile organic cotton weaves in warm honey amber tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZNNFqdC4pXVtu4uuXhg_qYDQ8oSABZVax9mQ9bDW7IZmDc7366hqUPQXyle2HFZlGTOwJ3KTf0_gqK8YZRL3FZ6rmrkn4GQBFBRLW2AjWxZ1GpqxzI3HZW2LU-OAUfLuEeIliH5Ms9-sUWs6ln0FJtdvsBraNKTFNmHxx2hNinxnOOyYFbJYKTm27vlbVWLB77mdo2kJ7a92wMUF3uaN02ftlSiFvMJG26SAqOF0vzIiVg5Yz0fKV">
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-5 left-5 right-5 text-on-primary flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary-fixed bg-on-primary-fixed-variant/40 backdrop-blur-md px-2.5 py-0.5 rounded-full">Spotlight Keepsake</span>
+<p class="font-headline-sm text-headline-sm mt-1 text-on-secondary">The Heirloom Muslin Collection</p>
+</div>
+<div class="bg-surface/90 text-on-surface rounded-full px-3 py-1 font-price-md text-price-md backdrop-blur-sm shadow-sm">
+                  ₹1,299
+                </div>
+</div>
+</div>
+<!-- Floating Accent Badge -->
+<div class="absolute -bottom-5 -left-6 z-20 bg-surface/95 backdrop-blur-md p-4 rounded-xl shadow-lg border border-outline-variant/30 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-tertiary/15 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-xl">verified_user</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Pediatrician Approved</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Hypoallergenic &amp; Safe for Preemies</span>
+</div>
+</div>
+<!-- Floating Star Rating Accent -->
+<div class="absolute -top-4 -right-4 z-20 bg-surface/95 backdrop-blur-md px-3.5 py-2 rounded-full shadow-md flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md font-bold">4.92 / 5</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-normal">(18.4k reviews)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 4 Quick Trust Badges Strip -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 pt-8 border-t border-outline-variant/30">
+<div class="flex items-center gap-3 p-3 rounded-xl bg-surface hover:bg-surface-container-low transition-colors">
+<div class="w-11 h-11 rounded-full bg-tertiary/10 text-tertiary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-xl">eco</span>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg font-bold text-on-surface">100% Certified Organic</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">GOTS standard pure cotton</p>
+</div>
+</div>
+<div class="flex items-center gap-3 p-3 rounded-xl bg-surface hover:bg-surface-container-low transition-colors">
+<div class="w-11 h-11 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-xl">assignment_return</span>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg font-bold text-on-surface">7-Day Free Returns</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Instant doorstep baby pickup</p>
+</div>
+</div>
+<div class="flex items-center gap-3 p-3 rounded-xl bg-surface hover:bg-surface-container-low transition-colors">
+<div class="w-11 h-11 rounded-full bg-secondary/10 text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-xl">science</span>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg font-bold text-on-surface">Safe Herbal Dyes</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Non-toxic &amp; AZO free pigments</p>
+</div>
+</div>
+<div class="flex items-center gap-3 p-3 rounded-xl bg-surface hover:bg-surface-container-low transition-colors">
+<div class="w-11 h-11 rounded-full bg-tertiary-container/30 text-on-tertiary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-xl">payments</span>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg font-bold text-on-surface">Cash On Delivery</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Available PAN India</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Category Quick Carousel & Age Filter Ribbons -->
+<section class="w-full bg-surface-container-lowest py-8 shadow-sm" id="age-filters">
+<div class="max-w-[1280px] mx-auto px-margin-mobile lg:px-margin">
+<!-- Section Tag & Title -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-6 gap-2">
+<div>
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">Curated Wardrobe Departments</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Explore by Category</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Each item tailored for movement, diaper ease, and delicate newborn skin</p>
+</div>
+<!-- Category Round Pills / Visual Cards -->
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4"><!-- Cat 1 -->
+<a class="group flex flex-col items-center p-4 rounded-2xl transition-all text-center hover:shadow-md" style="background-color: rgb(253, 240, 242);" href="#">
+<div class="w-20 h-20 rounded-full overflow-hidden mb-3 shadow-inner group-hover:scale-105 transition-transform" style="background-color: #ffd9de;">
+<img class="w-full h-full object-cover" data-alt="Charming miniature baby dress in pastel rose muslin with delicate lace flounce and floral embroidery on a neutral cream backdrop, soft ambient lighting, artisanal aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDK35FEDvUNThYTtT-HW4pQqwEx_p94vrfVfEw0JhhZ47QolBNvPhHQvNQG83vNT_YpKQhXIiMcITnElU0YzNLP22CIeLryUZPCZ7afoSJfnBuMxPAYYZFy3Vv6SY2TxnzdP9ncYW7Vvcl5Q7W2EIg-L9y-Jhzc_JCkEKiStgrUufwKlqlXj_FoTE6yuIPf_YWxZNHvQvOE-1cfseMPUFkyrdcFZTSmAnW0VF3XLruk43jPP2m79jH7">
+</div>
+<span class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors">Baby Dresses</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Frocks, Floral Gowns</span>
+</a>
+<!-- Cat 2 -->
+<a class="group flex flex-col items-center p-4 rounded-2xl transition-all text-center hover:shadow-md" style="background-color: rgb(227, 240, 249);" href="#">
+<div class="w-20 h-20 rounded-full overflow-hidden mb-3 shadow-inner group-hover:scale-105 transition-transform" style="background-color: #B9D5EB;">
+<img class="w-full h-full object-cover" data-alt="Folded warm honey waffle-knit infant romper with wooden coconut buttons and matching knotted beanie on a textured linen background, cozy nursery mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUSQUjvO2ZRUpc0nCGd3axlsuzd-Ru_16q9CG8r_JBQHU61DcJ_lz1oQXmiAwd1kLhafTYsWh2uSxPNotDilOHgLUUoVYt52zRT1XU9cRaHM7iK-NqEeoA-frOwxhVCk4Paf1uHTqD3uAskoVBbomQN0MzkICvbO-5OfWb3B7xJK30wHkBewhqIWLyUJ_dvmxEMpS4oNjrM8jGzOmCkfXfHhSXz3-YFVWXxbUAbvobRQa8Wq_COe0I">
+</div>
+<span class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors">Rompers &amp; Sets</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Bodysuits &amp; 2-Piece Sets</span>
+</a>
+<!-- Cat 3 -->
+<a class="group flex flex-col items-center p-4 rounded-2xl transition-all text-center hover:shadow-md" style="background-color: rgb(253, 240, 242);" href="#">
+<div class="w-20 h-20 rounded-full overflow-hidden mb-3 shadow-inner group-hover:scale-105 transition-transform" style="background-color: #ffd9de;">
+<img class="w-full h-full object-cover" data-alt="Pair of pastel sage green genuine soft-sole pre-walker baby booties crafted in supple leather and organic cotton lining, set on clean travertine tile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDArUTTGxcn6_IVTXm0bQvxxz-E1RDbw74BvNkAp8vLTe-6aad_uggi-8C0YeJzFhmVYae1fWna-nrkdzK8VXlE_y8B173zkjL0lnD_iVb3uw29sPgw-L7Ncn9cgDC8kKB9g7WigI5IspYUbZpKNfB0mOCPs6S6MyH1aVho3nXcPbJI_rQ2CO26SWUveoqGQRve3Moovri_PTyw1t_rHbL-hll1MWxvzxCC-D9csdXWFILNLAPvrVaR">
+</div>
+<span class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors">Baby Shoes</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Soft Sole Booties, Pre-Walkers</span>
+</a>
+<!-- Cat 4 -->
+<a class="group flex flex-col items-center p-4 rounded-2xl transition-all text-center hover:shadow-md" style="background-color: rgb(227, 240, 249);" href="#">
+<div class="w-20 h-20 rounded-full overflow-hidden mb-3 shadow-inner group-hover:scale-105 transition-transform" style="background-color: #B9D5EB;">
+<img class="w-full h-full object-cover" data-alt="Artisanal trio of triangular bandana baby bibs in earthy terracotta, sand cream, and olive green with nickel-free brass snaps on warm neutral oak surface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuADHADajAlY26oMxrdS06yEbeUOyK5_uWNApq8h5lBvY833GpYMc8gOaWAzruuYjLhjYuG9uxraeNFPVwhlMcAVxio6ibxYm6P5mp6E-FUyzNOxYPreqyC4n4Xp0F9adfdSzV92fN4osMXcGcRUMIE0eCH7QDJzv1-N5kF5naPwWIRnRqykjI4hPPQINyvDZoApTskG75-qYxqdjwgm75FJE9pRCK4E9HzWGhS9b4LEzjP_ymzpPj1h">
+</div>
+<span class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors">Accessories</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Muslin Bibs, Headbands, Mitts</span>
+</a>
+<!-- Cat 5 -->
+<a class="group flex flex-col items-center p-4 rounded-2xl transition-all text-center hover:shadow-md" style="background-color: rgb(253, 240, 242);" href="#">
+<div class="w-20 h-20 rounded-full overflow-hidden mb-3 shadow-inner group-hover:scale-105 transition-transform" style="background-color: #ffd9de;">
+<img class="w-full h-full object-cover" data-alt="Handcrafted knitted organic plush bunny toy alongside a polished beechwood natural teether ring on warm ivory knit blanket with gentle diffused light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoVcc4ycVGJiMOSPSTzsJrbJiPJqKfS2_uM4Y6TttOqsJtdyTWzq7FgNsUn2bfploYpLWKL--y-lENBio9HKNDkoKyzmMrHR9JkXPP2-S7nBcStqTfVUOcPHtCNLdZntGRLu0sim6WPHRA_uUS-HYtaj7eBSntY3uqZzTG-ZAiMh41YVFvJOMciZesOkeuOAWE2NqHFt8EB91JVf1Y9NqwESdygnWUeikv1I__J8HzSCnx5Z_SLruc">
+</div>
+<span class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors">Toys &amp; Keepsakes</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Organic Plushies &amp; Teethers</span>
+</a></div>
+<!-- Quick Age Filter Pill Bar -->
+<div class="mt-8 pt-6 border-t border-outline-variant/20 flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-2 self-start md:self-center">
+<span class="material-symbols-outlined text-primary text-lg">child_care</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Filter by Growth Stage:</span>
+</div>
+<div class="flex items-center gap-2 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 scrollbar-none">
+<button class="bg-primary text-on-primary px-4 py-2 rounded-full font-label-md text-label-md font-semibold shrink-0 shadow-sm" style="background-color: rgb(217, 112, 134); color: rgb(255, 255, 255);">
+            All Ages
+          </button>
+<button class="bg-surface-container hover:bg-surface-container-high text-on-surface px-4 py-2 rounded-full font-label-md text-label-md shrink-0 transition-colors">
+            0 – 3 Months
+          </button>
+<button class="bg-surface-container hover:bg-surface-container-high text-on-surface px-4 py-2 rounded-full font-label-md text-label-md shrink-0 transition-colors">
+            3 – 6 Months
+          </button>
+<button class="bg-surface-container hover:bg-surface-container-high text-on-surface px-4 py-2 rounded-full font-label-md text-label-md shrink-0 transition-colors">
+            6 – 12 Months
+          </button>
+<button class="bg-surface-container hover:bg-surface-container-high text-on-surface px-4 py-2 rounded-full font-label-md text-label-md shrink-0 transition-colors">
+            12 – 24 Months
+          </button>
+<button class="bg-surface-container hover:bg-surface-container-high text-on-surface px-4 py-2 rounded-full font-label-md text-label-md shrink-0 transition-colors">
+            2 – 4 Years
+          </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Catalog Area: Sidebar + Grid -->
+<main class="max-w-[1280px] mx-auto px-margin-mobile lg:px-margin py-10 w-full" id="catalog-grid">
+<!-- Breadcrumb & Control Toolbar -->
+<div class="flex flex-col gap-4 mb-8">
+<!-- Breadcrumb -->
+<nav class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<a class="hover:text-primary transition-colors" href="#">Home</a>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Baby Clothes &amp; Dresses</a>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="text-on-surface font-semibold">Artisanal Baby Dresses</span>
+</nav>
+<!-- Toolbar -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-surface-container-lowest p-4 rounded-2xl shadow-sm">
+<div class="flex items-center gap-3">
+<span class="font-title-md text-title-md text-on-surface font-bold">Baby Dresses &amp; Keepsakes</span>
+<span class="bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm px-2.5 py-0.5 rounded-full font-bold" style="background-color: rgb(227, 240, 249); color: rgb(76, 117, 154);">
+            Showing 48 adorable items
+          </span>
+</div>
+<!-- Sort and Controls -->
+<div class="flex items-center gap-3 self-end sm:self-center">
+<label class="font-label-md text-label-md text-on-surface-variant hidden sm:inline-block" for="catalog-sort">Sort by:</label>
+<div class="relative">
+<select class="bg-surface-container-low text-on-surface font-label-md text-label-md px-3.5 py-2 rounded-full appearance-none pr-8 cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary/20" id="catalog-sort">
+<option>Popularity &amp; Bestsellers</option>
+<option>Price: Low to High</option>
+<option>Price: High to Low</option>
+<option>Newest Arrivals</option>
+<option>Customer Rating (High to Low)</option>
+</select>
+<span class="material-symbols-outlined text-sm absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant">expand_more</span>
+</div>
+<!-- View Mode Toggle (Visual Only) -->
+<div class="hidden md:flex items-center bg-surface-container-low p-1 rounded-full">
+<button class="p-1.5 rounded-full bg-surface text-primary shadow-xs">
+<span class="material-symbols-outlined text-sm">grid_view</span>
+</button>
+<button class="p-1.5 rounded-full text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined text-sm">view_agenda</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Active Filter Tags Strip -->
+<div class="flex flex-wrap items-center gap-2 pt-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Active Filters:</span>
+<div class="flex items-center gap-1.5 bg-surface-container px-3 py-1 rounded-full text-on-surface font-label-md text-label-md">
+<span class="">Category: Baby Dresses</span>
+<button class="hover:text-error transition-colors flex items-center"><span class="material-symbols-outlined text-xs">close</span></button>
+</div>
+<div class="flex items-center gap-1.5 bg-surface-container px-3 py-1 rounded-full text-on-surface font-label-md text-label-md">
+<span class="">Availability: In Stock Only</span>
+<button class="hover:text-error transition-colors flex items-center"><span class="material-symbols-outlined text-xs">close</span></button>
+</div>
+<div class="flex items-center gap-1.5 bg-surface-container px-3 py-1 rounded-full text-on-surface font-label-md text-label-md">
+<span class="">Fabric: 100% Organic</span>
+<button class="hover:text-error transition-colors flex items-center"><span class="material-symbols-outlined text-xs">close</span></button>
+</div>
+<button class="font-label-md text-label-md text-secondary hover:underline ml-2 font-semibold">
+          Clear All
+        </button>
+</div>
+</div>
+<!-- Main Layout: Sidebar Filters + 4-Col Products Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- SIDEBAR FILTERS (Left 3 columns) -->
+<aside class="lg:col-span-3 bg-surface-container-lowest p-6 rounded-2xl shadow-sm space-y-6">
+<div class="flex items-center justify-between pb-3 border-b border-outline-variant/30">
+<div class="flex items-center gap-2 font-title-md text-title-md text-on-surface font-bold">
+<span class="material-symbols-outlined text-primary text-xl">tune</span>
+<span class="">Refine Selection</span>
+</div>
+<button class="font-label-sm text-label-sm text-primary hover:underline">Reset</button>
+</div>
+<!-- Filter 1: Categories -->
+<div class="space-y-3">
+<h4 class="font-label-lg text-label-lg font-bold text-on-surface">Categories</h4>
+<div class="space-y-2 font-body-md text-body-md text-on-surface-variant">
+<label class="flex items-center justify-between cursor-pointer group">
+<span class="flex items-center gap-2.5">
+<input checked="" class="w-4 h-4 rounded text-primary accent-primary cursor-pointer" type="checkbox">
+<span class="text-on-surface font-semibold group-hover:text-primary transition-colors">Baby Dresses</span>
+</span>
+<span class="font-body-sm text-body-sm text-outline">24</span>
+</label>
+<label class="flex items-center justify-between cursor-pointer group">
+<span class="flex items-center gap-2.5">
+<input class="w-4 h-4 rounded text-primary accent-primary cursor-pointer" type="checkbox">
+<span class="group-hover:text-on-surface transition-colors">Rompers &amp; Sets</span>
+</span>
+<span class="font-body-sm text-body-sm text-outline">18</span>
+</label>
+<label class="flex items-center justify-between cursor-pointer group">
+<span class="flex items-center gap-2.5">
+<input class="w-4 h-4 rounded text-primary accent-primary cursor-pointer" type="checkbox">
+<span class="group-hover:text-on-surface transition-colors">Baby Tops &amp; Blouses</span>
+</span>
+<span class="font-body-sm text-body-sm text-outline">12</span>
+</label>
+<label class="flex items-center justify-between cursor-pointer group">
+<span class="flex items-center gap-2.5">
+<input class="w-4 h-4 rounded text-primary accent-primary cursor-pointer" type="checkbox">
+<span class="group-hover:text-on-surface transition-colors">Baby Shoes &amp; Booties</span>
+</span>
+<span class="font-body-sm text-body-sm text-outline">15</span>
+</label>
+<label class="flex items-center justify-between cursor-pointer group">
+<span class="flex items-center gap-2.5">
+<input class="w-4 h-4 rounded text-primary accent-primary cursor-pointer" type="checkbox">
+<span class="group-hover:text-on-surface transition-colors">Accessories &amp; Bibs</span>
+</span>
+<span class="font-body-sm text-body-sm text-outline">9</span>
+</label>
+</div>
+</div>
+<div class="h-px bg-outline-variant/30"></div>
+<!-- Filter 2: Age Group Checkboxes -->
+<div class="space-y-3">
+<h4 class="font-label-lg text-label-lg font-bold text-on-surface">Age Group</h4>
+<div class="space-y-2 font-body-md text-body-md text-on-surface-variant">
+<label class="flex items-center justify-between cursor-pointer group">
+<span class="flex items-center gap-2.5">
+<input checked="" class="w-4 h-4 rounded text-primary accent-primary cursor-pointer" type="checkbox">
+<span class="text-on-surface group-hover:text-primary transition-colors">Newborn (0 - 3M)</span>
+</span>
+<span class="font-body-sm text-body-sm text-outline">14</span>
+</label>
+<label class="flex items-center justify-between cursor-pointer group">
+<span class="flex items-center gap-2.5">
+<input checked="" class="w-4 h-4 rounded text-primary accent-primary cursor-pointer" type="checkbox">
+<span class="text-on-surface group-hover:text-primary transition-colors">Infant (3 - 6M)</span>
+</span>
+<span class="font-body-sm text-body-sm text-outline">21</span>
+</label>
+<label class="flex items-center justify-between cursor-pointer group">
+<span class="flex items-center gap-2.5">
+<input checked="" class="w-4 h-4 rounded text-primary accent-primary cursor-pointer" type="checkbox">
+<span class="text-on-surface group-hover:text-primary transition-colors">Crawler (6 - 12M)</span>
+</span>
+<span class="font-body-sm text-body-sm text-outline">19</span>
+</label>
+<label class="flex items-center justify-between cursor-pointer group">
+<span class="flex items-center gap-2.5">
+<input class="w-4 h-4 rounded text-primary accent-primary cursor-pointer" type="checkbox">
+<span class="group-hover:text-on-surface transition-colors">Toddler (1 - 2Y)</span>
+</span>
+<span class="font-body-sm text-body-sm text-outline">16</span>
+</label>
+<label class="flex items-center justify-between cursor-pointer group">
+<span class="flex items-center gap-2.5">
+<input class="w-4 h-4 rounded text-primary accent-primary cursor-pointer" type="checkbox">
+<span class="group-hover:text-on-surface transition-colors">Little Walker (2 - 4Y)</span>
+</span>
+<span class="font-body-sm text-body-sm text-outline">11</span>
+</label>
+</div>
+</div>
+<div class="h-px bg-outline-variant/30"></div>
+<!-- Filter 3: Price Range (₹ INR) -->
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<h4 class="font-label-lg text-label-lg font-bold text-on-surface">Price Range</h4>
+<span class="font-price-md text-price-md text-primary font-bold">₹299 – ₹2,499</span>
+</div>
+<!-- Custom Mock Dual-Slider Bar -->
+<div class="relative w-full py-2">
+<div class="h-1.5 w-full bg-surface-container rounded-full"></div>
+<div class="absolute top-2 left-1/12 right-1/4 h-1.5 bg-primary rounded-full"></div>
+<div class="absolute top-0.5 left-1/12 w-4 h-4 bg-surface rounded-full shadow-md border-2 border-primary cursor-pointer"></div>
+<div class="absolute top-0.5 right-1/4 w-4 h-4 bg-surface rounded-full shadow-md border-2 border-primary cursor-pointer"></div>
+</div>
+<div class="flex items-center gap-2 pt-1 font-body-sm text-body-sm text-on-surface-variant">
+<div class="flex-1 bg-surface-container-low px-3 py-1.5 rounded-lg flex items-center justify-between">
+<span class="">Min</span>
+<span class="font-bold text-on-surface">₹299</span>
+</div>
+<span class="">to</span>
+<div class="flex-1 bg-surface-container-low px-3 py-1.5 rounded-lg flex items-center justify-between">
+<span class="">Max</span>
+<span class="font-bold text-on-surface">₹2,499</span>
+</div>
+</div>
+</div>
+<div class="h-px bg-outline-variant/30"></div>
+<!-- Filter 4: Organic Fabric & Materials -->
+<div class="space-y-3">
+<h4 class="font-label-lg text-label-lg font-bold text-on-surface">Fabric / Material</h4>
+<div class="space-y-2 font-body-md text-body-md text-on-surface-variant">
+<label class="flex items-center justify-between cursor-pointer group">
+<span class="flex items-center gap-2.5">
+<input checked="" class="w-4 h-4 rounded text-primary accent-primary cursor-pointer" type="checkbox">
+<span class="text-on-surface group-hover:text-primary transition-colors">100% Organic Muslin</span>
+</span>
+<span class="font-body-sm text-body-sm text-outline">18</span>
+</label>
+<label class="flex items-center justify-between cursor-pointer group">
+<span class="flex items-center gap-2.5">
+<input class="w-4 h-4 rounded text-primary accent-primary cursor-pointer" type="checkbox">
+<span class="group-hover:text-on-surface transition-colors">Pure Combed Cotton</span>
+</span>
+<span class="font-body-sm text-body-sm text-outline">15</span>
+</label>
+<label class="flex items-center justify-between cursor-pointer group">
+<span class="flex items-center gap-2.5">
+<input class="w-4 h-4 rounded text-primary accent-primary cursor-pointer" type="checkbox">
+<span class="group-hover:text-on-surface transition-colors">Soft Waffle Knit</span>
+</span>
+<span class="font-body-sm text-body-sm text-outline">8</span>
+</label>
+<label class="flex items-center justify-between cursor-pointer group">
+<span class="flex items-center gap-2.5">
+<input class="w-4 h-4 rounded text-primary accent-primary cursor-pointer" type="checkbox">
+<span class="group-hover:text-on-surface transition-colors">Organic Bamboo Fiber</span>
+</span>
+<span class="font-body-sm text-body-sm text-outline">7</span>
+</label>
+</div>
+</div>
+<div class="h-px bg-outline-variant/30"></div>
+<!-- Filter 5: Color Swatches -->
+<div class="space-y-3">
+<h4 class="font-label-lg text-label-lg font-bold text-on-surface">Color Palette</h4>
+<div class="grid grid-cols-6 gap-2">
+<!-- Blush -->
+<button class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center ring-2 ring-primary ring-offset-2" title="Powder Blush">
+<span class="material-symbols-outlined text-xs text-on-secondary-container">check</span>
+</button>
+<!-- Soft Honey -->
+<button class="w-8 h-8 rounded-full bg-primary-fixed-dim hover:scale-105 transition-transform" title="Soft Honey"></button>
+<!-- Sage Mint -->
+<button class="w-8 h-8 rounded-full bg-tertiary-container hover:scale-105 transition-transform" title="Sage Mint"></button>
+<!-- Cloud Cream -->
+<button class="w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant hover:scale-105 transition-transform" title="Cloud Cream"></button>
+<!-- Baby Blue -->
+<button class="w-8 h-8 rounded-full bg-tertiary-fixed hover:scale-105 transition-transform" title="Baby Blue"></button>
+<!-- Lavender -->
+<button class="w-8 h-8 rounded-full bg-secondary-fixed hover:scale-105 transition-transform" title="Pastel Lavender"></button>
+</div>
+</div>
+<div class="h-px bg-outline-variant/30"></div>
+<!-- Filter 6: Availability & Rating -->
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">In Stock Only</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox">
+<div class="w-10 h-5 bg-surface-container-high peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="space-y-1.5 pt-2">
+<span class="font-label-sm text-label-sm uppercase font-bold text-on-surface-variant">Customer Rating</span>
+<div class="space-y-1">
+<label class="flex items-center gap-2 cursor-pointer text-on-surface group">
+<input checked="" class="accent-primary" name="rating-filter" type="radio">
+<span class="flex items-center text-primary text-sm">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm text-outline-variant">star</span>
+</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant group-hover:text-on-surface">&amp; 4.0 &amp; above</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer text-on-surface group">
+<input class="accent-primary" name="rating-filter" type="radio">
+<span class="flex items-center text-primary text-sm">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm text-outline-variant">star</span>
+<span class="material-symbols-outlined text-sm text-outline-variant">star</span>
+</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant group-hover:text-on-surface">&amp; 3.0 &amp; above</span>
+</label>
+</div>
+</div>
+</div>
+<!-- Sidebar Promo Box -->
+<div class="mt-6 p-4 rounded-xl bg-primary-fixed/30 text-on-primary-fixed-variant flex flex-col space-y-2">
+<div class="flex items-center gap-1.5 font-label-md text-label-md font-bold">
+<span class="material-symbols-outlined text-primary text-base">redeem</span>
+<span class="">Baby Gift Box Service</span>
+</div>
+<p class="font-body-sm text-body-sm">Ordering for a baby shower? Add our personalized keepsake gift box at checkout for ₹199.</p>
+</div>
+</aside>
+<!-- PRODUCT CATALOG GRID (Right 9 columns) -->
+<div class="lg:col-span-9 flex flex-col space-y-8">
+<!-- 4-Column Responsive Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-5">
+<!-- PRODUCT 1: Vintage Rose Embroidered Muslin Dress (Spotlight Item) -->
+<div class="group bg-surface-container-lowest rounded-2xl p-3 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative">
+<div class="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-surface-container-low mb-3">
+<!-- Visual Tags -->
+<div class="absolute top-2 left-2 z-10 flex flex-col gap-1">
+<span class="bg-secondary text-on-secondary font-label-sm text-label-sm px-2 py-0.5 rounded-full font-bold shadow-xs">Bestseller</span>
+<span class="bg-tertiary-container text-on-tertiary-container font-label-sm text-label-sm px-2 py-0.5 rounded-full font-semibold shadow-xs">100% Organic</span>
+</div>
+<!-- Wishlist Heart Button -->
+<button class="absolute top-2 right-2 z-10 w-8 h-8 rounded-full bg-surface/90 hover:bg-surface text-on-surface flex items-center justify-center shadow-sm transition-transform hover:scale-110" title="Add to Wishlist">
+<span class="material-symbols-outlined text-base hover:text-secondary transition-colors" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Editorial close-up of a vintage rose baby dress made of double-gauze organic muslin with hand-embroidered floral motifs along the ruffled bodice and mother-of-pearl buttons, softly lit on creamy linen." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJru4TFgBMrb-jLP4eReRw562-r9p11fG0i2JTwVDfsoDnjp7kihRti44aYpJw-eJfEu_pZFsbO3x954kzjrLkX2WKxGW6ptJYc5LHNzX7NVTzrhPkMMOfyvwssjHMC8jPUW8dqBt4RbN-k6-1w1FFoWgZNLpDJ0JhXjj1ccncVgUb-Off1PmjeSftdpTZHbyMcC7bI1rcDId24lA4DEW0Mrd-NRRIcVD2cILY3BC10Pi_HtDHyayZ">
+<!-- Hover Quick View Action Button -->
+<button class="absolute inset-x-3 bottom-3 py-2 bg-surface/90 backdrop-blur-md text-on-surface font-label-md text-label-md font-semibold rounded-full opacity-0 group-hover:opacity-100 transition-all duration-200 shadow-md hover:bg-primary hover:text-on-primary" onclick="document.getElementById('quick-view-modal').classList.remove('hidden')">
+                Quick View
+              </button>
+</div>
+<div class="flex flex-col flex-1">
+<!-- Size Chips -->
+<div class="flex items-center gap-1 mb-1.5">
+<span class="bg-surface-container px-2 py-0.5 rounded text-on-surface-variant font-label-sm text-label-sm font-semibold">0-3M</span>
+<span class="bg-surface-container px-2 py-0.5 rounded text-on-surface-variant font-label-sm text-label-sm font-semibold">3-6M</span>
+<span class="bg-surface-container px-2 py-0.5 rounded text-on-surface-variant font-label-sm text-label-sm font-semibold">6-12M</span>
+</div>
+<!-- Title -->
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors line-clamp-1 leading-snug">
+                Vintage Rose Embroidered Muslin Dress
+              </h3>
+<!-- Rating -->
+<div class="flex items-center gap-1.5 my-1.5">
+<div class="flex items-center text-primary text-xs">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">4.9 (128)</span>
+</div>
+<!-- Price & Discount -->
+<div class="flex items-baseline gap-2 mt-auto pt-2">
+<span class="font-price-lg text-price-lg text-on-surface">₹1,299</span>
+<span class="font-body-sm text-body-sm text-outline line-through">₹1,799</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">28% OFF</span>
+</div>
+<span class="font-label-sm text-label-sm text-error font-semibold mt-1">Only 4 left in stock!</span>
+<!-- Cart Button -->
+<button class="mt-3 w-full bg-primary-container text-on-primary-container hover:bg-primary hover:text-on-primary py-2.5 px-3 rounded-full font-label-md text-label-md font-semibold transition-colors flex items-center justify-center gap-1.5" style="background-color: #4C759A; color: #ffffff;">
+<span class="material-symbols-outlined text-base">shopping_bag</span>
+<span class="">Add to Cart</span>
+</button>
+</div>
+</div>
+<!-- PRODUCT 2: Soft Honey Waffle Knit Romper & Cap Set -->
+<div class="group bg-surface-container-lowest rounded-2xl p-3 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative">
+<div class="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-surface-container-low mb-3">
+<div class="absolute top-2 left-2 z-10 flex flex-col gap-1">
+<span class="bg-primary text-on-primary font-label-sm text-label-sm px-2 py-0.5 rounded-full font-bold shadow-xs">New Arrival</span>
+</div>
+<button class="absolute top-2 right-2 z-10 w-8 h-8 rounded-full bg-surface/90 hover:bg-surface text-on-surface flex items-center justify-center shadow-sm transition-transform hover:scale-110" title="Add to Wishlist">
+<span class="material-symbols-outlined text-base hover:text-secondary transition-colors">favorite</span>
+</button>
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Baby boy or girl wearing cozy soft honey ochre waffle-knit long-sleeve romper with organic wooden button front and a cute matching knotted beanie, sunlit nursery environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMZcAJgRK7C--Ff-jg6pIMBW62YLaIaBCd5xHHJTFx78rTHHYO63S_ZxV_9DBJtiUqAhTY5dum3b_IuOmdIODCa6td4kn6ng52jVkjPUG0tcRFCTW4XVoee9h6SP0j_sbsFhddkiILNrfOWS_3YMuJ8bx0NlWpwMIRK-k1CwqRO7tV9JaxPSyvu0FeBgaeVHTBnZ6Fd9CiEfjz3d5vaFcvTb_Zkx9TY_iM5br-_WU71u7v4WTeP9Fl">
+<button class="absolute inset-x-3 bottom-3 py-2 bg-surface/90 backdrop-blur-md text-on-surface font-label-md text-label-md font-semibold rounded-full opacity-0 group-hover:opacity-100 transition-all duration-200 shadow-md hover:bg-primary hover:text-on-primary" onclick="document.getElementById('quick-view-modal').classList.remove('hidden')">
+                Quick View
+              </button>
+</div>
+<div class="flex flex-col flex-1">
+<div class="flex items-center gap-1 mb-1.5">
+<span class="bg-surface-container px-2 py-0.5 rounded text-on-surface-variant font-label-sm text-label-sm font-semibold">0-3M</span>
+<span class="bg-surface-container px-2 py-0.5 rounded text-on-surface-variant font-label-sm text-label-sm font-semibold">3-6M</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors line-clamp-1 leading-snug">
+                Soft Honey Waffle Knit Romper &amp; Cap Set
+              </h3>
+<div class="flex items-center gap-1.5 my-1.5">
+<div class="flex items-center text-primary text-xs">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star_half</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">4.8 (94)</span>
+</div>
+<div class="flex items-baseline gap-2 mt-auto pt-2">
+<span class="font-price-lg text-price-lg text-on-surface">₹899</span>
+<span class="font-body-sm text-body-sm text-outline line-through">₹1,199</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">25% OFF</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold mt-1">In Stock • Ships in 24 hrs</span>
+<button class="mt-3 w-full bg-primary-container text-on-primary-container hover:bg-primary hover:text-on-primary py-2.5 px-3 rounded-full font-label-md text-label-md font-semibold transition-colors flex items-center justify-center gap-1.5" style="background-color: rgb(76, 117, 154); color: rgb(255, 255, 255);">
+<span class="material-symbols-outlined text-base">shopping_bag</span>
+<span class="">Add to Cart</span>
+</button>
+</div>
+</div>
+<!-- PRODUCT 3: Daisy Meadow Flounce Tiered Party Frock -->
+<div class="group bg-surface-container-lowest rounded-2xl p-3 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative">
+<div class="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-surface-container-low mb-3">
+<div class="absolute top-2 left-2 z-10 flex flex-col gap-1">
+<span class="bg-tertiary text-on-tertiary font-label-sm text-label-sm px-2 py-0.5 rounded-full font-bold shadow-xs">Top Rated</span>
+</div>
+<button class="absolute top-2 right-2 z-10 w-8 h-8 rounded-full bg-surface/90 hover:bg-surface text-on-surface flex items-center justify-center shadow-sm transition-transform hover:scale-110" title="Add to Wishlist">
+<span class="material-symbols-outlined text-base hover:text-secondary transition-colors">favorite</span>
+</button>
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Delightful pale cream toddler tiered frock with subtle yellow daisy meadow floral botanical illustrations, delicate flutter cap sleeves, laid out flat on rustic whitewashed wood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRXHPlwGN0M-xe2ysoDOq46vFbBeYPgbUDTwoWeuTsm-YXQPhCYp6rihrhYnPYlCiFPminB4dyoIVD6my2Zwu0TIMQ3oIckEhq_Z7lobc5UxyjMzvIuBO7b04plQcwW5CJArXAEY3FVkwIrsLfDRfLR5Luc_2KpMe7oUi-1_NYkyQ_645z1pG9myahQmQtfQrdBj7fWolHcR3bYzUQ9LCC8Ry7Hp2LWtCG0lIpHEPviztSrx4RxRe1">
+<button class="absolute inset-x-3 bottom-3 py-2 bg-surface/90 backdrop-blur-md text-on-surface font-label-md text-label-md font-semibold rounded-full opacity-0 group-hover:opacity-100 transition-all duration-200 shadow-md hover:bg-primary hover:text-on-primary" onclick="document.getElementById('quick-view-modal').classList.remove('hidden')">
+                Quick View
+              </button>
+</div>
+<div class="flex flex-col flex-1">
+<div class="flex items-center gap-1 mb-1.5">
+<span class="bg-surface-container px-2 py-0.5 rounded text-on-surface-variant font-label-sm text-label-sm font-semibold">6-12M</span>
+<span class="bg-surface-container px-2 py-0.5 rounded text-on-surface-variant font-label-sm text-label-sm font-semibold">1-2Y</span>
+<span class="bg-surface-container px-2 py-0.5 rounded text-on-surface-variant font-label-sm text-label-sm font-semibold">2-3Y</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors line-clamp-1 leading-snug">
+                Daisy Meadow Flounce Tiered Party Frock
+              </h3>
+<div class="flex items-center gap-1.5 my-1.5">
+<div class="flex items-center text-primary text-xs">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">5.0 (62)</span>
+</div>
+<div class="flex items-baseline gap-2 mt-auto pt-2">
+<span class="font-price-lg text-price-lg text-on-surface">₹1,499</span>
+<span class="font-label-sm text-label-sm text-tertiary font-bold">Heirloom Piece</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold mt-1">Available in Stock</span>
+<button class="mt-3 w-full bg-primary-container text-on-primary-container hover:bg-primary hover:text-on-primary py-2.5 px-3 rounded-full font-label-md text-label-md font-semibold transition-colors flex items-center justify-center gap-1.5" style="background-color: #d97086; color: #ffffff;">
+<span class="material-symbols-outlined text-base">shopping_bag</span>
+<span class="">Add to Cart</span>
+</button>
+</div>
+</div>
+<!-- PRODUCT 4: Pre-Walker Breathable Soft-Sole Booties (Pastel Sage) -->
+<div class="group bg-surface-container-lowest rounded-2xl p-3 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative">
+<div class="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-surface-container-low mb-3">
+<div class="absolute top-2 left-2 z-10 flex flex-col gap-1">
+<span class="bg-secondary text-on-secondary font-label-sm text-label-sm px-2 py-0.5 rounded-full font-bold shadow-xs">31% OFF</span>
+</div>
+<button class="absolute top-2 right-2 z-10 w-8 h-8 rounded-full bg-surface/90 hover:bg-surface text-on-surface flex items-center justify-center shadow-sm transition-transform hover:scale-110" title="Add to Wishlist">
+<span class="material-symbols-outlined text-base hover:text-secondary transition-colors">favorite</span>
+</button>
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Detailed macro product photo of soft sage green organic suede leather infant pre-walker booties with elasticized ankle support and breathable non-slip bottom." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBx7cotNELCvN2KV2G3Gy1sa8nJ7kiKK8KyG8jagXjBm9dlBV6dHqfb7yxQYRpktz4hUd8ELiQuWfSNZZMIKdcttMOjFzN9E__FfFkz9M0pgTkSeFc9rh8RwS91WPClIVagskDMhTKQTZtmSkXpybCWHoYFHceFZqwfTyE0gwdliYR4rARIxxExhtky3aBkax1bGgUspdTQ1ErCpzKVcO31zQgTs3jinnWwB0yv-ULt9xoAJaLFbInH">
+<button class="absolute inset-x-3 bottom-3 py-2 bg-surface/90 backdrop-blur-md text-on-surface font-label-md text-label-md font-semibold rounded-full opacity-0 group-hover:opacity-100 transition-all duration-200 shadow-md hover:bg-primary hover:text-on-primary" onclick="document.getElementById('quick-view-modal').classList.remove('hidden')">
+                Quick View
+              </button>
+</div>
+<div class="flex flex-col flex-1">
+<div class="flex items-center gap-1 mb-1.5">
+<span class="bg-surface-container px-2 py-0.5 rounded text-on-surface-variant font-label-sm text-label-sm font-semibold">0-6M</span>
+<span class="bg-surface-container px-2 py-0.5 rounded text-on-surface-variant font-label-sm text-label-sm font-semibold">6-12M</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors line-clamp-1 leading-snug">
+                Pre-Walker Breathable Soft-Sole Booties
+              </h3>
+<div class="flex items-center gap-1.5 my-1.5">
+<div class="flex items-center text-primary text-xs">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star_half</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">4.7 (215)</span>
+</div>
+<div class="flex items-baseline gap-2 mt-auto pt-2">
+<span class="font-price-lg text-price-lg text-on-surface">₹549</span>
+<span class="font-body-sm text-body-sm text-outline line-through">₹799</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">31% OFF</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold mt-1">Available • Fast Delivery</span>
+<button class="mt-3 w-full bg-primary-container text-on-primary-container hover:bg-primary hover:text-on-primary py-2.5 px-3 rounded-full font-label-md text-label-md font-semibold transition-colors flex items-center justify-center gap-1.5" style="background-color: #4C759A; color: #ffffff;">
+<span class="material-symbols-outlined text-base">shopping_bag</span>
+<span class="">Add to Cart</span>
+</button>
+</div>
+</div>
+<!-- PRODUCT 5: 3-Pack Ultra-Soft Organic Bandana Bibs -->
+<div class="group bg-surface-container-lowest rounded-2xl p-3 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative">
+<div class="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-surface-container-low mb-3">
+<div class="absolute top-2 left-2 z-10 flex flex-col gap-1">
+<span class="bg-tertiary text-on-tertiary font-label-sm text-label-sm px-2 py-0.5 rounded-full font-bold shadow-xs">Essential Pack</span>
+</div>
+<button class="absolute top-2 right-2 z-10 w-8 h-8 rounded-full bg-surface/90 hover:bg-surface text-on-surface flex items-center justify-center shadow-sm transition-transform hover:scale-110" title="Add to Wishlist">
+<span class="material-symbols-outlined text-base hover:text-secondary transition-colors">favorite</span>
+</button>
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Pack of three layered ultra-soft muslin baby bandana drool bibs displayed in stacked fan design in warm terracotta, cream and almond tones, organic cotton labels." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCO2LCpDCid58QtzWuDPQnFQF-vuY3KCcSwDQPqY0R0RppBKaIzuoISafYBql80cvFWOlKcmvDCz12tc1z4bwA64imiJI4sbWEEjDe9-gjBUy_sTFC95-Ea3XSeG1hM5dFbwIxuveB2JRBJ644-eZQ9An_OIIza9X3pjkeBzthulWct-cdc6jphhkUg-5CYR7iTHLWaTHlVMPPPRR6FqSsDCH7w5fjwuP-eDwtXhfcM84543GlAguPa">
+<button class="absolute inset-x-3 bottom-3 py-2 bg-surface/90 backdrop-blur-md text-on-surface font-label-md text-label-md font-semibold rounded-full opacity-0 group-hover:opacity-100 transition-all duration-200 shadow-md hover:bg-primary hover:text-on-primary" onclick="document.getElementById('quick-view-modal').classList.remove('hidden')">
+                Quick View
+              </button>
+</div>
+<div class="flex flex-col flex-1">
+<div class="flex items-center gap-1 mb-1.5">
+<span class="bg-surface-container px-2 py-0.5 rounded text-on-surface-variant font-label-sm text-label-sm font-semibold">One Size (0-2Y)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors line-clamp-1 leading-snug">
+                3-Pack Ultra-Soft Organic Bandana Bibs
+              </h3>
+<div class="flex items-center gap-1.5 my-1.5">
+<div class="flex items-center text-primary text-xs">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">4.9 (310)</span>
+</div>
+<div class="flex items-baseline gap-2 mt-auto pt-2">
+<span class="font-price-lg text-price-lg text-on-surface">₹449</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Value Set</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold mt-1">Available in Stock</span>
+<button class="mt-3 w-full bg-primary-container text-on-primary-container hover:bg-primary hover:text-on-primary py-2.5 px-3 rounded-full font-label-md text-label-md font-semibold transition-colors flex items-center justify-center gap-1.5" style="background-color: #d97086; color: #ffffff;">
+<span class="material-symbols-outlined text-base">shopping_bag</span>
+<span class="">Add to Cart</span>
+</button>
+</div>
+</div>
+<!-- PRODUCT 6: Heirloom Linen Sailor Collar Playsuit -->
+<div class="group bg-surface-container-lowest rounded-2xl p-3 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative">
+<div class="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-surface-container-low mb-3">
+<div class="absolute top-2 left-2 z-10 flex flex-col gap-1">
+<span class="bg-primary text-on-primary font-label-sm text-label-sm px-2 py-0.5 rounded-full font-bold shadow-xs">Artisanal</span>
+</div>
+<button class="absolute top-2 right-2 z-10 w-8 h-8 rounded-full bg-surface/90 hover:bg-surface text-on-surface flex items-center justify-center shadow-sm transition-transform hover:scale-110" title="Add to Wishlist">
+<span class="material-symbols-outlined text-base hover:text-secondary transition-colors">favorite</span>
+</button>
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Classic French sailor-collar vintage baby linen playsuit in natural unbleached ivory with fine navy pinstripe trimming, hanging on handcrafted wooden child hanger." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7iVeySTp8Ai249EOqZSjSP-SquI_aDJCSjHQTKwChhKWttrO2pxqRaRXpV9LMYeI0hCJHbURTl73aiT5FMiBGQTvm_VNkNhhPLqk-CE8EhP2faDKN5kPDxj9jXX4W-BqxHigA4of6XToA6ytfdCDYiMvBtYSINV9Lo9F3I6oJh1bvuToydxqXnnXCL1dq9OWNsYoVI342e_YRkY5-Q1BAlQb8kMJX4T5PyBl3M5MzNd8mF5pwalm2">
+<button class="absolute inset-x-3 bottom-3 py-2 bg-surface/90 backdrop-blur-md text-on-surface font-label-md text-label-md font-semibold rounded-full opacity-0 group-hover:opacity-100 transition-all duration-200 shadow-md hover:bg-primary hover:text-on-primary" onclick="document.getElementById('quick-view-modal').classList.remove('hidden')">
+                Quick View
+              </button>
+</div>
+<div class="flex flex-col flex-1">
+<div class="flex items-center gap-1 mb-1.5">
+<span class="bg-surface-container px-2 py-0.5 rounded text-on-surface-variant font-label-sm text-label-sm font-semibold">3-6M</span>
+<span class="bg-surface-container px-2 py-0.5 rounded text-on-surface-variant font-label-sm text-label-sm font-semibold">6-12M</span>
+<span class="bg-surface-container px-2 py-0.5 rounded text-on-surface-variant font-label-sm text-label-sm font-semibold">1-2Y</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors line-clamp-1 leading-snug">
+                Heirloom Linen Sailor Collar Playsuit
+              </h3>
+<div class="flex items-center gap-1.5 my-1.5">
+<div class="flex items-center text-primary text-xs">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star_half</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">4.8 (43)</span>
+</div>
+<div class="flex items-baseline gap-2 mt-auto pt-2">
+<span class="font-price-lg text-price-lg text-on-surface">₹1,199</span>
+<span class="font-body-sm text-body-sm text-outline line-through">₹1,599</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">25% OFF</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold mt-1">Available in Stock</span>
+<button class="mt-3 w-full bg-primary-container text-on-primary-container hover:bg-primary hover:text-on-primary py-2.5 px-3 rounded-full font-label-md text-label-md font-semibold transition-colors flex items-center justify-center gap-1.5" style="background-color: #4C759A; color: #ffffff;">
+<span class="material-symbols-outlined text-base">shopping_bag</span>
+<span class="">Add to Cart</span>
+</button>
+</div>
+</div>
+<!-- PRODUCT 7: Cloud-Soft Pointelle Knit Baby Cardigan -->
+<div class="group bg-surface-container-lowest rounded-2xl p-3 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative">
+<div class="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-surface-container-low mb-3">
+<div class="absolute top-2 left-2 z-10 flex flex-col gap-1">
+<span class="bg-tertiary-container text-on-tertiary-container font-label-sm text-label-sm px-2 py-0.5 rounded-full font-semibold shadow-xs">100% Cotton</span>
+</div>
+<button class="absolute top-2 right-2 z-10 w-8 h-8 rounded-full bg-surface/90 hover:bg-surface text-on-surface flex items-center justify-center shadow-sm transition-transform hover:scale-110" title="Add to Wishlist">
+<span class="material-symbols-outlined text-base hover:text-secondary transition-colors">favorite</span>
+</button>
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Cloud-soft baby knit cardigan in off-white pointelle eyelet stitching with natural shell buttons, styled neatly next to a plush miniature lamb toy on warm knitted throw." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2w5AozjzoQlqfAXxEHHDX00VgEULnvuPUxTYbkcB9SGfl4MepRBV4Xp51lyGEMx8U6YA96Bn26ww5dmKo1eRme8xTUFSH5ld7quFL-yCS4Wh5HuPRWMOykUICgHj4YM3JL66hu8DUSgBu69Z3RuJKNwgl43jzQSGc0DkQAHvEu6RztmUQkAKXTnABvlFuR7lDy6aDjehQs8sW8zC5uf95dMdu_5zoraMmVj6EanK901Qtc8JRN8Hn">
+<button class="absolute inset-x-3 bottom-3 py-2 bg-surface/90 backdrop-blur-md text-on-surface font-label-md text-label-md font-semibold rounded-full opacity-0 group-hover:opacity-100 transition-all duration-200 shadow-md hover:bg-primary hover:text-on-primary" onclick="document.getElementById('quick-view-modal').classList.remove('hidden')">
+                Quick View
+              </button>
+</div>
+<div class="flex flex-col flex-1">
+<div class="flex items-center gap-1 mb-1.5">
+<span class="bg-surface-container px-2 py-0.5 rounded text-on-surface-variant font-label-sm text-label-sm font-semibold">0-3M</span>
+<span class="bg-surface-container px-2 py-0.5 rounded text-on-surface-variant font-label-sm text-label-sm font-semibold">3-6M</span>
+<span class="bg-surface-container px-2 py-0.5 rounded text-on-surface-variant font-label-sm text-label-sm font-semibold">6-12M</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors line-clamp-1 leading-snug">
+                Cloud-Soft Pointelle Knit Baby Cardigan
+              </h3>
+<div class="flex items-center gap-1.5 my-1.5">
+<div class="flex items-center text-primary text-xs">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">4.9 (88)</span>
+</div>
+<div class="flex items-baseline gap-2 mt-auto pt-2">
+<span class="font-price-lg text-price-lg text-on-surface">₹999</span>
+<span class="font-label-sm text-label-sm text-tertiary font-bold">Best Layer</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold mt-1">Available in Stock</span>
+<button class="mt-3 w-full bg-primary-container text-on-primary-container hover:bg-primary hover:text-on-primary py-2.5 px-3 rounded-full font-label-md text-label-md font-semibold transition-colors flex items-center justify-center gap-1.5" style="background-color: #d97086; color: #ffffff;">
+<span class="material-symbols-outlined text-base">shopping_bag</span>
+<span class="">Add to Cart</span>
+</button>
+</div>
+</div>
+<!-- PRODUCT 8: Botanical Bloom Flutter Sleeve Sundress -->
+<div class="group bg-surface-container-lowest rounded-2xl p-3 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative">
+<div class="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-surface-container-low mb-3">
+<div class="absolute top-2 left-2 z-10 flex flex-col gap-1">
+<span class="bg-secondary-container text-on-secondary-container font-label-sm text-label-sm px-2 py-0.5 rounded-full font-bold shadow-xs">22% OFF</span>
+</div>
+<button class="absolute top-2 right-2 z-10 w-8 h-8 rounded-full bg-surface/90 hover:bg-surface text-on-surface flex items-center justify-center shadow-sm transition-transform hover:scale-110" title="Add to Wishlist">
+<span class="material-symbols-outlined text-base hover:text-secondary transition-colors">favorite</span>
+</button>
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Delicate summer infant dress with whimsical botanical watercolor print, flutter sleeves and gentle bloomers set, styled on warm cream linen background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1PTcHeZs95w5QFb9v6g7JXJA-1pcNncsQUlcYAD_qz_vyUCa9ViGewq1hKOBTtJLKNe3DNDRJqt34oKXq6Q5EvIimo8rCtGLEITQ0LMM1TFD2aAzMzoXVjo1_fDWdG0u-fwygw9S_gpmLmFUspeyFmC9xBaaWh8O3eLEqp4Lsfznd0wUEYErbB5fMIZHTnW_g4nBUhTmx2I8A7o4Ou9O90LPsSmI0v-8ywPy585DNZNjpn10_iONy">
+<button class="absolute inset-x-3 bottom-3 py-2 bg-surface/90 backdrop-blur-md text-on-surface font-label-md text-label-md font-semibold rounded-full opacity-0 group-hover:opacity-100 transition-all duration-200 shadow-md hover:bg-primary hover:text-on-primary" onclick="document.getElementById('quick-view-modal').classList.remove('hidden')">
+                Quick View
+              </button>
+</div>
+<div class="flex flex-col flex-1">
+<div class="flex items-center gap-1 mb-1.5">
+<span class="bg-surface-container px-2 py-0.5 rounded text-on-surface-variant font-label-sm text-label-sm font-semibold">6-12M</span>
+<span class="bg-surface-container px-2 py-0.5 rounded text-on-surface-variant font-label-sm text-label-sm font-semibold">1-2Y</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors line-clamp-1 leading-snug">
+                Botanical Bloom Flutter Sleeve Sundress
+              </h3>
+<div class="flex items-center gap-1.5 my-1.5">
+<div class="flex items-center text-primary text-xs">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star_half</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">4.6 (56)</span>
+</div>
+<div class="flex items-baseline gap-2 mt-auto pt-2">
+<span class="font-price-lg text-price-lg text-on-surface">₹849</span>
+<span class="font-body-sm text-body-sm text-outline line-through">₹1,099</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">22% OFF</span>
+</div>
+<span class="font-label-sm text-label-sm text-error font-semibold mt-1">Low Stock: 2 items left</span>
+<button class="mt-3 w-full bg-primary-container text-on-primary-container hover:bg-primary hover:text-on-primary py-2.5 px-3 rounded-full font-label-md text-label-md font-semibold transition-colors flex items-center justify-center gap-1.5" style="background-color: #4C759A; color: #ffffff;">
+<span class="material-symbols-outlined text-base">shopping_bag</span>
+<span class="">Add to Cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Catalog Pagination / Load More -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t border-outline-variant/30">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Showing 8 of 48 heirloom dresses &amp; outfits</span>
+<div class="flex items-center gap-2">
+<button class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-lg">chevron_left</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-primary text-on-primary font-label-md text-label-md font-semibold shadow-sm">1</button>
+<button class="w-10 h-10 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors">2</button>
+<button class="w-10 h-10 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors">3</button>
+<span class="px-1 text-outline">...</span>
+<button class="w-10 h-10 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors">6</button>
+<button class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-lg">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Interactive Quick View Modal (Visible by default for evaluation / dismissible) -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-inverse-surface/60 backdrop-blur-sm" id="quick-view-modal">
+<div class="relative w-full max-w-4xl bg-surface-container-lowest rounded-3xl shadow-2xl overflow-hidden max-h-[90vh] flex flex-col md:flex-row">
+<!-- Close button -->
+<button class="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface flex items-center justify-center transition-colors" onclick="document.getElementById('quick-view-modal').classList.add('hidden')">
+<span class="material-symbols-outlined text-lg">close</span>
+</button>
+<!-- Left: Imagery Showcase -->
+<div class="md:w-1/2 bg-surface-container-low p-6 flex flex-col justify-between">
+<div class="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-sm bg-surface">
+<img class="w-full h-full object-cover" data-alt="Macro high detail photograph of the Vintage Rose Embroidered Muslin Dress highlighting delicate scalloped neckline, micro-ruffles, breathable organic cotton open-weave fabric, and natural shell buttons." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWNslAm2cg46hRwRJgqrv6owYVRCY3pl-Ix2OWtW8q53Ir-x7z31VQDvUyp1nIyrOLeGlFiSt75HfqyqZusccCoX0-7ETLPthj3QB4VqhN-AyDZjs7bi3vlc5HCw8ZSuaBGqF4DYZuKbkMqX984Peg6KUty8rkgL_EUN2TpRU9hu8iEAyQoDINSmSGa-7zHZn4o-DlhC-sHIJctV6_VXhadqFHGgJh2vD-aNA12YAfiIoQmartaI76">
+<div class="absolute bottom-3 left-3 bg-tertiary-container/80 backdrop-blur-md px-3 py-1 rounded-full text-on-tertiary-container font-label-sm text-label-sm font-semibold flex items-center gap-1" style="background-color: rgba(227, 240, 249, 0.95); color: rgb(76, 117, 154); border: 1px solid rgba(185, 213, 235, 0.6);">
+<span class="material-symbols-outlined text-xs">spa</span>
+<span class="">100% GOTS Certified Cotton</span>
+</div>
+</div>
+<!-- Thumbnail Angle Carousel -->
+<div class="grid grid-cols-4 gap-2 mt-4">
+<button class="aspect-square rounded-xl overflow-hidden border-2 border-primary ring-1 ring-primary/30">
+<img class="w-full h-full object-cover" data-alt="Front view of vintage rose organic muslin baby dress on warm linen." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAD1QBx3B5mGOQPltTTAcU2sTzztuQuoYX-FXyWim-eVLldOPO_kYvs2WPHl3q9dQhvh4higNhuvaqjgOy2ynZki-JhsbETUHHGqK3pGyMk4L3-vQV3CKc080qu8jZ2ZcQ7jECZjTZBbJFnBt-jai1QLiWNHl8LM056xa9qjnwZiulHDRQKSgxCX2hmxBnrajFaJB9cuHHu57_xJy9n_2VHdge-ztzpQwnsRd5C1tTlFA-kLJHQ1mkF">
+</button>
+<button class="aspect-square rounded-xl overflow-hidden opacity-70 hover:opacity-100 transition-opacity">
+<img class="w-full h-full object-cover" data-alt="Back detail showing nickel-free snaps and baby neck comfort lining." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAax3WLjwZhdUxMol65Ba1YmhJTGMHk8UxFJo43VgCv3hKm3GviLYdyl-oIQ1xuOll7FJFS9pNDYrLQTAyeZ7TVruGSoPhiWz48kk27Cp7qD5gtiJPMof6RDlCDMqLpE45cVbaLDdSs8hwsG2ciO1pa5M0pBzEljaDzKJm_avGZrlOmdEZmuHz99Y4nl7JUYPAcRJuyIrIlEtbwRKfB7_FlDd5WOiXAKkS8KGzGP1jbi6de-itNbGkO">
+</button>
+<button class="aspect-square rounded-xl overflow-hidden opacity-70 hover:opacity-100 transition-opacity">
+<img class="w-full h-full object-cover" data-alt="Flat lay showing included matching organic muslin bloomers." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWPV8HOzn__W6rYYLlg90x5VESm_2w5oOpzn5Ije3F0AjkgzNfPpChSmu5IV2r9pepRCkLDMiH1usLSpixq_DyHAlI38LeaUBF2X9GsAb7GWiIwxpJdKbypvlhvr4pPBauBnCJrc_rI8zuEvBlwDAOUT0e6DI9COFFCis5Ej76ZlleMqwkOdvic0aRqZUKKi9R5rzZtTsEwHv4hMYOvEm3NpQz51euoYw90aAbAINFV4FJaSyp_Zgb">
+</button>
+<button class="aspect-square rounded-xl overflow-hidden opacity-70 hover:opacity-100 transition-opacity">
+<img class="w-full h-full object-cover" data-alt="Handcrafted embroidery close up with soft pastel floss thread." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBopJj9vJ8AKJDXFKzbcb83OYPDNT_TnlS5uEDyh9JUcLiJZ2K9aSd6Zc7ebo0gQeV8U4gUp5usW99QJ6uq0R6lKzus2nnO_MofRGnNbNQyZ4EeSeJMty-4R3RILcEaVy_j15TrZyH_ItB6u5Z4XL_YefJzcboQPrywka-AfcXtZo8XdzWmZTqhDY3anHOaQkigg3g_Sp3YI5BivwiIovnaobKasYWU_sAhQGtgrgGhrzkcCDxO2bqk">
+</button>
+</div>
+</div>
+<!-- Right: Product Selector & Checkout Parameters -->
+<div class="md:w-1/2 p-6 md:p-8 flex flex-col justify-between overflow-y-auto">
+<div class="space-y-4">
+<div class="flex items-center gap-2">
+<span class="bg-secondary text-on-secondary font-label-sm text-label-sm px-2.5 py-0.5 rounded-full font-bold">Bestseller</span>
+<span class="bg-surface-container text-on-surface-variant font-label-sm text-label-sm px-2.5 py-0.5 rounded-full">SKU: BH-DRS-081</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface">
+            Vintage Rose Embroidered Muslin Dress
+          </h2>
+<div class="flex items-center gap-2">
+<div class="flex items-center text-primary text-sm">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="font-label-md text-label-md font-semibold text-on-surface">4.9</span>
+<span class="text-on-surface-variant font-body-sm text-body-sm">• 128 verified mom reviews</span>
+</div>
+<!-- Price row -->
+<div class="flex items-baseline gap-3 pt-1">
+<span class="font-price-lg text-price-lg text-on-surface text-2xl font-bold">₹1,299</span>
+<span class="font-body-md text-body-md text-outline line-through">₹1,799</span>
+<span class="font-label-md text-label-md text-secondary font-bold bg-secondary-container/40 px-2 py-0.5 rounded">28% OFF</span>
+</div>
+<!-- Color selector -->
+<div class="pt-2">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-md text-label-md font-bold text-on-surface">Selected Shade: <span class="font-normal text-on-surface-variant">Blush Rose</span></span>
+</div>
+<div class="flex items-center gap-3">
+<button class="w-8 h-8 rounded-full bg-secondary-container ring-2 ring-primary ring-offset-2 flex items-center justify-center">
+<span class="material-symbols-outlined text-xs text-on-secondary-container">check</span>
+</button>
+<button class="w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant hover:scale-105 transition-transform" title="Cloud Cream"></button>
+<button class="w-8 h-8 rounded-full bg-primary-fixed hover:scale-105 transition-transform" title="Soft Peach"></button>
+</div>
+</div>
+<!-- Size selector -->
+<div class="pt-2">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-md text-label-md font-bold text-on-surface">Select Baby Size</span>
+<button class="font-label-sm text-label-sm text-primary hover:underline flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">straighten</span>
+<span class="">Size &amp; Growth Chart</span>
+</button>
+</div>
+<div class="grid grid-cols-3 gap-2">
+<button class="py-2.5 px-3 rounded-xl border border-primary bg-primary/10 text-on-surface font-label-md text-label-md font-bold flex flex-col items-center" style="border-color: rgb(217, 112, 134); background-color: rgb(253, 240, 242); color: rgb(156, 63, 82);">
+<span class="">0 – 3 Months</span>
+<span class="font-body-sm text-body-sm font-normal text-primary">3-5 kg</span>
+</button>
+<button class="py-2.5 px-3 rounded-xl border border-outline-variant hover:border-primary/50 text-on-surface font-label-md text-label-md flex flex-col items-center transition-colors">
+<span class="">3 – 6 Months</span>
+<span class="font-body-sm text-body-sm text-outline">5-7 kg</span>
+</button>
+<button class="py-2.5 px-3 rounded-xl border border-outline-variant hover:border-primary/50 text-on-surface font-label-md text-label-md flex flex-col items-center transition-colors">
+<span class="">6 – 12 Months</span>
+<span class="font-body-sm text-body-sm text-outline">7-10 kg</span>
+</button>
+</div>
+</div>
+<!-- Quantity & Stock indicator -->
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-center border border-outline-variant rounded-full bg-surface-container-low px-2 py-1">
+<button class="w-7 h-7 rounded-full flex items-center justify-center text-on-surface hover:bg-surface transition-colors">
+<span class="material-symbols-outlined text-sm">remove</span>
+</button>
+<span class="w-8 text-center font-label-md text-label-md font-bold text-on-surface">1</span>
+<button class="w-7 h-7 rounded-full flex items-center justify-center text-on-surface hover:bg-surface transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<div class="flex items-center gap-1.5 text-error font-label-sm text-label-sm font-semibold">
+<span class="w-2 h-2 rounded-full bg-error animate-pulse"></span>
+<span class="">Hurry, only 4 units remaining!</span>
+</div>
+</div>
+<!-- Fabric Care Accordion Snapshot -->
+<div class="bg-surface-container-low p-3.5 rounded-xl space-y-1.5 font-body-sm text-body-sm text-on-surface-variant">
+<div class="flex items-center gap-2 text-on-surface font-semibold">
+<span class="material-symbols-outlined text-tertiary text-base">eco</span>
+<span class="">100% Organic Double-Gauze Muslin</span>
+</div>
+<p class="">Naturally breathable weave that gets softer with every wash. AZO-free hypoallergenic dyes safe for teething babies who chew collars.</p>
+</div>
+</div>
+<!-- Modal Action Buttons -->
+<div class="pt-6 flex flex-col sm:flex-row gap-3">
+<button class="flex-1 bg-primary text-on-primary hover:bg-on-primary-container py-3.5 px-6 rounded-full font-label-lg text-label-lg font-semibold shadow-md transition-all flex items-center justify-center gap-2" style="background-color: rgb(217, 112, 134); color: rgb(255, 255, 255);">
+<span class="material-symbols-outlined text-lg">shopping_bag</span>
+<span class="">Add to Cart • ₹1,299</span>
+</button>
+<button class="w-full sm:w-auto px-5 py-3.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg">favorite</span>
+<span class="">Wishlist</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Boutique Perks & Parent Reviews Spotlight -->
+<section class="w-full bg-surface-container-low py-14 mt-8">
+<div class="max-w-[1280px] mx-auto px-margin-mobile lg:px-margin space-y-12">
+<!-- Section Header -->
+<div class="text-center max-w-2xl mx-auto space-y-2">
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-widest">Nurtured with Love</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">
+          Loved by 25,000+ Happy Parents Across India
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Read heartwarming real experiences from mothers, fathers, and loving grandparents who cherish Baby Hug garments.
+        </p>
+</div>
+<!-- Testimonials Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Review Card 1 -->
+<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm flex flex-col justify-between space-y-4">
+<div class="space-y-3">
+<div class="flex items-center text-primary text-sm">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface font-bold">"Zero heat rashes in peak Mumbai humidity"</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              The double-gauze muslin dress is a godsend for my 4-month-old daughter. The fabric is cloud-like, breathable, and no scratchy inner tags anywhere.
+            </p>
+</div>
+<div class="flex items-center gap-3 pt-3 border-t border-outline-variant/20">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="Portrait photo of a smiling mother holding her smiling toddler girl outdoors in natural daylight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrqAhkgZeds4-ZIuJSKsRb6tS6eLXrX9QiW87imyk-xczUQ1nUjd_2dETiQr9Q21elC2KEuy_2dHIDwnqOEfZX05R8hu3gjv9t65WdXahlHYOuDxA7womWTt1Vtfs_zV7W1raE2zG1gNv_n6QItsWzeZFkxsPT_uIaoQUvBb2SpeL1p6ybc0Sqyphz3bHR9mPNi-QDhZUxShvUMsyU4EKQLBgB94QvM9NQI27sRUN7HjFzxAyJxePV">
+<div>
+<p class="font-label-md text-label-md font-bold text-on-surface">Pooja Venkatesh</p>
+<div class="flex items-center gap-1 text-tertiary font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-xs">verified</span>
+<span class="">Verified Buyer • Mumbai</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Review Card 2 -->
+<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm flex flex-col justify-between space-y-4">
+<div class="space-y-3">
+<div class="flex items-center text-primary text-sm">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface font-bold">"The perfect first birthday gift"</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Ordered the Daisy Meadow frock for my niece's 1st birthday. The wooden box packaging and personalized calligraphy card made it an heirloom family memory.
+            </p>
+</div>
+<div class="flex items-center gap-3 pt-3 border-t border-outline-variant/20">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="Warm lifestyle profile portrait of an Indian gentleman holding a baby gift package." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvVhMN7Zp5tQ36OvLKNwsjkwRf-OEhHxgYNcgJ97zTWEoKJKEHLRtILz6ZbyTo9AU2aOmcnMoTaVhH6y_UcJC_uw3uWvnk4GSS-VXGIO_rNgS6WvUgSgcpZ7_109Dlgn2q1JdrExBlzQWW0S-iAQF7Ug-gMiMh7ObZDCubfXwqWmZnFOc4CrHvSBZih54w3JD9qZ_MLvq1z5SRozSycliHYA16gEETjMD5QYp8drFHby6RhiKvIfc2">
+<div>
+<p class="font-label-md text-label-md font-bold text-on-surface">Arjun Menon</p>
+<div class="flex items-center gap-1 text-tertiary font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-xs">verified</span>
+<span class="">Verified Buyer • Bengaluru</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Review Card 3 -->
+<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm flex flex-col justify-between space-y-4">
+<div class="space-y-3">
+<div class="flex items-center text-primary text-sm">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface font-bold">"Easy diaper changes in seconds"</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              The bottom snap buttons on the waffle romper make 2 AM changes seamless without having to fully undress the baby. Super thoughtful engineering!
+            </p>
+</div>
+<div class="flex items-center gap-3 pt-3 border-t border-outline-variant/20">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="Portrait of an Indian mother gently cradling her newborn infant on a cozy nursery chair." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUCAQL8cA0L4uWQoIxuaGikcAce0TpDmSu1Dj1r1qjz5V6p4kLSlMK_hV3y9zMuLOoVZqk_hcgKQpYg0RWQqXHWe1cHX9AXbMZDMGBOHfGA-N5VMoF_eOS4rnqQF4dk0k0JHs3YRBdQFyx2sMpN92R32wGSSZMEjubJFz2Qti3jaUgo0fbmf8VUVXCdjOs6x5HdIrydBrWPaFQUn-AEEC4OOcV5oW-Vjv4Ex13INb_2OehvqkWNf_b">
+<div>
+<p class="font-label-md text-label-md font-bold text-on-surface">Dr. Ananya Roy</p>
+<div class="flex items-center gap-1 text-tertiary font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-xs">verified</span>
+<span class="">Pediatrician &amp; Mom • Delhi</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Newsletter & Birthday Club Callout -->
+<div class="bg-gradient-to-r from-primary-fixed/40 via-surface-container to-secondary-fixed/40 p-8 rounded-3xl shadow-sm flex flex-col lg:flex-row items-center justify-between gap-6 border border-outline-variant/20" style="background: linear-gradient(135deg, rgb(227, 240, 249) 0%, rgb(250, 248, 245) 50%, rgb(253, 240, 242) 100%); border-color: rgba(236, 161, 172, 0.3);">
+<div class="space-y-2 text-center lg:text-left">
+<div class="inline-flex items-center gap-1.5 text-primary font-label-md text-label-md font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-base">cake</span>
+<span class="">The Baby Hug Milestone Club</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+            Get 15% Off Your First Order + A Surprise on Baby’s Birthday
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl">
+            Join 45,000+ families. Receive pediatric sleep guides, seasonal organic capsule drops, and milestone celebration gifts.
+          </p>
+</div>
+<div class="w-full lg:w-auto flex flex-col sm:flex-row items-center gap-3">
+<input class="w-full sm:w-80 bg-surface px-5 py-3.5 rounded-full font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary shadow-xs" placeholder="Enter your email address" type="email">
+<button class="w-full sm:w-auto bg-primary text-on-primary hover:bg-on-primary-container px-7 py-3.5 rounded-full font-label-md text-label-md font-semibold transition-colors shadow-sm whitespace-nowrap" style="background-color: rgb(217, 112, 134); color: rgb(255, 255, 255);">
+            Join Club &amp; Save
+          </button>
+</div>
+</div>
+</div>
+</section>
+</div></main><footer class="w-full bg-surface-container-low pt-space-xl pb-space-lg text-on-surface"><div class="max-w-[1280px] mx-auto px-margin-mobile lg:px-margin"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-lg mb-space-xl"><div class="lg:col-span-2 space-y-space-md"><div class="flex items-center gap-space-sm"><img alt="Baby Hug Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA19YF0LuLmk2ZxOTd11qzWwtQhe7hEYVvVJroCjlGqDD3Ku71yfZdstMhfoLO2PgwCAUt6RksAbL851GqUOseMaM3tWHQioG5sN2SXBH-1OajVFBg_-rlcnH8EsQ9bGIWHOT2SOlexgp1Gp2ID9W3UADyC_K-fzcP7jZSsuXZQfUum_72pLQeyTrcuY0lq_53VIsyVXQ03Ee2oTKbRKLDnvSPxE3M6xh9I-rBfKo21mmSZ4mKpHFnY"><span class="font-headline-sm text-headline-sm text-primary font-medium">Baby Hug</span></div><p class="font-body-md text-body-md text-on-surface-variant max-w-sm">Crafting timeless, heirloom-quality clothing for babies and toddlers. Nurturing skin with 100% certified organic fabrics and thoughtful artisanal touches.</p><div class="flex flex-wrap items-center gap-space-sm pt-space-xs"><div class="flex items-center gap-1.5 bg-surface-container px-3 py-1.5 rounded-full text-tertiary font-label-md text-label-md"><span class="material-symbols-outlined text-sm">eco</span><span class="">100% Organic</span></div><div class="flex items-center gap-1.5 bg-surface-container px-3 py-1.5 rounded-full text-secondary font-label-md text-label-md"><span class="material-symbols-outlined text-sm">verified</span><span class="">Sensitive Skin Safe</span></div><div class="flex items-center gap-1.5 bg-surface-container px-3 py-1.5 rounded-full text-primary font-label-md text-label-md"><span class="material-symbols-outlined text-sm">sync</span><span class="">Easy 15-Day Returns</span></div></div></div><div class="space-y-space-sm"><h4 class="font-title-md text-title-md text-on-surface font-semibold">Customer Care</h4><ul class="space-y-2 font-body-md text-body-md text-on-surface-variant"><li class=""><a class="hover:text-primary transition-colors" data-path="track-order" href="#">Track Your Order</a></li><li class=""><a class="hover:text-primary transition-colors" data-path="shipping-policy" href="#">Shipping &amp; Delivery</a></li><li class=""><a class="hover:text-primary transition-colors" data-path="returns-exchanges" href="#">Returns &amp; Exchanges</a></li><li class=""><a class="hover:text-primary transition-colors" data-path="size-guide" href="#">Sizing Assistance</a></li><li class=""><a class="hover:text-primary transition-colors" data-path="faq" href="#">Help &amp; FAQ</a></li></ul></div><div class="space-y-space-sm"><h4 class="font-title-md text-title-md text-on-surface font-semibold">Shop Boutique</h4><ul class="space-y-2 font-body-md text-body-md text-on-surface-variant"><li class=""><a class="hover:text-primary transition-colors" data-path="newborn-essentials" href="#">Newborn Essentials</a></li><li class=""><a class="hover:text-primary transition-colors" data-path="baby-dresses" href="#">Artisanal Dresses</a></li><li class=""><a class="hover:text-primary transition-colors" data-path="rompers-sets" href="#">Knitted Rompers</a></li><li class=""><a class="hover:text-primary transition-colors" data-path="accessories-bibs" href="#">Soft Bibs &amp; Bonnets</a></li><li class=""><a class="hover:text-primary transition-colors" data-path="gift-boxes" href="#">Curated Gift Sets</a></li></ul></div><div class="space-y-space-sm"><h4 class="font-title-md text-title-md text-on-surface font-semibold">The Boutique Journal</h4><p class="font-body-sm text-body-sm text-on-surface-variant">Subscribe for nursery design stories, seasonal heirloom collections, and exclusive private offers.</p><div class="flex flex-col gap-2 pt-1"><input class="w-full bg-surface-container-lowest px-4 py-2.5 rounded-full font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary/30" placeholder="Enter your email address" type="email"><button class="w-full bg-primary text-on-primary py-2.5 px-4 rounded-full font-label-md text-label-md font-semibold hover:bg-on-primary-container transition-colors shadow-sm" style="background-color: rgb(217, 112, 134); color: rgb(255, 255, 255);">Subscribe</button></div></div></div><div class="pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md text-on-surface-variant font-body-sm text-body-sm"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-tertiary">shield_lock</span><span class="">256-Bit SSL Encrypted Checkout | UPI, RuPay, NetBanking &amp; Cards Accepted</span></div><div class="">© 2024 Baby Hug Boutique Private Limited. All rights reserved.</div></div></div></footer>
+
+</body></html>

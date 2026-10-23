@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% block title %}Sign In – Baby Hug{% endblock %}
+
+{% block content %}
+<div class="min-h-[70vh] flex items-center justify-center px-4 py-12">
+  <div class="w-full max-w-md">
+
+    <!-- Card -->
+    <div class="bg-surface-container-lowest rounded-3xl shadow-xl p-8 border border-outline-variant/20">
+
+      <!-- Logo mark -->
+      <div class="flex flex-col items-center mb-8">
+        <div class="w-14 h-14 rounded-2xl bg-primary flex items-center justify-center shadow-lg mb-4">
+          <span class="material-symbols-outlined text-white text-3xl">child_care</span>
+        </div>
+        <h1 class="font-display text-3xl text-on-surface">Welcome Back</h1>
+        <p class="text-sm text-on-surface-variant mt-1">Enter your credentials to continue</p>
+      </div>
+
+      <form method="POST" class="space-y-5">
+        {% csrf_token %}
+        {% if next %}<input type="hidden" name="next" value="{{ next }}">{% endif %}
+
+        <!-- Email -->
+        <div>
+          <label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider block mb-1.5" for="email">
+            Email Address
+          </label>
+          <div class="relative">
+            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg">mail</span>
+            <input type="email" id="email" name="email" required placeholder="name@example.com"
+                   class="w-full h-12 border border-outline-variant/40 rounded-lg pl-10 pr-4 text-sm text-on-surface bg-white focus:outline-none focus:ring-2 focus:ring-primary/25 focus:border-primary transition-all">
+          </div>
+        </div>
+
+        <!-- Password -->
+        <div>
+          <div class="flex items-center justify-between mb-1.5">
+            <label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider" for="password">Password</label>
+            <a href="#" class="text-xs text-primary hover:underline font-semibold">Forgot Password?</a>
+          </div>
+          <div class="relative">
+            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg">lock</span>
+            <input type="password" id="password" name="password" required placeholder="Your password"
+                   class="w-full h-12 border border-outline-variant/40 rounded-lg pl-10 pr-12 text-sm text-on-surface bg-white focus:outline-none focus:ring-2 focus:ring-primary/25 focus:border-primary transition-all">
+            <button type="button" onclick="togglePw(this)" class="absolute right-3 top-1/2 -translate-y-1/2 text-outline hover:text-on-surface transition-colors">
+              <span class="material-symbols-outlined text-lg">visibility</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit"
+                class="w-full h-12 bg-primary text-white rounded-full font-bold text-sm hover:bg-on-primary-container transition-all shadow-lg hover:shadow-xl btn-primary flex items-center justify-center gap-2 mt-2">
+          <span class="material-symbols-outlined text-xl">login</span>
+          Sign In
+        </button>
+      </form>
+
+      <p class="text-center text-sm text-on-surface-variant mt-6">
+        Don't have an account?
+        <a href="{% url 'register' %}" class="text-primary font-bold hover:underline">Create one for free →</a>
+      </p>
+    </div>
+
+    <!-- Trust signals -->
+    <div class="flex items-center justify-center gap-6 mt-6 text-xs text-on-surface-variant">
+      <div class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">lock</span> SSL Secured</div>
+      <div class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">verified_user</span> Privacy Protected</div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function togglePw(btn) {
+  const input = btn.previousElementSibling;
+  const icon = btn.querySelector('span');
+  if (input.type === 'password') {
+    input.type = 'text';
+    icon.textContent = 'visibility_off';
+  } else {
+    input.type = 'password';
+    icon.textContent = 'visibility';
+  }
+}
+</script>
+{% endblock %}

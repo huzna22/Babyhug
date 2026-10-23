@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% block title %}Contact Us – Baby Hug{% endblock %}
+
+{% block content %}
+<div class="max-w-[1280px] mx-auto px-4 lg:px-12 py-12">
+
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+
+    <!-- Left: Info -->
+    <div class="space-y-8">
+      <div>
+        <span class="text-xs text-primary uppercase font-bold tracking-widest">We'd love to hear from you</span>
+        <h1 class="font-display text-4xl text-on-surface mt-2">Get in Touch</h1>
+        <p class="text-on-surface-variant mt-3 leading-relaxed">
+          Have a question about your order, a product, or just want to say hello?
+          Our team of baby care enthusiasts is here to help, 7 days a week.
+        </p>
+      </div>
+
+      <!-- Contact Cards -->
+      <div class="space-y-4">
+        <div class="flex items-center gap-4 p-4 rounded-2xl bg-surface-container-lowest shadow-sm">
+          <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+            <span class="material-symbols-outlined text-xl">mail</span>
+          </div>
+          <div>
+            <p class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Email Us</p>
+            <a href="mailto:support@babyhug.in" class="text-sm font-semibold text-primary hover:underline">support@babyhug.in</a>
+            <p class="text-xs text-on-surface-variant">We reply within 24 hours</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-4 p-4 rounded-2xl bg-surface-container-lowest shadow-sm">
+          <div class="w-12 h-12 rounded-full bg-tertiary/10 flex items-center justify-center text-tertiary">
+            <span class="material-symbols-outlined text-xl">call</span>
+          </div>
+          <div>
+            <p class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Call Us</p>
+            <a href="tel:+918000123456" class="text-sm font-semibold text-on-surface">+91 80001 23456</a>
+            <p class="text-xs text-on-surface-variant">Mon–Sat, 9 AM – 6 PM IST</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-4 p-4 rounded-2xl bg-surface-container-lowest shadow-sm">
+          <div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
+            <span class="material-symbols-outlined text-xl">location_on</span>
+          </div>
+          <div>
+            <p class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Visit Us</p>
+            <p class="text-sm font-semibold text-on-surface">Kochi, Kerala – 682025</p>
+            <p class="text-xs text-on-surface-variant">India</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ teaser -->
+      <div class="p-5 rounded-2xl bg-primary-fixed/30 border border-primary-fixed">
+        <h3 class="font-bold text-on-surface text-sm mb-3 flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary text-base">help</span> Frequently Asked Questions
+        </h3>
+        <ul class="space-y-2 text-sm text-on-surface-variant">
+          <li class="flex items-start gap-2"><span class="text-primary font-bold shrink-0">Q:</span> How long does delivery take?</li>
+          <li class="text-xs pl-4 text-on-surface-variant">A: Typically 3–5 working days across India. Express delivery available.</li>
+          <li class="flex items-start gap-2 mt-3"><span class="text-primary font-bold shrink-0">Q:</span> What is your return policy?</li>
+          <li class="text-xs pl-4 text-on-surface-variant">A: 7-day hassle-free returns with free doorstep pickup.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Right: Contact Form -->
+    <div class="bg-surface-container-lowest rounded-3xl p-8 shadow-lg border border-outline-variant/20">
+      <h2 class="font-display text-2xl text-on-surface mb-6">Send Us a Message</h2>
+
+      <form method="POST" class="space-y-5">
+        {% csrf_token %}
+
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider block mb-1.5">Your Name *</label>
+            <input type="text" name="name" required placeholder="Full name"
+                   value="{% if user.is_authenticated %}{{ user.get_full_name }}{% endif %}"
+                   class="w-full h-12 border border-outline-variant/40 rounded-lg px-4 text-sm text-on-surface bg-white focus:outline-none focus:ring-2 focus:ring-primary/25 focus:border-primary transition-all">
+          </div>
+          <div>
+            <label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider block mb-1.5">Email Address *</label>
+            <input type="email" name="email" required placeholder="name@example.com"
+                   value="{% if user.is_authenticated %}{{ user.email }}{% endif %}"
+                   class="w-full h-12 border border-outline-variant/40 rounded-lg px-4 text-sm text-on-surface bg-white focus:outline-none focus:ring-2 focus:ring-primary/25 focus:border-primary transition-all">
+          </div>
+        </div>
+
+        <div>
+          <label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider block mb-1.5">Subject *</label>
+          <input type="text" name="subject" required placeholder="e.g. Order inquiry, Product question…"
+                 class="w-full h-12 border border-outline-variant/40 rounded-lg px-4 text-sm text-on-surface bg-white focus:outline-none focus:ring-2 focus:ring-primary/25 focus:border-primary transition-all">
+        </div>
+
+        <div>
+          <label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider block mb-1.5">Message *</label>
+          <textarea name="message" rows="5" required placeholder="Tell us how we can help you…"
+                    class="w-full border border-outline-variant/40 rounded-lg px-4 py-3 text-sm text-on-surface bg-white focus:outline-none focus:ring-2 focus:ring-primary/25 focus:border-primary transition-all resize-none"></textarea>
+        </div>
+
+        <button type="submit"
+                class="w-full h-12 bg-primary text-white rounded-full font-bold text-sm hover:bg-on-primary-container transition-all shadow-lg hover:shadow-xl btn-primary flex items-center justify-center gap-2">
+          <span class="material-symbols-outlined text-xl">send</span>
+          Send Message
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

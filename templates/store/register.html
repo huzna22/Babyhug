@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% block title %}Create Account – Baby Hug{% endblock %}
+
+{% block content %}
+<div class="min-h-[70vh] flex items-center justify-center px-4 py-12">
+  <div class="w-full max-w-lg">
+
+    <div class="bg-surface-container-lowest rounded-3xl shadow-xl p-8 border border-outline-variant/20">
+
+      <!-- Header -->
+      <div class="flex flex-col items-center mb-8">
+        <div class="w-14 h-14 rounded-2xl bg-secondary flex items-center justify-center shadow-lg mb-4">
+          <span class="material-symbols-outlined text-white text-3xl">child_care</span>
+        </div>
+        <h1 class="font-display text-3xl text-on-surface">Create a New Account</h1>
+        <p class="text-sm text-on-surface-variant mt-1">Join thousands of happy parents on Baby Hug</p>
+      </div>
+
+      <form method="POST" class="space-y-4">
+        {% csrf_token %}
+
+        <!-- Name row -->
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider block mb-1.5">First Name</label>
+            <input type="text" name="first_name" required placeholder="Huzna"
+                   class="w-full h-12 border border-outline-variant/40 rounded-lg px-4 text-sm text-on-surface bg-white focus:outline-none focus:ring-2 focus:ring-primary/25 focus:border-primary transition-all">
+          </div>
+          <div>
+            <label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider block mb-1.5">Last Name</label>
+            <input type="text" name="last_name" placeholder="Shajahan"
+                   class="w-full h-12 border border-outline-variant/40 rounded-lg px-4 text-sm text-on-surface bg-white focus:outline-none focus:ring-2 focus:ring-primary/25 focus:border-primary transition-all">
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div>
+          <label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider block mb-1.5">Email Address</label>
+          <div class="relative">
+            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg">mail</span>
+            <input type="email" name="email" required placeholder="name@example.com"
+                   class="w-full h-12 border border-outline-variant/40 rounded-lg pl-10 pr-4 text-sm text-on-surface bg-white focus:outline-none focus:ring-2 focus:ring-primary/25 focus:border-primary transition-all">
+          </div>
+        </div>
+
+        <!-- Phone -->
+        <div>
+          <label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider block mb-1.5">Phone Number</label>
+          <div class="relative">
+            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg">phone</span>
+            <input type="tel" name="phone" placeholder="+91 98765 43210"
+                   class="w-full h-12 border border-outline-variant/40 rounded-lg pl-10 pr-4 text-sm text-on-surface bg-white focus:outline-none focus:ring-2 focus:ring-primary/25 focus:border-primary transition-all">
+          </div>
+        </div>
+
+        <!-- Password -->
+        <div>
+          <label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider block mb-1.5">Password</label>
+          <div class="relative">
+            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg">lock</span>
+            <input type="password" id="pw" name="password" required placeholder="Min. 8 characters"
+                   class="w-full h-12 border border-outline-variant/40 rounded-lg pl-10 pr-12 text-sm text-on-surface bg-white focus:outline-none focus:ring-2 focus:ring-primary/25 focus:border-primary transition-all">
+            <button type="button" onclick="togglePw('pw')" class="absolute right-3 top-1/2 -translate-y-1/2 text-outline hover:text-on-surface transition-colors">
+              <span class="material-symbols-outlined text-lg">visibility</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Confirm Password -->
+        <div>
+          <label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider block mb-1.5">Confirm Password</label>
+          <div class="relative">
+            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg">lock_open</span>
+            <input type="password" id="cpw" name="confirm_password" required placeholder="Repeat your password"
+                   class="w-full h-12 border border-outline-variant/40 rounded-lg pl-10 pr-4 text-sm text-on-surface bg-white focus:outline-none focus:ring-2 focus:ring-primary/25 focus:border-primary transition-all">
+          </div>
+        </div>
+
+        <!-- Terms -->
+        <label class="flex items-start gap-3 cursor-pointer text-sm text-on-surface-variant">
+          <input type="checkbox" required class="mt-1 accent-primary w-4 h-4 rounded">
+          <span>I agree to Baby Hug's <a href="#" class="text-primary hover:underline font-semibold">Terms of Service</a> and <a href="#" class="text-primary hover:underline font-semibold">Privacy Policy</a></span>
+        </label>
+
+        <!-- Submit -->
+        <button type="submit"
+                class="w-full h-12 bg-primary text-white rounded-full font-bold text-sm hover:bg-on-primary-container transition-all shadow-lg hover:shadow-xl btn-primary flex items-center justify-center gap-2">
+          <span class="material-symbols-outlined text-xl">person_add</span>
+          Create Account
+        </button>
+      </form>
+
+      <p class="text-center text-sm text-on-surface-variant mt-6">
+        Already have an account?
+        <a href="{% url 'login' %}" class="text-primary font-bold hover:underline">Sign in →</a>
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function togglePw(id) {
+  const input = document.getElementById(id);
+  input.type = input.type === 'password' ? 'text' : 'password';
+}
+</script>
+{% endblock %}

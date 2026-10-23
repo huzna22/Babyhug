@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% block title %}Order Confirmed! – Baby Hug{% endblock %}
+
+{% block content %}
+<div class="min-h-[70vh] flex items-center justify-center px-4 py-12">
+  <div class="w-full max-w-lg text-center">
+
+    <!-- Success Animation -->
+    <div class="w-24 h-24 rounded-full bg-tertiary-fixed flex items-center justify-center mx-auto mb-6 shadow-lg" style="animation: pulse 2s infinite;">
+      <span class="material-symbols-outlined text-5xl text-on-tertiary-fixed">check_circle</span>
+    </div>
+
+    <h1 class="font-display text-4xl text-on-surface mb-3">Order Confirmed! 🎉</h1>
+    <p class="text-on-surface-variant mb-2">
+      Your order <span class="font-bold text-primary">#BH{{ order.pk|stringformat:"05d" }}</span> has been placed successfully.
+    </p>
+    <p class="text-sm text-on-surface-variant mb-8">
+      We'll send you a confirmation soon. Your little one's new outfit is on its way!
+    </p>
+
+    <!-- Order Summary Card -->
+    <div class="bg-surface-container-lowest rounded-2xl shadow-sm p-6 text-left mb-6">
+      <div class="grid grid-cols-2 gap-4 text-sm">
+        <div>
+          <p class="text-xs text-on-surface-variant uppercase tracking-wider font-semibold">Order ID</p>
+          <p class="font-bold text-on-surface">#BH{{ order.pk|stringformat:"05d" }}</p>
+        </div>
+        <div>
+          <p class="text-xs text-on-surface-variant uppercase tracking-wider font-semibold">Order Date</p>
+          <p class="font-bold text-on-surface">{{ order.order_date|date:"d M Y" }}</p>
+        </div>
+        <div>
+          <p class="text-xs text-on-surface-variant uppercase tracking-wider font-semibold">Total Amount</p>
+          <p class="font-bold text-primary text-lg">₹{{ order.total_amount|floatformat:0 }}</p>
+        </div>
+        <div>
+          <p class="text-xs text-on-surface-variant uppercase tracking-wider font-semibold">Status</p>
+          <p class="font-bold text-on-surface">{{ order.status }}</p>
+        </div>
+      </div>
+
+      <div class="border-t border-outline-variant/20 pt-4 mt-4">
+        <p class="text-xs text-on-surface-variant uppercase tracking-wider font-semibold mb-2">Delivery Address</p>
+        <p class="text-sm text-on-surface">{{ order.address.full_name }}</p>
+        <p class="text-xs text-on-surface-variant mt-0.5">{{ order.address.house_no }}, {{ order.address.street }}, {{ order.address.city }} – {{ order.address.pincode }}</p>
+      </div>
+    </div>
+
+    <!-- CTA Buttons -->
+    <div class="flex flex-col sm:flex-row gap-3 justify-center">
+      <a href="{% url 'order_detail' order.pk %}"
+         class="flex items-center justify-center gap-2 bg-primary text-white px-6 py-3 rounded-full font-bold text-sm hover:bg-on-primary-container transition-colors shadow-lg">
+        <span class="material-symbols-outlined text-xl">package_2</span>
+        Track Order
+      </a>
+      <a href="{% url 'product_list' %}"
+         class="flex items-center justify-center gap-2 border-2 border-primary text-primary px-6 py-3 rounded-full font-bold text-sm hover:bg-primary/5 transition-colors">
+        <span class="material-symbols-outlined text-xl">storefront</span>
+        Continue Shopping
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<style>
+@keyframes pulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 10px 30px rgba(75,99,90,0.2); }
+  50% { transform: scale(1.05); box-shadow: 0 15px 40px rgba(75,99,90,0.35); }
+}
+</style>
+{% endblock %}

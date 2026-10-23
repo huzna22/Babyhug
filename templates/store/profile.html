@@ -1,0 +1,174 @@
+{% extends 'base.html' %}
+{% block title %}My Profile – Baby Hug{% endblock %}
+
+{% block content %}
+<div class="max-w-[1280px] mx-auto px-4 lg:px-12 py-8">
+  <h1 class="font-display text-3xl text-on-surface mb-8">My Account</h1>
+
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+
+    <!-- Sidebar Navigation -->
+    <aside class="lg:col-span-3">
+      <div class="bg-surface-container-lowest rounded-2xl p-4 shadow-sm sticky top-24">
+        <!-- Avatar -->
+        <div class="flex flex-col items-center py-4 mb-4 border-b border-outline-variant/30">
+          <div class="w-16 h-16 rounded-full bg-primary-fixed flex items-center justify-center text-primary font-bold text-2xl mb-3">
+            {{ user.first_name|first|upper }}{% if not user.first_name %}{{ user.username|first|upper }}{% endif %}
+          </div>
+          <p class="font-bold text-on-surface text-sm">{{ user.get_full_name|default:user.username }}</p>
+          <p class="text-xs text-on-surface-variant">{{ user.email }}</p>
+        </div>
+
+        <nav class="space-y-1">
+          <a href="#personal" class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-primary/10 text-primary font-semibold text-sm transition-colors">
+            <span class="material-symbols-outlined text-base">person</span> Personal Info
+          </a>
+          <a href="#security" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container text-sm transition-colors">
+            <span class="material-symbols-outlined text-base">lock</span> Security
+          </a>
+          <a href="#addresses" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container text-sm transition-colors">
+            <span class="material-symbols-outlined text-base">location_on</span> Addresses
+          </a>
+          <a href="{% url 'my_orders' %}" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container text-sm transition-colors">
+            <span class="material-symbols-outlined text-base">package_2</span> My Orders
+          </a>
+          <a href="{% url 'wishlist' %}" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container text-sm transition-colors">
+            <span class="material-symbols-outlined text-base">favorite</span> Wishlist
+          </a>
+          <div class="border-t border-outline-variant/20 pt-1 mt-1">
+            <a href="{% url 'logout' %}" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-error hover:bg-error-container/30 text-sm transition-colors">
+              <span class="material-symbols-outlined text-base">logout</span> Logout
+            </a>
+          </div>
+        </nav>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="lg:col-span-9 space-y-6">
+
+      <!-- ── Personal Information ───────────────────────────────────────── -->
+      <div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm" id="personal">
+        <h2 class="font-bold text-on-surface text-base mb-5 flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary">person</span> Personal Information
+        </h2>
+        <form method="POST" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {% csrf_token %}
+          <input type="hidden" name="action" value="update_profile">
+
+          <div>
+            <label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider block mb-1.5">First Name</label>
+            <input type="text" name="first_name" value="{{ user.first_name }}" required
+                   class="w-full h-12 border border-outline-variant/40 rounded-lg px-4 text-sm text-on-surface bg-white focus:outline-none focus:ring-2 focus:ring-primary/25">
+          </div>
+          <div>
+            <label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider block mb-1.5">Last Name</label>
+            <input type="text" name="last_name" value="{{ user.last_name }}"
+                   class="w-full h-12 border border-outline-variant/40 rounded-lg px-4 text-sm text-on-surface bg-white focus:outline-none focus:ring-2 focus:ring-primary/25">
+          </div>
+          <div>
+            <label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider block mb-1.5">Email Address</label>
+            <input type="email" name="email" value="{{ user.email }}"
+                   class="w-full h-12 border border-outline-variant/40 rounded-lg px-4 text-sm text-on-surface bg-white focus:outline-none focus:ring-2 focus:ring-primary/25">
+          </div>
+          <div>
+            <label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider block mb-1.5">Phone Number</label>
+            <input type="tel" name="phone" value="{{ profile.phone }}" placeholder="+91 XXXXX XXXXX"
+                   class="w-full h-12 border border-outline-variant/40 rounded-lg px-4 text-sm text-on-surface bg-white focus:outline-none focus:ring-2 focus:ring-primary/25">
+          </div>
+
+          <div class="sm:col-span-2 flex gap-3 pt-2">
+            <button type="submit" class="bg-primary text-white px-8 py-2.5 rounded-full font-bold text-sm hover:bg-on-primary-container transition-colors shadow-md">
+              Save Changes
+            </button>
+            <a href="{% url 'profile' %}" class="px-6 py-2.5 rounded-full font-semibold text-sm border border-outline-variant/50 text-on-surface-variant hover:bg-surface-container transition-colors">
+              Cancel
+            </a>
+          </div>
+        </form>
+      </div>
+
+      <!-- ── Security / Password ───────────────────────────────────────── -->
+      <div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm" id="security">
+        <h2 class="font-bold text-on-surface text-base mb-5 flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary">lock</span> Change Password
+        </h2>
+        <form method="POST" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {% csrf_token %}
+          <input type="hidden" name="action" value="change_password">
+
+          <div class="sm:col-span-2">
+            <label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider block mb-1.5">Current Password</label>
+            <input type="password" name="current_password" required placeholder="Enter current password"
+                   class="w-full h-12 border border-outline-variant/40 rounded-lg px-4 text-sm text-on-surface bg-white focus:outline-none focus:ring-2 focus:ring-primary/25">
+          </div>
+          <div>
+            <label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider block mb-1.5">New Password</label>
+            <input type="password" name="new_password" required placeholder="Min. 8 characters"
+                   class="w-full h-12 border border-outline-variant/40 rounded-lg px-4 text-sm text-on-surface bg-white focus:outline-none focus:ring-2 focus:ring-primary/25">
+          </div>
+          <div>
+            <label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider block mb-1.5">Confirm New Password</label>
+            <input type="password" name="confirm_password" required placeholder="Repeat new password"
+                   class="w-full h-12 border border-outline-variant/40 rounded-lg px-4 text-sm text-on-surface bg-white focus:outline-none focus:ring-2 focus:ring-primary/25">
+          </div>
+
+          <div class="sm:col-span-2 pt-2">
+            <button type="submit" class="bg-secondary text-on-secondary px-8 py-2.5 rounded-full font-bold text-sm hover:bg-on-secondary-container hover:text-on-secondary-container transition-colors shadow-md">
+              Update Password
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- ── Saved Addresses ───────────────────────────────────────────── -->
+      <div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm" id="addresses">
+        <div class="flex items-center justify-between mb-5">
+          <h2 class="font-bold text-on-surface text-base flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary">location_on</span> Saved Addresses
+          </h2>
+        </div>
+
+        {% if addresses %}
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+          {% for addr in addresses %}
+          <div class="p-4 rounded-xl border-2 border-outline-variant/30 hover:border-primary/40 transition-colors relative">
+            <div class="flex items-start justify-between">
+              <div>
+                <span class="text-xs bg-surface-container text-on-surface-variant px-2 py-0.5 rounded-full font-semibold">{{ addr.address_type }}</span>
+                <p class="font-bold text-on-surface text-sm mt-2">{{ addr.full_name }}</p>
+                <p class="text-xs text-on-surface-variant mt-1 leading-relaxed">
+                  {{ addr.house_no }}, {{ addr.street }},<br>
+                  {{ addr.city }}, {{ addr.state }} – {{ addr.pincode }}
+                </p>
+                <p class="text-xs text-on-surface-variant mt-1">📞 {{ addr.phone }}</p>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        {% endif %}
+
+        <!-- Add New Address -->
+        <details class="group">
+          <summary class="flex items-center gap-2 text-sm text-primary font-semibold cursor-pointer hover:underline list-none">
+            <span class="material-symbols-outlined text-base group-open:rotate-45 transition-transform">add_circle</span>
+            Add New Address
+          </summary>
+          <form method="POST" class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-5 pt-5 border-t border-outline-variant/20">
+            {% csrf_token %}
+            <input type="hidden" name="action" value="add_address">
+            {% include 'store/partials/address_fields.html' %}
+            <div class="sm:col-span-2">
+              <button type="submit" class="bg-primary text-white px-8 py-2.5 rounded-full font-bold text-sm hover:bg-on-primary-container transition-colors">
+                Save Address
+              </button>
+            </div>
+          </form>
+        </details>
+      </div>
+
+    </div>
+  </div>
+</div>
+{% endblock %}
