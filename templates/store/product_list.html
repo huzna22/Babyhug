@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}{{ selected_category.name|default:"All Products" }} – Baby Hug{% endblock %}
+{% block title %}{{ selected_category.name|default:"All Products" }} – Baby Hug Nordic Atelier{% endblock %}
 {% block meta_description %}Browse {{ selected_category.name|default:"all" }} baby products at Baby Hug. Premium organic dresses, shoes & accessories. Free shipping over ₹999.{% endblock %}
 
 {% block content %}
-<div class="max-w-[1280px] mx-auto px-4 lg:px-12 py-8">
+<div class="max-w-[1360px] mx-auto px-4 lg:px-10 py-8">
 
   <!-- Breadcrumb -->
-  <nav class="flex items-center gap-2 text-sm text-on-surface-variant mb-6">
+  <nav class="flex items-center gap-2 text-sm font-body text-on-surface-variant mb-6">
     <a href="{% url 'home' %}" class="hover:text-primary transition-colors">Home</a>
     <span class="material-symbols-outlined text-xs">chevron_right</span>
     <a href="{% url 'product_list' %}" class="hover:text-primary transition-colors">Products</a>
@@ -22,25 +22,27 @@
   </nav>
 
   <!-- Toolbar -->
-  <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-surface-container-lowest p-4 rounded-2xl shadow-sm mb-6">
+  <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 mb-6"
+       style="background:#FFFFFF; border-radius:0.5rem; border:1px solid rgba(160,196,226,0.35); box-shadow:0 2px 6px rgba(35,40,46,0.04);">
     <div class="flex items-center gap-3 flex-wrap">
-      <span class="font-bold text-on-surface text-base">
+      <span class="font-bold text-on-surface text-base font-body">
         {% if selected_category %}{{ selected_category.name }}{% elif q %}Results for "{{ q }}"{% else %}All Products{% endif %}
       </span>
-      <span class="bg-primary-fixed text-on-primary-fixed-variant text-xs px-2.5 py-0.5 rounded-full font-bold"
-            style="background: rgba(227,240,249,1); color: #4C759A;">
+      <span class="text-xs font-body px-2.5 py-0.5 font-bold rounded"
+            style="background:#E3F0F9; color:#4C759A; border-radius:0.25rem;">
         {{ products.count }} item{{ products.count|pluralize }}
       </span>
     </div>
     <!-- Sort -->
     <div class="flex items-center gap-3 self-end sm:self-center">
-      <label class="text-xs text-on-surface-variant hidden sm:inline">Sort by:</label>
+      <label class="text-xs text-on-surface-variant hidden sm:inline font-body">Sort by:</label>
       <form method="GET" id="sort-form">
         {% if q %}<input type="hidden" name="q" value="{{ q }}">{% endif %}
         {% if request.GET.category %}<input type="hidden" name="category" value="{{ request.GET.category }}">{% endif %}
         {% if age %}<input type="hidden" name="age" value="{{ age }}">{% endif %}
         <select name="sort" onchange="document.getElementById('sort-form').submit()"
-                class="bg-surface-container-low text-on-surface text-xs px-3.5 py-2 rounded-full appearance-none pr-8 cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary/20">
+                class="text-sm font-body px-3.5 py-2 cursor-pointer focus:outline-none appearance-none pr-8"
+                style="background:#E3F0F9; color:#171c22; border-radius:0.25rem; border:1px solid #B9D5EB;">
           <option value="popular" {% if sort == 'popular' %}selected{% endif %}>Popularity</option>
           <option value="price_asc" {% if sort == 'price_asc' %}selected{% endif %}>Price: Low to High</option>
           <option value="price_desc" {% if sort == 'price_desc' %}selected{% endif %}>Price: High to Low</option>
@@ -53,14 +55,17 @@
   <!-- Main Layout: Sidebar + Grid -->
   <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
 
-    <!-- ── SIDEBAR FILTERS ─────────────────────────────────────────────── -->
-    <aside class="lg:col-span-3 bg-surface-container-lowest p-5 rounded-2xl shadow-sm space-y-5 sticky top-24">
-      <div class="flex items-center justify-between pb-3 border-b border-outline-variant/30">
-        <div class="flex items-center gap-2 font-bold text-sm text-on-surface">
-          <span class="material-symbols-outlined text-primary text-xl">tune</span>
+    <!-- ── SIDEBAR FILTERS ──────────────────────────────────────── -->
+    <aside class="lg:col-span-3 p-5 space-y-5 sticky top-24"
+           style="background:#FFFFFF; border-radius:0.5rem; border:1px solid rgba(160,196,226,0.35);
+                  box-shadow:0 2px 6px rgba(35,40,46,0.04);">
+      <div class="flex items-center justify-between pb-3"
+           style="border-bottom:1px solid rgba(160,196,226,0.3);">
+        <div class="flex items-center gap-2 font-bold text-sm text-on-surface font-body">
+          <span class="material-symbols-outlined text-xl" style="color:#4C759A;">tune</span>
           Refine Selection
         </div>
-        <a href="{% url 'product_list' %}" class="text-xs text-primary hover:underline">Reset</a>
+        <a href="{% url 'product_list' %}" class="text-xs font-body hover:underline" style="color:#4C759A;">Reset</a>
       </div>
 
       <form method="GET" id="filter-form">
@@ -69,72 +74,84 @@
 
         <!-- Categories -->
         <div class="space-y-2">
-          <h4 class="text-xs font-bold text-on-surface uppercase tracking-wider">Categories</h4>
+          <h4 class="text-xs font-bold text-on-surface uppercase tracking-wider font-body">Categories</h4>
           <div class="space-y-1.5">
             {% for cat in categories %}
-            <label class="flex items-center justify-between cursor-pointer group text-sm">
+            <label class="flex items-center justify-between cursor-pointer group text-sm font-body">
               <span class="flex items-center gap-2.5">
                 <input type="radio" name="category" value="{{ cat.slug }}"
-                       class="accent-primary cursor-pointer"
+                       style="accent-color:#A0C4E2;"
                        {% if selected_category.slug == cat.slug %}checked{% endif %}
                        onchange="document.getElementById('filter-form').submit()">
-                <span class="group-hover:text-on-surface transition-colors {% if selected_category.slug == cat.slug %}text-on-surface font-semibold{% else %}text-on-surface-variant{% endif %}">{{ cat.name }}</span>
+                <span class="group-hover:text-on-surface transition-colors
+                             {% if selected_category.slug == cat.slug %}text-on-surface font-semibold{% else %}text-on-surface-variant{% endif %}">
+                  {{ cat.name }}
+                </span>
               </span>
-              <span class="text-xs text-outline">{{ cat.products.count }}</span>
+              <span class="text-xs text-outline font-body">{{ cat.products.count }}</span>
             </label>
             {% endfor %}
           </div>
         </div>
 
-        <div class="h-px bg-outline-variant/30"></div>
+        <div class="h-px" style="background:rgba(160,196,226,0.3);"></div>
 
         <!-- Age Group -->
         <div class="space-y-2">
-          <h4 class="text-xs font-bold text-on-surface uppercase tracking-wider">Age Group</h4>
+          <h4 class="text-xs font-bold text-on-surface uppercase tracking-wider font-body">Age Group</h4>
           <div class="space-y-1.5">
             {% for val, label in age_choices %}
-            <label class="flex items-center gap-2 cursor-pointer group text-sm">
+            <label class="flex items-center gap-2 cursor-pointer group text-sm font-body">
               <input type="radio" name="age" value="{{ val }}"
-                     class="accent-primary cursor-pointer"
+                     style="accent-color:#A0C4E2;"
                      {% if age == val %}checked{% endif %}
                      onchange="document.getElementById('filter-form').submit()">
-              <span class="group-hover:text-on-surface transition-colors {% if age == val %}text-on-surface font-semibold{% else %}text-on-surface-variant{% endif %}">{{ label }}</span>
+              <span class="group-hover:text-on-surface transition-colors
+                           {% if age == val %}text-on-surface font-semibold{% else %}text-on-surface-variant{% endif %}">
+                {{ label }}
+              </span>
             </label>
             {% endfor %}
           </div>
         </div>
 
-        <div class="h-px bg-outline-variant/30"></div>
+        <div class="h-px" style="background:rgba(160,196,226,0.3);"></div>
 
         <!-- Price Range -->
         <div class="space-y-2">
-          <h4 class="text-xs font-bold text-on-surface uppercase tracking-wider">Price Range</h4>
+          <h4 class="text-xs font-bold text-on-surface uppercase tracking-wider font-body">Price Range</h4>
           <div class="flex items-center gap-2 text-sm">
-            <div class="flex-1 bg-surface-container-low px-3 py-2 rounded-lg">
+            <div class="flex-1 px-3 py-2 rounded" style="background:#F0F4FC; border:1px solid rgba(160,196,226,0.35);">
               <input type="number" name="min_price" placeholder="Min ₹" value="{{ request.GET.min_price }}"
-                     class="w-full bg-transparent text-xs text-on-surface focus:outline-none">
+                     class="w-full bg-transparent text-xs font-body text-on-surface focus:outline-none">
             </div>
-            <span class="text-on-surface-variant text-xs">to</span>
-            <div class="flex-1 bg-surface-container-low px-3 py-2 rounded-lg">
+            <span class="text-on-surface-variant text-xs font-body">to</span>
+            <div class="flex-1 px-3 py-2 rounded" style="background:#F0F4FC; border:1px solid rgba(160,196,226,0.35);">
               <input type="number" name="max_price" placeholder="Max ₹" value="{{ request.GET.max_price }}"
-                     class="w-full bg-transparent text-xs text-on-surface focus:outline-none">
+                     class="w-full bg-transparent text-xs font-body text-on-surface focus:outline-none">
             </div>
           </div>
-          <button type="submit" class="w-full bg-primary text-white py-2 rounded-full text-xs font-semibold hover:bg-on-primary-container transition-colors">Apply</button>
+          <button type="submit"
+                  class="w-full py-2 text-xs font-semibold font-body rounded transition-all btn-nordic"
+                  style="background:#A0C4E2; color:#23282E; border-radius:0.25rem;">
+            Apply
+          </button>
         </div>
       </form>
 
       <!-- Promo Box -->
-      <div class="p-4 rounded-xl bg-primary-fixed/30 text-on-primary-fixed-variant">
-        <div class="flex items-center gap-1.5 text-xs font-bold mb-1">
-          <span class="material-symbols-outlined text-primary text-base">redeem</span>
+      <div class="p-4 rounded" style="background:#E3F0F9; border:1px solid rgba(185,213,235,0.5);">
+        <div class="flex items-center gap-1.5 text-xs font-bold mb-1 font-body" style="color:#4C759A;">
+          <span class="material-symbols-outlined text-base">redeem</span>
           Baby Gift Box Service
         </div>
-        <p class="text-xs leading-relaxed">Ordering for a baby shower? Add our keepsake gift box at checkout for ₹199.</p>
+        <p class="text-xs leading-relaxed font-body text-on-surface-variant">
+          Ordering for a baby shower? Add our keepsake gift box at checkout for ₹199.
+        </p>
       </div>
     </aside>
 
-    <!-- ── PRODUCT GRID ───────────────────────────────────────────────── -->
+    <!-- ── PRODUCT GRID ───────────────────────────────────────── -->
     <div class="lg:col-span-9">
       {% if products %}
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
@@ -144,10 +161,14 @@
       </div>
       {% else %}
       <div class="flex flex-col items-center justify-center py-24 text-center text-on-surface-variant">
-        <span class="material-symbols-outlined text-7xl text-outline/50 mb-4">search_off</span>
-        <h3 class="font-display text-2xl text-on-surface mb-2">No products found</h3>
-        <p class="text-sm max-w-sm">Try adjusting your filters or search query, or browse all our categories.</p>
-        <a href="{% url 'product_list' %}" class="mt-6 bg-primary text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-on-primary-container transition-colors">Browse All</a>
+        <span class="material-symbols-outlined text-7xl mb-4" style="color:rgba(160,196,226,0.4);">search_off</span>
+        <h3 class="font-display text-2xl text-on-surface mb-2" style="font-weight:600; letter-spacing:-0.01em;">No products found</h3>
+        <p class="text-sm max-w-sm font-body text-on-surface-variant">Try adjusting your filters or search query, or browse all our categories.</p>
+        <a href="{% url 'product_list' %}"
+           class="mt-6 px-6 py-2 rounded text-sm font-semibold font-body transition-all btn-nordic"
+           style="background:#A0C4E2; color:#23282E; border-radius:0.25rem;">
+          Browse All
+        </a>
       </div>
       {% endif %}
     </div>
@@ -157,7 +178,6 @@
 
 {% block extra_js %}
 <script>
-  // Make the age_choices available
   const AGE_CHOICES = {{ age_choices_json|safe }};
 </script>
 {% endblock %}

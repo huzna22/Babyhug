@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}{{ product.name }} – Baby Hug{% endblock %}
+{% block title %}{{ product.name }} – Baby Hug Nordic Atelier{% endblock %}
 {% block meta_description %}{{ product.description|truncatechars:160 }}{% endblock %}
 
 {% block content %}
-<div class="max-w-[1280px] mx-auto px-4 lg:px-12 py-8">
+<div class="max-w-[1360px] mx-auto px-4 lg:px-10 py-8">
 
   <!-- Breadcrumb -->
-  <nav class="flex items-center gap-2 text-sm text-on-surface-variant mb-6">
+  <nav class="flex items-center gap-2 text-sm font-body text-on-surface-variant mb-6">
     <a href="{% url 'home' %}" class="hover:text-primary transition-colors">Home</a>
     <span class="material-symbols-outlined text-xs">chevron_right</span>
     <a href="{% url 'product_list' %}" class="hover:text-primary transition-colors">Products</a>
@@ -21,30 +21,36 @@
   <!-- Product Main Grid -->
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
 
-    <!-- ── IMAGE COLUMN ─────────────────────────────────────────────────── -->
+    <!-- ── IMAGE COLUMN ──────────────────────────────────────────── -->
     <div class="space-y-4">
       <!-- Main Image -->
-      <div class="relative aspect-[4/5] rounded-2xl overflow-hidden bg-surface-container-low shadow-sm group" id="main-image-wrap">
+      <div class="relative aspect-[4/5] overflow-hidden bg-surface-container-low group" id="main-image-wrap"
+           style="border-radius:0.5rem; border:1px solid rgba(160,196,226,0.35);
+                  box-shadow:0 8px 24px -4px rgba(160,196,226,0.2);">
         {% if product.image %}
         <img src="{{ product.image.url }}" alt="{{ product.name }}"
              id="main-product-image"
              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
         {% else %}
-        <div class="w-full h-full flex items-center justify-center">
-          <span class="material-symbols-outlined text-8xl text-on-surface-variant/20">checkroom</span>
+        <div class="w-full h-full flex items-center justify-center" style="background:linear-gradient(135deg,#E3F0F9,#FDF0F2);">
+          <span class="material-symbols-outlined text-8xl" style="color:rgba(160,196,226,0.4);">checkroom</span>
         </div>
         {% endif %}
 
-        <!-- Org Badge -->
-        <div class="absolute bottom-3 left-3 bg-tertiary-fixed/90 backdrop-blur-md px-3 py-1 rounded-full text-on-tertiary-fixed text-xs font-semibold flex items-center gap-1">
-          <span class="material-symbols-outlined text-xs">eco</span> 100% Organic Cotton
+        <!-- Organic Badge -->
+        <div class="absolute bottom-3 left-3 flex items-center gap-1 px-3 py-1 rounded font-body text-xs font-semibold"
+             style="background:rgba(227,240,249,0.92); backdrop-filter:blur(8px); color:#4C759A; border:1px solid rgba(185,213,235,0.5);">
+          <span class="material-symbols-outlined text-xs">eco</span>
+          100% Organic Cotton
         </div>
 
         <!-- Wishlist -->
         <form action="{% url 'toggle_wishlist' product.pk %}" method="POST" class="absolute top-3 right-3">
           {% csrf_token %}
-          <button type="submit" class="w-10 h-10 rounded-full bg-white/90 hover:bg-white shadow-md flex items-center justify-center transition-transform hover:scale-110">
-            <span class="material-symbols-outlined text-xl {% if in_wishlist %}text-secondary{% else %}text-on-surface-variant{% endif %}"
+          <button type="submit"
+                  class="w-10 h-10 flex items-center justify-center shadow-md transition-transform hover:scale-110"
+                  style="background:rgba(250,248,245,0.92); border-radius:0.25rem; border:1px solid rgba(160,196,226,0.4);">
+            <span class="material-symbols-outlined text-xl {% if in_wishlist %}text-tertiary{% else %}text-on-surface-variant{% endif %}"
                   style="font-variation-settings:'FILL' {% if in_wishlist %}1{% else %}0{% endif %};">favorite</span>
           </button>
         </form>
@@ -54,12 +60,16 @@
       {% if product.gallery.all %}
       <div class="grid grid-cols-4 gap-2">
         <button onclick="swapImage('{{ product.image.url }}')"
-                class="aspect-square rounded-xl overflow-hidden border-2 border-primary">
+                class="aspect-square overflow-hidden transition-all"
+                style="border-radius:0.25rem; border:2px solid #A0C4E2;">
           <img src="{{ product.image.url }}" alt="" class="w-full h-full object-cover">
         </button>
         {% for img in product.gallery.all %}
         <button onclick="swapImage('{{ img.image.url }}')"
-                class="aspect-square rounded-xl overflow-hidden border-2 border-transparent hover:border-primary/50 transition-colors opacity-70 hover:opacity-100">
+                class="aspect-square overflow-hidden opacity-70 hover:opacity-100 transition-all"
+                style="border-radius:0.25rem; border:2px solid transparent;"
+                onmouseover="this.style.borderColor='rgba(160,196,226,0.6)'"
+                onmouseout="this.style.borderColor='transparent'">
           <img src="{{ img.image.url }}" alt="{{ img.caption }}" class="w-full h-full object-cover">
         </button>
         {% endfor %}
@@ -67,80 +77,96 @@
       {% endif %}
     </div>
 
-    <!-- ── DETAILS COLUMN ────────────────────────────────────────────── -->
+    <!-- ── DETAILS COLUMN ──────────────────────────────────────── -->
     <div class="flex flex-col space-y-5">
+
       <!-- Badges -->
       <div class="flex flex-wrap items-center gap-2">
         {% if product.is_featured %}
-        <span class="bg-secondary text-on-secondary text-xs px-3 py-1 rounded-full font-bold">Bestseller</span>
+        <span class="text-xs font-bold font-body px-3 py-1 rounded"
+              style="background:#ffd9de; color:#9c3f52;">Bestseller</span>
         {% endif %}
         {% if product.age_group %}
-        <span class="bg-surface-container text-on-surface text-xs px-3 py-1 rounded-full font-semibold">{{ product.get_age_group_display }}</span>
+        <span class="text-xs font-semibold font-body px-3 py-1 rounded"
+              style="background:#E3F0F9; color:#4C759A; border:1px solid rgba(185,213,235,0.5);">
+          {{ product.get_age_group_display }}
+        </span>
         {% endif %}
-        <span class="text-xs text-on-surface-variant">SKU: BH-{{ product.pk|stringformat:"05d" }}</span>
+        <span class="text-xs font-body text-on-surface-variant">SKU: BH-{{ product.pk|stringformat:"05d" }}</span>
       </div>
 
       <!-- Title -->
-      <h1 class="font-display text-3xl lg:text-4xl text-on-surface leading-tight">{{ product.name }}</h1>
+      <h1 class="font-display text-3xl lg:text-4xl text-on-surface leading-tight"
+          style="font-weight:600; letter-spacing:-0.02em;">{{ product.name }}</h1>
 
       <!-- Rating -->
       {% if product.review_count > 0 %}
       <div class="flex items-center gap-3">
-        <div class="flex items-center text-primary">
+        <div class="flex items-center gap-0">
           {% for i in "12345" %}
-          <span class="material-symbols-outlined text-base" style="font-variation-settings:'FILL' {% if forloop.counter <= product.avg_rating %}1{% else %}0{% endif %};">star</span>
+          <span class="material-symbols-outlined text-base"
+                style="font-variation-settings:'FILL' {% if forloop.counter <= product.avg_rating %}1{% else %}0{% endif %}; color:#4C759A;">star</span>
           {% endfor %}
         </div>
-        <span class="text-sm text-on-surface font-semibold">{{ product.avg_rating }}</span>
-        <span class="text-sm text-on-surface-variant">· {{ product.review_count }} verified review{{ product.review_count|pluralize }}</span>
-        <a href="#reviews" class="text-xs text-primary hover:underline">Read reviews</a>
+        <span class="text-sm font-semibold font-body text-on-surface">{{ product.avg_rating }}</span>
+        <span class="text-sm font-body text-on-surface-variant">· {{ product.review_count }} verified review{{ product.review_count|pluralize }}</span>
+        <a href="#reviews" class="text-xs font-body hover:underline" style="color:#4C759A;">Read reviews</a>
       </div>
       {% endif %}
 
       <!-- Price -->
       <div class="flex items-baseline gap-3 py-2">
-        <span class="text-3xl font-bold text-on-surface">₹{{ product.price|floatformat:0 }}</span>
+        <span class="text-3xl font-bold text-on-surface font-body">₹{{ product.price|floatformat:0 }}</span>
         {% if product.original_price %}
-        <span class="text-lg text-outline line-through">₹{{ product.original_price|floatformat:0 }}</span>
-        <span class="bg-error-container text-on-error-container text-sm px-2 py-0.5 rounded-full font-bold">{{ product.discount_percent }}% OFF</span>
+        <span class="text-lg line-through font-body" style="color:#72787d;">₹{{ product.original_price|floatformat:0 }}</span>
+        <span class="text-sm font-bold font-body px-2 py-0.5 rounded"
+              style="background:#ffdad6; color:#ba1a1a;">{{ product.discount_percent }}% OFF</span>
         {% endif %}
       </div>
 
       <!-- Colour -->
       {% if product.colour %}
       <div>
-        <p class="text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Selected Shade: {{ product.colour }}</p>
+        <p class="text-xs font-bold font-body uppercase tracking-wider mb-2"
+           style="color:#42474d;">Selected Shade: {{ product.colour }}</p>
         <div class="flex gap-2">
-          <button class="w-8 h-8 rounded-full bg-secondary-container ring-2 ring-primary ring-offset-2"></button>
+          <button class="w-8 h-8 rounded"
+                  style="background:#E3F0F9; border:2px solid #A0C4E2; box-shadow:0 0 0 2px rgba(160,196,226,0.3);"></button>
         </div>
       </div>
       {% endif %}
 
       <!-- Stock -->
-      <div class="flex items-center gap-2 text-sm">
+      <div class="flex items-center gap-2 text-sm font-body">
         {% if product.is_in_stock %}
-        <span class="material-symbols-outlined text-tertiary text-base">check_circle</span>
-        <span class="text-tertiary font-semibold">In Stock{% if product.stock <= 10 %} · Only {{ product.stock }} left!{% endif %}</span>
+        <span class="material-symbols-outlined text-base" style="color:#4C759A;">check_circle</span>
+        <span class="font-semibold" style="color:#4C759A;">
+          In Stock{% if product.stock <= 10 %} · Only {{ product.stock }} left!{% endif %}
+        </span>
         {% else %}
-        <span class="material-symbols-outlined text-error text-base">cancel</span>
-        <span class="text-error font-semibold">Out of Stock</span>
+        <span class="material-symbols-outlined text-base" style="color:#ba1a1a;">cancel</span>
+        <span class="font-semibold" style="color:#ba1a1a;">Out of Stock</span>
         {% endif %}
       </div>
 
       <!-- Description -->
-      <p class="text-sm text-on-surface-variant leading-relaxed border-l-2 border-primary-fixed pl-4">
+      <p class="text-sm font-body text-on-surface-variant leading-relaxed pl-4"
+         style="border-left:2px solid #A0C4E2;">
         {{ product.description }}
       </p>
 
       <!-- Feature Badges -->
       <div class="flex flex-wrap gap-2">
-        <span class="flex items-center gap-1 text-xs font-semibold px-3 py-1.5 rounded-full" style="background: #EAF2EE; color: #436657;">
+        <span class="flex items-center gap-1 text-xs font-semibold font-body px-3 py-1.5 rounded"
+              style="background:#E3F0F9; color:#4C759A; border-radius:0.25rem;">
           <span class="material-symbols-outlined text-xs">eco</span> 100% Organic Cotton
         </span>
-        <span class="flex items-center gap-1 text-xs font-semibold px-3 py-1.5 rounded-full" style="background: #FDF1EE; color: #8F4C40;">
+        <span class="flex items-center gap-1 text-xs font-semibold font-body px-3 py-1.5 rounded"
+              style="background:#FDF0F2; color:#9c3f52; border-radius:0.25rem;">
           <span class="material-symbols-outlined text-xs">verified_user</span> Dermatologist Tested
         </span>
-        <span class="flex items-center gap-1 text-xs font-semibold px-3 py-1.5 rounded-full" style="background: #EAF2EE; color: #436657;">
+        <span class="flex items-center gap-1 text-xs font-semibold font-body px-3 py-1.5 rounded"
+              style="background:#E3F0F9; color:#4C759A; border-radius:0.25rem;">
           <span class="material-symbols-outlined text-xs">local_laundry_service</span> Machine Washable
         </span>
       </div>
@@ -150,69 +176,88 @@
       <form action="{% url 'add_to_cart' product.pk %}" method="POST" class="flex gap-3">
         {% csrf_token %}
         <button type="submit"
-                class="flex-1 bg-primary text-white py-4 rounded-full font-bold text-sm hover:bg-on-primary-container transition-all shadow-lg hover:shadow-xl btn-primary flex items-center justify-center gap-2">
+                class="flex-1 py-4 font-bold text-sm font-body rounded transition-all btn-nordic flex items-center justify-center gap-2"
+                style="background:#A0C4E2; color:#23282E; border-radius:0.25rem; box-shadow:0 4px 14px rgba(160,196,226,0.4);">
           <span class="material-symbols-outlined text-xl">shopping_bag</span>
           Add to Cart · ₹{{ product.price|floatformat:0 }}
         </button>
-        <a href="{% url 'checkout' %}" class="px-4 py-4 rounded-full border-2 border-primary text-primary font-bold text-sm hover:bg-primary/5 transition-colors flex items-center gap-2">
+        <a href="{% url 'checkout' %}"
+           class="px-4 py-4 font-bold text-sm font-body rounded flex items-center gap-2 transition-colors"
+           style="border:1.5px solid #A0C4E2; color:#4C759A; border-radius:0.25rem;"
+           onmouseover="this.style.background='#E3F0F9'" onmouseout="this.style.background='transparent'">
           <span class="material-symbols-outlined text-xl">bolt</span>
           Buy Now
         </a>
       </form>
       {% else %}
-      <button disabled class="w-full py-4 rounded-full bg-surface-container-high text-outline cursor-not-allowed font-bold text-sm">
+      <button disabled
+              class="w-full py-4 rounded font-bold text-sm font-body cursor-not-allowed"
+              style="background:#dee3eb; color:#72787d; border-radius:0.25rem;">
         Out of Stock – Coming Soon
       </button>
       {% endif %}
 
       <!-- Delivery Info -->
       <div class="grid grid-cols-3 gap-3 pt-2">
-        <div class="flex flex-col items-center gap-1 text-center p-3 rounded-xl bg-surface-container-low">
-          <span class="material-symbols-outlined text-primary text-xl">local_shipping</span>
-          <span class="text-xs font-semibold text-on-surface">Free Delivery</span>
-          <span class="text-[10px] text-on-surface-variant">Over ₹999</span>
+        <div class="flex flex-col items-center gap-1 text-center p-3 rounded"
+             style="background:#F0F4FC; border:1px solid rgba(160,196,226,0.3);">
+          <span class="material-symbols-outlined text-xl" style="color:#4C759A;">local_shipping</span>
+          <span class="text-xs font-semibold font-body text-on-surface">Free Delivery</span>
+          <span class="text-[10px] font-body text-on-surface-variant">Over ₹999</span>
         </div>
-        <div class="flex flex-col items-center gap-1 text-center p-3 rounded-xl bg-surface-container-low">
-          <span class="material-symbols-outlined text-primary text-xl">assignment_return</span>
-          <span class="text-xs font-semibold text-on-surface">7-Day Returns</span>
-          <span class="text-[10px] text-on-surface-variant">Easy pickup</span>
+        <div class="flex flex-col items-center gap-1 text-center p-3 rounded"
+             style="background:#F0F4FC; border:1px solid rgba(160,196,226,0.3);">
+          <span class="material-symbols-outlined text-xl" style="color:#4C759A;">assignment_return</span>
+          <span class="text-xs font-semibold font-body text-on-surface">7-Day Returns</span>
+          <span class="text-[10px] font-body text-on-surface-variant">Easy pickup</span>
         </div>
-        <div class="flex flex-col items-center gap-1 text-center p-3 rounded-xl bg-surface-container-low">
-          <span class="material-symbols-outlined text-primary text-xl">payments</span>
-          <span class="text-xs font-semibold text-on-surface">COD Available</span>
-          <span class="text-[10px] text-on-surface-variant">PAN India</span>
+        <div class="flex flex-col items-center gap-1 text-center p-3 rounded"
+             style="background:#F0F4FC; border:1px solid rgba(160,196,226,0.3);">
+          <span class="material-symbols-outlined text-xl" style="color:#4C759A;">payments</span>
+          <span class="text-xs font-semibold font-body text-on-surface">COD Available</span>
+          <span class="text-[10px] font-body text-on-surface-variant">PAN India</span>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- ── REVIEWS SECTION ───────────────────────────────────────────────── -->
+  <!-- ── REVIEWS SECTION ────────────────────────────────────────── -->
   <div class="mt-16" id="reviews">
-    <h2 class="font-display text-2xl text-on-surface mb-6">Customer Reviews</h2>
+    <h2 class="font-display text-2xl text-on-surface mb-6" style="font-weight:600; letter-spacing:-0.01em;">Customer Reviews</h2>
 
     <!-- Write a review -->
     {% if user.is_authenticated and not user_review %}
-    <div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm mb-8">
-      <h3 class="font-bold text-on-surface mb-4">Write a Review</h3>
+    <div class="p-6 mb-8 rounded-lg"
+         style="background:#FFFFFF; border:1px solid rgba(160,196,226,0.35); box-shadow:0 2px 6px rgba(35,40,46,0.04);">
+      <h3 class="font-bold text-on-surface font-body mb-4">Write a Review</h3>
       <form method="POST" class="space-y-4">
         {% csrf_token %}
         <div>
-          <label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider block mb-2">Your Rating</label>
+          <label class="text-xs font-bold font-body uppercase tracking-wider block mb-2" style="color:#42474d;">Your Rating</label>
           <div class="flex gap-2">
             {% for i in "12345" %}
             <label class="cursor-pointer">
-              <input type="radio" name="rating" value="{{ forloop.counter }}" class="sr-only" {% if forloop.counter == 5 %}checked{% endif %}>
-              <span class="material-symbols-outlined text-2xl text-primary hover:scale-110 transition-transform" style="font-variation-settings:'FILL' 1;">star</span>
+              <input type="radio" name="rating" value="{{ forloop.counter }}" class="sr-only"
+                     {% if forloop.counter == 5 %}checked{% endif %}>
+              <span class="material-symbols-outlined text-2xl hover:scale-110 transition-transform"
+                    style="font-variation-settings:'FILL' 1; color:#4C759A;">star</span>
             </label>
             {% endfor %}
           </div>
         </div>
         <div>
-          <label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider block mb-2">Your Review</label>
+          <label class="text-xs font-bold font-body uppercase tracking-wider block mb-2" style="color:#42474d;">Your Review</label>
           <textarea name="review_text" rows="3" placeholder="Share your experience with this product…"
-                    class="w-full bg-surface-container-low border border-outline-variant/30 rounded-xl px-4 py-3 text-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/20 resize-none"></textarea>
+                    class="w-full px-4 py-3 text-sm font-body text-on-surface focus:outline-none resize-none"
+                    style="background:#F0F4FC; border:1px solid rgba(160,196,226,0.4); border-radius:0.25rem; transition:border-color 0.2s, box-shadow 0.2s;"
+                    onfocus="this.style.borderColor='#A0C4E2'; this.style.boxShadow='0 0 0 2px #A0C4E2';"
+                    onblur="this.style.borderColor='rgba(160,196,226,0.4)'; this.style.boxShadow='none';"></textarea>
         </div>
-        <button type="submit" class="bg-primary text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-on-primary-container transition-colors">Submit Review</button>
+        <button type="submit"
+                class="px-6 py-2.5 rounded text-sm font-semibold font-body transition-all btn-nordic"
+                style="background:#A0C4E2; color:#23282E; border-radius:0.25rem;">
+          Submit Review
+        </button>
       </form>
     </div>
     {% endif %}
@@ -221,39 +266,43 @@
     {% if reviews %}
     <div class="space-y-4">
       {% for review in reviews %}
-      <div class="bg-surface-container-lowest rounded-2xl p-5 shadow-sm">
+      <div class="p-5 rounded-lg"
+           style="background:#FFFFFF; border:1px solid rgba(160,196,226,0.35);">
         <div class="flex items-start justify-between gap-4">
           <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary font-bold text-sm">
+            <div class="w-10 h-10 rounded flex items-center justify-center font-bold text-sm font-body"
+                 style="background:#E3F0F9; color:#4C759A;">
               {{ review.user.first_name|first|upper }}{% if not review.user.first_name %}{{ review.user.username|first|upper }}{% endif %}
             </div>
             <div>
-              <p class="text-sm font-bold text-on-surface">{{ review.user.get_full_name|default:review.user.username }}</p>
-              <p class="text-xs text-on-surface-variant">{{ review.review_date|date:"d M Y" }}</p>
+              <p class="text-sm font-bold text-on-surface font-body">{{ review.user.get_full_name|default:review.user.username }}</p>
+              <p class="text-xs font-body text-on-surface-variant">{{ review.review_date|date:"d M Y" }}</p>
             </div>
           </div>
-          <div class="flex items-center text-primary text-sm">
+          <div class="flex items-center gap-0 text-sm">
             {% for i in "12345" %}
-            <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' {% if forloop.counter <= review.rating %}1{% else %}0{% endif %};">star</span>
+            <span class="material-symbols-outlined text-sm"
+                  style="font-variation-settings:'FILL' {% if forloop.counter <= review.rating %}1{% else %}0{% endif %}; color:#4C759A;">star</span>
             {% endfor %}
           </div>
         </div>
-        <p class="text-sm text-on-surface-variant mt-3 leading-relaxed">{{ review.review_text }}</p>
+        <p class="text-sm font-body text-on-surface-variant mt-3 leading-relaxed">{{ review.review_text }}</p>
       </div>
       {% endfor %}
     </div>
     {% else %}
-    <div class="text-center py-12 text-on-surface-variant bg-surface-container-lowest rounded-2xl">
-      <span class="material-symbols-outlined text-4xl text-outline mb-3 block">rate_review</span>
-      <p class="text-sm">No reviews yet. Be the first to review this product!</p>
+    <div class="text-center py-12 text-on-surface-variant rounded-lg"
+         style="background:#F0F4FC; border:1px solid rgba(160,196,226,0.3);">
+      <span class="material-symbols-outlined text-4xl mb-3 block" style="color:rgba(160,196,226,0.5);">rate_review</span>
+      <p class="text-sm font-body">No reviews yet. Be the first to review this product!</p>
     </div>
     {% endif %}
   </div>
 
-  <!-- ── RELATED PRODUCTS ──────────────────────────────────────────────── -->
+  <!-- ── RELATED PRODUCTS ──────────────────────────────────────── -->
   {% if related %}
   <div class="mt-14">
-    <h2 class="font-display text-2xl text-on-surface mb-6">You May Also Like</h2>
+    <h2 class="font-display text-2xl text-on-surface mb-6" style="font-weight:600; letter-spacing:-0.01em;">You May Also Like</h2>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
       {% for product in related %}
       {% include 'store/partials/product_card.html' with product=product %}

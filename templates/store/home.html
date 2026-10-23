@@ -1,66 +1,77 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Baby Hug – Pure Cotton Comfort for Little Smiles{% endblock %}
+{% block title %}Baby Hug – Nordic Atelier | Pure Organic Babywear{% endblock %}
 
 {% block content %}
 
-<!-- ══════════════════════════════════════════════════════════════════════════
-     HERO SECTION
-══════════════════════════════════════════════════════════════════════════ -->
-<section class="relative w-full overflow-hidden py-10 lg:py-16"
-         style="background: linear-gradient(135deg, #e3f0f9 0%, #fdf5f0 50%, #fdf0f2 100%);">
+<!-- ══════════════════════════════════════════════════════════════════
+     HERO SECTION — Nordic Split Layout
+══════════════════════════════════════════════════════════════════ -->
+<section class="relative w-full overflow-hidden py-12 lg:py-20"
+         style="background: linear-gradient(150deg, #E3F0F9 0%, #FAF8F5 55%, #FDF0F2 100%);">
 
-  <!-- Soft glow orbs -->
-  <div class="absolute -top-24 -left-20 w-96 h-96 rounded-full blur-3xl pointer-events-none" style="background: rgba(185,213,235,0.5);"></div>
-  <div class="absolute top-1/2 -right-24 w-80 h-80 rounded-full blur-3xl pointer-events-none" style="background: rgba(236,161,172,0.35);"></div>
+  <!-- Ambient glow orbs -->
+  <div class="absolute -top-32 -left-24 w-[500px] h-[500px] rounded-full pointer-events-none blur-3xl"
+       style="background:rgba(160,196,226,0.3);"></div>
+  <div class="absolute -bottom-24 -right-20 w-96 h-96 rounded-full pointer-events-none blur-3xl"
+       style="background:rgba(236,161,172,0.25);"></div>
 
-  <div class="max-w-[1280px] mx-auto px-4 lg:px-12 relative z-10">
+  <div class="max-w-[1360px] mx-auto px-4 lg:px-10 relative z-10">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
 
       <!-- Text Column -->
-      <div class="lg:col-span-7 flex flex-col space-y-5">
-        <div class="inline-flex items-center gap-2 self-start px-4 py-1.5 rounded-full text-sm font-semibold tracking-wider uppercase"
-             style="background: rgba(253,240,242,1); color: #9c3f52; border: 1px solid rgba(236,161,172,0.4);">
-          <span class="material-symbols-outlined text-base">spa</span>
+      <div class="lg:col-span-7 flex flex-col space-y-6">
+        <!-- Eyebrow badge -->
+        <div class="inline-flex items-center gap-2 self-start px-3 py-1.5 text-xs font-semibold tracking-wider uppercase font-body rounded"
+             style="background:rgba(253,240,242,0.9); color:#9c3f52; border:1px solid rgba(236,161,172,0.4);">
+          <span class="material-symbols-outlined text-sm">spa</span>
           Heirloom Quality · Handcrafted Softness
         </div>
 
-        <h1 class="font-display text-4xl lg:text-5xl xl:text-6xl text-on-surface leading-tight tracking-tight">
-          Pure Cotton Comfort for Little Smiles —
-          <span class="italic font-normal" style="color: #4C759A;">100% Organic</span>,
-          Dermatologist-Approved Babywear
+        <h1 class="font-display text-4xl lg:text-5xl xl:text-[56px] text-on-surface leading-tight"
+            style="font-weight:600; letter-spacing:-0.03em;">
+          Pure Cotton Comfort<br>
+          for Little Smiles —
+          <span style="color:#4C759A; font-style:italic; font-weight:500;">100% Organic</span>,
+          <br class="hidden lg:block">Dermatologist Approved
         </h1>
 
-        <p class="text-base text-on-surface-variant leading-relaxed max-w-xl">
+        <p class="text-base font-body text-on-surface-variant leading-relaxed max-w-xl">
           Thoughtfully woven with GOTS-certified organic cotton and hypoallergenic herbal dyes.
           Gentle on fragile newborn skin, tailored for ages 0–4 years.
         </p>
 
         <!-- CTAs -->
-        <div class="flex flex-wrap items-center gap-4 pt-2">
+        <div class="flex flex-wrap items-center gap-3 pt-1">
           <a href="{% url 'product_list' %}"
-             class="bg-primary text-white px-7 py-3 rounded-full font-semibold text-sm shadow-md hover:shadow-xl transition-all flex items-center gap-2 btn-primary">
+             class="flex items-center gap-2 px-7 py-3 text-sm font-semibold font-body rounded transition-all btn-nordic"
+             style="background:#A0C4E2; color:#23282E; border-radius:0.25rem; box-shadow:0 4px 14px rgba(160,196,226,0.35);">
             Shop New Arrivals
-            <span class="material-symbols-outlined text-lg">arrow_forward</span>
+            <span class="material-symbols-outlined text-base">arrow_forward</span>
           </a>
           <a href="{% url 'product_list' %}?age=0-3M"
-             class="px-6 py-3 rounded-full font-semibold text-sm transition-all"
-             style="background: rgba(227,240,249,1); color: #4C759A; border: 1px solid rgba(185,213,235,0.8);">
+             class="flex items-center gap-2 px-6 py-3 text-sm font-semibold font-body rounded transition-all"
+             style="background:#E3F0F9; color:#4C759A; border:1px solid #B9D5EB; border-radius:0.25rem;"
+             onmouseover="this.style.background='#B9D5EB'"
+             onmouseout="this.style.background='#E3F0F9'">
             Explore 0–12M Collections
           </a>
         </div>
 
-        <!-- Trust Bullets -->
-        <div class="flex flex-wrap items-center gap-5 text-sm text-on-surface-variant pt-2">
+        <!-- Trust bullets -->
+        <div class="flex flex-wrap items-center gap-5 text-sm font-body text-on-surface-variant pt-1">
           <div class="flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-tertiary inline-block"></span> Tested for 100+ washes
+            <span class="w-2 h-2 rounded-full inline-block" style="background:#4C759A;"></span>
+            Tested for 100+ washes
           </div>
           <div class="flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-primary inline-block"></span> Zero Harsh Chemicals
+            <span class="w-2 h-2 rounded-full inline-block" style="background:#A0C4E2;"></span>
+            Zero Harsh Chemicals
           </div>
           <div class="flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-secondary inline-block"></span> Anti-Chafe Flat Seams
+            <span class="w-2 h-2 rounded-full inline-block" style="background:#ECA1AC;"></span>
+            Anti-Chafe Flat Seams
           </div>
         </div>
       </div>
@@ -68,40 +79,54 @@
       <!-- Hero Image Column -->
       <div class="lg:col-span-5 relative">
         <div class="relative mx-auto max-w-sm lg:max-w-none">
-          <div class="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/5] bg-surface-container-low group">
+
+          <!-- Main hero card -->
+          <div class="relative overflow-hidden aspect-[4/5] group"
+               style="background:#E3F0F9; border-radius:0.5rem; border:1px solid rgba(160,196,226,0.35);
+                      box-shadow:0 20px 60px -10px rgba(35,40,46,0.14);">
             {% if featured_products and featured_products.0.image %}
             <img src="{{ featured_products.0.image.url }}" alt="{{ featured_products.0.name }}"
                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
             {% else %}
-            <div class="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-primary-fixed to-secondary-fixed">
-              <span class="material-symbols-outlined text-7xl text-primary mb-4">child_care</span>
-              <p class="text-primary font-display text-2xl text-center px-8">Premium Baby Collection</p>
+            <div class="w-full h-full flex flex-col items-center justify-center"
+                 style="background:linear-gradient(135deg,#E3F0F9,#FDF0F2);">
+              <span class="material-symbols-outlined text-7xl mb-4" style="color:#A0C4E2;">child_care</span>
+              <p class="font-display text-xl text-on-surface-variant text-center px-8" style="font-weight:500;">Premium Baby Collection</p>
             </div>
             {% endif %}
-            <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
-            <div class="absolute bottom-5 left-5 right-5 text-white flex items-center justify-between">
+            <div class="absolute inset-0" style="background:linear-gradient(to top, rgba(35,40,46,0.55) 0%, transparent 55%);"></div>
+            <div class="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-3">
               <div>
-                <span class="text-xs uppercase tracking-widest bg-black/30 backdrop-blur-sm px-2.5 py-0.5 rounded-full">Spotlight Keepsake</span>
-                <p class="font-display text-xl mt-1">The Heirloom Muslin Collection</p>
+                <span class="text-[10px] uppercase tracking-widest font-body px-2.5 py-0.5 rounded font-semibold"
+                      style="background:rgba(35,40,46,0.4); backdrop-filter:blur(8px); color:#E3F0F9;">Spotlight</span>
+                <p class="font-display text-lg mt-1 text-white" style="font-weight:600;">The Heirloom Muslin Collection</p>
               </div>
               {% if featured_products %}
-              <div class="bg-white/90 text-on-surface rounded-full px-3 py-1 text-sm font-bold backdrop-blur-sm shadow-sm">
+              <div class="shrink-0 font-body font-bold text-sm px-3 py-1 rounded"
+                   style="background:rgba(250,248,245,0.92); backdrop-filter:blur(6px); color:#171c22;">
                 from ₹{{ featured_products.0.price|floatformat:0 }}
               </div>
               {% endif %}
             </div>
           </div>
 
-          <!-- Floating badge: rating -->
-          <div class="absolute -top-4 -right-4 z-20 bg-white/95 backdrop-blur-md px-3.5 py-2 rounded-full shadow-lg flex items-center gap-1.5 text-on-surface">
-            <span class="material-symbols-outlined text-primary text-base" style="font-variation-settings:'FILL' 1;">star</span>
+          <!-- Floating rating badge -->
+          <div class="absolute -top-4 -right-4 z-20 flex items-center gap-1.5 px-3.5 py-2 rounded-full font-body"
+               style="background:rgba(250,248,245,0.95); backdrop-filter:blur(10px); color:#171c22;
+                      box-shadow:0 8px 24px -4px rgba(160,196,226,0.4), 0 2px 6px rgba(35,40,46,0.04);
+                      border:1px solid rgba(160,196,226,0.35);">
+            <span class="material-symbols-outlined text-base" style="font-variation-settings:'FILL' 1; color:#4C759A;">star</span>
             <span class="text-sm font-bold">4.9 / 5</span>
-            <span class="text-xs text-on-surface-variant">(18k reviews)</span>
+            <span class="text-xs text-on-surface-variant">(18k)</span>
           </div>
 
-          <!-- Floating badge: certified -->
-          <div class="absolute -bottom-5 -left-6 z-20 bg-white/95 backdrop-blur-md p-4 rounded-xl shadow-lg border border-outline-variant/30 flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-tertiary/15 flex items-center justify-center text-tertiary">
+          <!-- Floating certified badge -->
+          <div class="absolute -bottom-5 -left-6 z-20 flex items-center gap-3 p-4 rounded-lg font-body"
+               style="background:rgba(250,248,245,0.95); backdrop-filter:blur(10px);
+                      box-shadow:0 8px 24px -4px rgba(160,196,226,0.4);
+                      border:1px solid rgba(160,196,226,0.35);">
+            <div class="w-10 h-10 rounded flex items-center justify-center shrink-0"
+                 style="background:#E3F0F9; color:#4C759A;">
               <span class="material-symbols-outlined text-xl">verified_user</span>
             </div>
             <div>
@@ -113,27 +138,40 @@
       </div>
     </div>
 
-    <!-- ── 4 Trust Badges ── -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-14 pt-8 border-t border-outline-variant/30">
+    <!-- Trust Badges Strip -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 pt-8"
+         style="border-top:1px solid rgba(160,196,226,0.3);">
       {% for icon, title, desc in trust_badges %}
-      <div class="flex items-center gap-3 p-3 rounded-xl bg-white/70 hover:bg-white transition-colors">
-        <div class="w-11 h-11 rounded-full bg-tertiary/10 text-tertiary flex items-center justify-center shrink-0">
+      <div class="flex items-center gap-3 p-3 rounded transition-colors"
+           style="background:rgba(255,255,255,0.8);"
+           onmouseover="this.style.background='#E3F0F9'" onmouseout="this.style.background='rgba(255,255,255,0.8)'">
+        <div class="w-11 h-11 rounded flex items-center justify-center shrink-0"
+             style="background:#E3F0F9; color:#4C759A;">
           <span class="material-symbols-outlined text-xl">{{ icon }}</span>
         </div>
         <div>
-          <h4 class="text-sm font-bold text-on-surface">{{ title }}</h4>
-          <p class="text-xs text-on-surface-variant">{{ desc }}</p>
+          <h4 class="text-xs font-bold text-on-surface font-body">{{ title }}</h4>
+          <p class="text-[11px] text-on-surface-variant font-body mt-0.5">{{ desc }}</p>
         </div>
       </div>
       {% empty %}
       {% for badge in "1234" %}
-      <div class="flex items-center gap-3 p-3 rounded-xl bg-white/70 hover:bg-white transition-colors">
-        <div class="w-11 h-11 rounded-full bg-tertiary/10 text-tertiary flex items-center justify-center shrink-0">
-          <span class="material-symbols-outlined text-xl">{% if forloop.counter == 1 %}eco{% elif forloop.counter == 2 %}assignment_return{% elif forloop.counter == 3 %}science{% else %}payments{% endif %}</span>
+      <div class="flex items-center gap-3 p-3 rounded transition-colors"
+           style="background:rgba(255,255,255,0.8);"
+           onmouseover="this.style.background='#E3F0F9'" onmouseout="this.style.background='rgba(255,255,255,0.8)'">
+        <div class="w-11 h-11 rounded flex items-center justify-center shrink-0"
+             style="background:#E3F0F9; color:#4C759A;">
+          <span class="material-symbols-outlined text-xl">
+            {% if forloop.counter == 1 %}eco{% elif forloop.counter == 2 %}assignment_return{% elif forloop.counter == 3 %}science{% else %}payments{% endif %}
+          </span>
         </div>
         <div>
-          <h4 class="text-sm font-bold text-on-surface">{% if forloop.counter == 1 %}100% Certified Organic{% elif forloop.counter == 2 %}7-Day Free Returns{% elif forloop.counter == 3 %}Safe Herbal Dyes{% else %}Cash on Delivery{% endif %}</h4>
-          <p class="text-xs text-on-surface-variant">{% if forloop.counter == 1 %}GOTS standard cotton{% elif forloop.counter == 2 %}Doorstep pickup{% elif forloop.counter == 3 %}Non-toxic & AZO free{% else %}Available PAN India{% endif %}</p>
+          <h4 class="text-xs font-bold text-on-surface font-body">
+            {% if forloop.counter == 1 %}100% Certified Organic{% elif forloop.counter == 2 %}7-Day Free Returns{% elif forloop.counter == 3 %}Safe Herbal Dyes{% else %}Cash on Delivery{% endif %}
+          </h4>
+          <p class="text-[11px] text-on-surface-variant font-body mt-0.5">
+            {% if forloop.counter == 1 %}GOTS standard cotton{% elif forloop.counter == 2 %}Doorstep pickup{% elif forloop.counter == 3 %}Non-toxic & AZO free{% else %}Available PAN India{% endif %}
+          </p>
         </div>
       </div>
       {% endfor %}
@@ -143,63 +181,83 @@
 </section>
 
 
-<!-- ══════════════════════════════════════════════════════════════════════════
+<!-- ══════════════════════════════════════════════════════════════════
      CATEGORIES SECTION
-══════════════════════════════════════════════════════════════════════════ -->
-<section class="w-full bg-surface-container-lowest py-12">
-  <div class="max-w-[1280px] mx-auto px-4 lg:px-12">
-    <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-2">
+══════════════════════════════════════════════════════════════════ -->
+<section class="w-full py-14" style="background:#FAF8F5;">
+  <div class="max-w-[1360px] mx-auto px-4 lg:px-10">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-2">
       <div>
-        <span class="text-xs text-primary uppercase font-bold tracking-widest">Curated Wardrobe Departments</span>
-        <h2 class="font-display text-3xl lg:text-4xl text-on-surface mt-1">Explore by Category</h2>
+        <span class="text-[11px] font-body font-bold uppercase tracking-widest" style="color:#4C759A;">Curated Wardrobe</span>
+        <h2 class="font-display text-3xl lg:text-4xl text-on-surface mt-1"
+            style="font-weight:600; letter-spacing:-0.02em;">Explore by Category</h2>
       </div>
-      <a href="{% url 'product_list' %}" class="text-sm text-primary font-semibold hover:underline">View all →</a>
+      <a href="{% url 'product_list' %}" class="text-sm font-semibold font-body transition-colors" style="color:#4C759A;"
+         onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">
+        View all →
+      </a>
     </div>
 
     <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
       {% for cat in categories %}
       <a href="{% url 'product_list' %}?category={{ cat.slug }}"
-         class="group flex flex-col items-center p-4 rounded-2xl transition-all text-center hover:shadow-lg hover:-translate-y-1"
-         style="background: {% if forloop.counter|divisibleby:2 %}rgba(227,240,249,1){% else %}rgba(253,240,242,1){% endif %};">
-        <div class="w-20 h-20 rounded-full overflow-hidden mb-3 shadow-inner group-hover:scale-105 transition-transform"
-             style="background: {% if forloop.counter|divisibleby:2 %}#B9D5EB{% else %}#ffd9de{% endif %};">
+         class="group flex flex-col items-center p-5 rounded-lg transition-all text-center"
+         style="background:{% if forloop.counter|divisibleby:2 %}#E3F0F9{% else %}#FDF0F2{% endif %};
+                border:1px solid {% if forloop.counter|divisibleby:2 %}rgba(185,213,235,0.6){% else %}rgba(236,161,172,0.4){% endif %};"
+         onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 24px -4px rgba(160,196,226,0.4)'"
+         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+        <div class="w-20 h-20 rounded overflow-hidden mb-3 shadow-inner group-hover:scale-105 transition-transform"
+             style="background:{% if forloop.counter|divisibleby:2 %}#B9D5EB{% else %}#ffd9de{% endif %};">
           {% if cat.image %}
           <img src="{{ cat.image.url }}" alt="{{ cat.name }}" class="w-full h-full object-cover">
           {% else %}
           <div class="w-full h-full flex items-center justify-center">
-            <span class="material-symbols-outlined text-2xl {% if forloop.counter|divisibleby:2 %}text-blue-500{% else %}text-pink-500{% endif %}">child_care</span>
+            <span class="material-symbols-outlined text-2xl {% if forloop.counter|divisibleby:2 %}text-powder-blue-deep{% else %}text-tertiary{% endif %}">child_care</span>
           </div>
           {% endif %}
         </div>
-        <span class="text-sm font-bold text-on-surface group-hover:text-primary transition-colors">{{ cat.name }}</span>
-        <span class="text-xs text-on-surface-variant mt-0.5">{{ cat.description|truncatechars:30 }}</span>
+        <span class="text-sm font-bold font-body text-on-surface group-hover:text-primary transition-colors" style="font-weight:600;">{{ cat.name }}</span>
+        <span class="text-xs font-body text-on-surface-variant mt-0.5">{{ cat.description|truncatechars:28 }}</span>
       </a>
       {% empty %}
       {% for name, sub, icon in category_defaults %}
       <a href="{% url 'product_list' %}"
-         class="group flex flex-col items-center p-4 rounded-2xl transition-all text-center hover:shadow-lg hover:-translate-y-1"
-         style="background: {% if forloop.counter|divisibleby:2 %}rgba(227,240,249,1){% else %}rgba(253,240,242,1){% endif %};">
-        <div class="w-20 h-20 rounded-full overflow-hidden mb-3 flex items-center justify-center"
-             style="background: {% if forloop.counter|divisibleby:2 %}#B9D5EB{% else %}#ffd9de{% endif %};">
-          <span class="material-symbols-outlined text-3xl {% if forloop.counter|divisibleby:2 %}text-blue-500{% else %}text-pink-500{% endif %}">{{ icon }}</span>
+         class="group flex flex-col items-center p-5 rounded-lg transition-all text-center"
+         style="background:{% if forloop.counter|divisibleby:2 %}#E3F0F9{% else %}#FDF0F2{% endif %};
+                border:1px solid {% if forloop.counter|divisibleby:2 %}rgba(185,213,235,0.6){% else %}rgba(236,161,172,0.4){% endif %};"
+         onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 24px -4px rgba(160,196,226,0.4)'"
+         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+        <div class="w-20 h-20 rounded overflow-hidden mb-3 flex items-center justify-center shadow-inner"
+             style="background:{% if forloop.counter|divisibleby:2 %}#B9D5EB{% else %}#ffd9de{% endif %};">
+          <span class="material-symbols-outlined text-3xl {% if forloop.counter|divisibleby:2 %}text-powder-blue-deep{% else %}text-tertiary{% endif %}">{{ icon }}</span>
         </div>
-        <span class="text-sm font-bold text-on-surface group-hover:text-primary transition-colors">{{ name }}</span>
-        <span class="text-xs text-on-surface-variant mt-0.5">{{ sub }}</span>
+        <span class="text-sm font-bold font-body text-on-surface" style="font-weight:600;">{{ name }}</span>
+        <span class="text-xs font-body text-on-surface-variant mt-0.5">{{ sub }}</span>
       </a>
       {% endfor %}
       {% endfor %}
     </div>
 
     <!-- Age Filter Pills -->
-    <div class="mt-8 pt-6 border-t border-outline-variant/20 flex flex-col md:flex-row items-center justify-between gap-4">
+    <div class="mt-10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4"
+         style="border-top:1px solid rgba(160,196,226,0.3);">
       <div class="flex items-center gap-2 self-start md:self-center">
-        <span class="material-symbols-outlined text-primary text-lg">child_care</span>
-        <span class="text-sm font-bold text-on-surface">Filter by Growth Stage:</span>
+        <span class="material-symbols-outlined text-lg" style="color:#4C759A;">child_care</span>
+        <span class="text-sm font-bold text-on-surface font-body">Filter by Growth Stage:</span>
       </div>
       <div class="flex items-center gap-2 flex-wrap">
-        <a href="{% url 'product_list' %}" class="bg-primary text-white px-4 py-2 rounded-full text-xs font-semibold shadow-sm hover:bg-on-primary-container transition-colors">All Ages</a>
+        <a href="{% url 'product_list' %}"
+           class="px-4 py-1.5 text-xs font-semibold font-body rounded transition-all btn-nordic"
+           style="background:#A0C4E2; color:#23282E; border-radius:0.25rem;">
+          All Ages
+        </a>
         {% for age_val, age_label in age_groups %}
-        <a href="{% url 'product_list' %}?age={{ age_val }}" class="bg-surface-container hover:bg-surface-container-high text-on-surface px-4 py-2 rounded-full text-xs font-medium transition-colors">{{ age_label }}</a>
+        <a href="{% url 'product_list' %}?age={{ age_val }}"
+           class="px-4 py-1.5 text-xs font-medium font-body rounded transition-colors"
+           style="background:#E3F0F9; color:#4C759A; border:1px solid #B9D5EB; border-radius:0.25rem;"
+           onmouseover="this.style.background='#B9D5EB'" onmouseout="this.style.background='#E3F0F9'">
+          {{ age_label }}
+        </a>
         {% endfor %}
       </div>
     </div>
@@ -207,30 +265,38 @@
 </section>
 
 
-<!-- ══════════════════════════════════════════════════════════════════════════
+<!-- ══════════════════════════════════════════════════════════════════
      FEATURED PRODUCTS
-══════════════════════════════════════════════════════════════════════════ -->
-<section class="w-full py-14">
-  <div class="max-w-[1280px] mx-auto px-4 lg:px-12">
-    <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-2">
+══════════════════════════════════════════════════════════════════ -->
+<section class="w-full py-14" style="background:#FFFFFF;">
+  <div class="max-w-[1360px] mx-auto px-4 lg:px-10">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-2">
       <div>
-        <span class="text-xs text-primary uppercase font-bold tracking-widest">Handpicked Favourites</span>
-        <h2 class="font-display text-3xl lg:text-4xl text-on-surface mt-1">Featured Collection</h2>
+        <span class="text-[11px] font-body font-bold uppercase tracking-widest" style="color:#4C759A;">Handpicked Favourites</span>
+        <h2 class="font-display text-3xl lg:text-4xl text-on-surface mt-1"
+            style="font-weight:600; letter-spacing:-0.02em;">Featured Collection</h2>
       </div>
-      <a href="{% url 'product_list' %}" class="text-sm text-primary font-semibold hover:underline">View all products →</a>
+      <a href="{% url 'product_list' %}" class="text-sm font-semibold font-body"
+         style="color:#4C759A;"
+         onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">
+        View all products →
+      </a>
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-5">
       {% for product in featured_products %}
       {% include 'store/partials/product_card.html' with product=product %}
       {% empty %}
-      <!-- No products yet -->
       <div class="col-span-full flex flex-col items-center justify-center py-20 text-on-surface-variant">
-        <span class="material-symbols-outlined text-6xl text-outline mb-4">storefront</span>
-        <p class="text-lg font-semibold">Products coming soon!</p>
-        <p class="text-sm mt-1">Add products from the admin panel to get started.</p>
+        <span class="material-symbols-outlined text-6xl mb-4" style="color:rgba(160,196,226,0.5);">storefront</span>
+        <p class="text-lg font-semibold font-body text-on-surface">Products coming soon!</p>
+        <p class="text-sm mt-1 font-body text-on-surface-variant">Add products from the admin panel to get started.</p>
         {% if user.is_staff %}
-        <a href="/admin/store/product/add/" class="mt-4 bg-primary text-white px-6 py-2 rounded-full text-sm font-semibold">Add Products</a>
+        <a href="/admin/store/product/add/"
+           class="mt-4 px-6 py-2 rounded text-sm font-semibold font-body transition-all btn-nordic"
+           style="background:#A0C4E2; color:#23282E; border-radius:0.25rem;">
+          Add Products
+        </a>
         {% endif %}
       </div>
       {% endfor %}
@@ -239,43 +305,57 @@
 </section>
 
 
-<!-- ══════════════════════════════════════════════════════════════════════════
-     PROMO BANNER
-══════════════════════════════════════════════════════════════════════════ -->
-<section class="py-12 relative overflow-hidden" style="background: linear-gradient(135deg, #875200, #d9933b);">
-  <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 20% 50%, white 0%, transparent 50%), radial-gradient(circle at 80% 50%, white 0%, transparent 50%);"></div>
-  <div class="max-w-[1280px] mx-auto px-4 lg:px-12 text-center relative z-10">
-    <p class="text-sm font-semibold tracking-widest text-white/80 uppercase mb-2">Limited Time</p>
-    <h2 class="font-display text-3xl lg:text-4xl text-white mb-4">Get 20% Off on Your First Order</h2>
-    <p class="text-white/80 mb-6 max-w-lg mx-auto">Use code <span class="font-bold text-white bg-white/20 px-2 py-0.5 rounded-md tracking-wider">BABYLOVE</span> at checkout</p>
-    <a href="{% url 'product_list' %}" class="inline-flex items-center gap-2 bg-white text-primary px-8 py-3 rounded-full font-bold text-sm hover:bg-primary-fixed transition-colors shadow-lg">
+<!-- ══════════════════════════════════════════════════════════════════
+     PROMO BANNER — Nordic Powder Blue
+══════════════════════════════════════════════════════════════════ -->
+<section class="py-16 relative overflow-hidden"
+         style="background: linear-gradient(135deg, #3f627c 0%, #4C759A 60%, #A0C4E2 100%);">
+  <div class="absolute inset-0 opacity-10 pointer-events-none"
+       style="background-image: radial-gradient(circle at 15% 50%, white 0%, transparent 45%), radial-gradient(circle at 85% 50%, white 0%, transparent 45%);"></div>
+  <div class="max-w-[1360px] mx-auto px-4 lg:px-10 text-center relative z-10">
+    <p class="text-xs font-semibold tracking-widest uppercase mb-3 font-body" style="color:rgba(237,241,249,0.75);">Limited Time Offer</p>
+    <h2 class="font-display text-3xl lg:text-4xl mb-4 text-white"
+        style="font-weight:600; letter-spacing:-0.02em;">Get 20% Off on Your First Order</h2>
+    <p class="mb-8 max-w-md mx-auto font-body text-base" style="color:rgba(237,241,249,0.8);">
+      Use code
+      <span class="font-bold px-2 py-0.5 rounded font-body" style="background:rgba(255,255,255,0.2); color:#FFFFFF; letter-spacing:0.08em;">BABYLOVE</span>
+      at checkout
+    </p>
+    <a href="{% url 'product_list' %}"
+       class="inline-flex items-center gap-2 px-8 py-3.5 rounded font-bold text-sm font-body transition-all"
+       style="background:#FAF8F5; color:#3f627c; border-radius:0.25rem; box-shadow:0 8px 24px rgba(35,40,46,0.2);"
+       onmouseover="this.style.background='#E3F0F9'" onmouseout="this.style.background='#FAF8F5'">
       Shop the Sale
-      <span class="material-symbols-outlined text-lg">arrow_forward</span>
+      <span class="material-symbols-outlined text-base">arrow_forward</span>
     </a>
   </div>
 </section>
 
 
-<!-- ══════════════════════════════════════════════════════════════════════════
+<!-- ══════════════════════════════════════════════════════════════════
      NEW ARRIVALS
-══════════════════════════════════════════════════════════════════════════ -->
-<section class="w-full py-14 bg-surface-container-low">
-  <div class="max-w-[1280px] mx-auto px-4 lg:px-12">
-    <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-2">
+══════════════════════════════════════════════════════════════════ -->
+<section class="w-full py-14" style="background:#F0F4FC;">
+  <div class="max-w-[1360px] mx-auto px-4 lg:px-10">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-2">
       <div>
-        <span class="text-xs text-secondary uppercase font-bold tracking-widest">Just Landed</span>
-        <h2 class="font-display text-3xl lg:text-4xl text-on-surface mt-1">New Arrivals</h2>
+        <span class="text-[11px] font-body font-bold uppercase tracking-widest" style="color:#9c3f52;">Just Landed</span>
+        <h2 class="font-display text-3xl lg:text-4xl text-on-surface mt-1"
+            style="font-weight:600; letter-spacing:-0.02em;">New Arrivals</h2>
       </div>
-      <a href="{% url 'product_list' %}?sort=newest" class="text-sm text-primary font-semibold hover:underline">See all new arrivals →</a>
+      <a href="{% url 'product_list' %}?sort=newest" class="text-sm font-semibold font-body"
+         style="color:#4C759A;"
+         onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">
+        See all new arrivals →
+      </a>
     </div>
-
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-5">
       {% for product in new_arrivals %}
       {% include 'store/partials/product_card.html' with product=product %}
       {% empty %}
       <div class="col-span-full text-center py-12 text-on-surface-variant">
-        <span class="material-symbols-outlined text-5xl text-outline mb-3">inventory_2</span>
-        <p>No products added yet.</p>
+        <span class="material-symbols-outlined text-5xl mb-3 block" style="color:rgba(160,196,226,0.5);">inventory_2</span>
+        <p class="font-body text-on-surface-variant">No products added yet.</p>
       </div>
       {% endfor %}
     </div>
@@ -283,49 +363,64 @@
 </section>
 
 
-<!-- ══════════════════════════════════════════════════════════════════════════
+<!-- ══════════════════════════════════════════════════════════════════
      TESTIMONIALS
-══════════════════════════════════════════════════════════════════════════ -->
-<section class="w-full py-16">
-  <div class="max-w-[1280px] mx-auto px-4 lg:px-12 text-center">
-    <span class="text-xs text-primary uppercase font-bold tracking-widest">Happy Families</span>
-    <h2 class="font-display text-3xl lg:text-4xl text-on-surface mt-2 mb-10">Loved by 25,000+ Parents Across India</h2>
+══════════════════════════════════════════════════════════════════ -->
+<section class="w-full py-16" style="background:#FAF8F5;">
+  <div class="max-w-[1360px] mx-auto px-4 lg:px-10 text-center">
+    <span class="text-[11px] font-body font-bold uppercase tracking-widest" style="color:#4C759A;">Happy Families</span>
+    <h2 class="font-display text-3xl lg:text-4xl text-on-surface mt-2 mb-10"
+        style="font-weight:600; letter-spacing:-0.02em;">Loved by 25,000+ Parents Across India</h2>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
       {% for testimonial in testimonials_data %}
-      <div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all text-left">
-        <div class="flex items-center text-primary text-sm mb-3">
-          {% for i in "12345" %}<span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1;">star</span>{% endfor %}
+      <div class="p-6 rounded-lg text-left transition-all"
+           style="background:#FFFFFF; border:1px solid rgba(160,196,226,0.35);"
+           onmouseover="this.style.boxShadow='0 8px 24px -4px rgba(160,196,226,0.4)'"
+           onmouseout="this.style.boxShadow='none'">
+        <div class="flex items-center gap-0.5 text-sm mb-3">
+          {% for i in "12345" %}
+          <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1; color:#4C759A;">star</span>
+          {% endfor %}
         </div>
-        <p class="text-sm text-on-surface-variant leading-relaxed mb-4">"{{ testimonial.text }}"</p>
+        <p class="text-sm font-body text-on-surface-variant leading-relaxed mb-4">"{{ testimonial.text }}"</p>
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary font-bold">{{ testimonial.name|first }}</div>
+          <div class="w-10 h-10 rounded flex items-center justify-center font-bold font-body text-sm"
+               style="background:#E3F0F9; color:#4C759A;">
+            {{ testimonial.name|first }}
+          </div>
           <div>
-            <p class="text-sm font-bold text-on-surface">{{ testimonial.name }}</p>
-            <p class="text-xs text-on-surface-variant">{{ testimonial.location }}</p>
+            <p class="text-sm font-bold text-on-surface font-body">{{ testimonial.name }}</p>
+            <p class="text-xs text-on-surface-variant font-body">{{ testimonial.location }}</p>
           </div>
         </div>
       </div>
       {% empty %}
       {% for t in "123" %}
-      <div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm text-left">
-        <div class="flex text-primary text-sm mb-3">
-          {% for i in "12345" %}<span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1;">star</span>{% endfor %}
+      <div class="p-6 rounded-lg text-left transition-all"
+           style="background:#FFFFFF; border:1px solid rgba(160,196,226,0.35);"
+           onmouseover="this.style.boxShadow='0 8px 24px -4px rgba(160,196,226,0.4)'"
+           onmouseout="this.style.boxShadow='none'">
+        <div class="flex items-center gap-0.5 text-sm mb-3">
+          {% for i in "12345" %}
+          <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1; color:#4C759A;">star</span>
+          {% endfor %}
         </div>
-        <p class="text-sm text-on-surface-variant leading-relaxed mb-4">
-          {% if forloop.counter == 1 %}"The quality is absolutely amazing! My daughter's skin is so sensitive and she has had no reactions at all. The fabric feels incredibly soft."
+        <p class="text-sm font-body text-on-surface-variant leading-relaxed mb-4">
+          {% if forloop.counter == 1 %}"The quality is absolutely amazing! My daughter's skin is so sensitive and she's had zero reactions. The fabric feels incredibly soft."
           {% elif forloop.counter == 2 %}"Perfect first birthday gift! The packaging was beautiful, the dress was even more gorgeous in person. Fast delivery too!"
           {% else %}"Ordered 3 sets for my twin boys. The sizing is spot-on and the organic cotton is noticeably different. Will definitely order again!"{% endif %}
         </p>
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary font-bold">
+          <div class="w-10 h-10 rounded flex items-center justify-center font-bold font-body text-sm"
+               style="background:#E3F0F9; color:#4C759A;">
             {% if forloop.counter == 1 %}P{% elif forloop.counter == 2 %}A{% else %}S{% endif %}
           </div>
           <div>
-            <p class="text-sm font-bold text-on-surface">
+            <p class="text-sm font-bold text-on-surface font-body">
               {% if forloop.counter == 1 %}Priya Menon{% elif forloop.counter == 2 %}Ananya Sharma{% else %}Sunita Reddy{% endif %}
             </p>
-            <p class="text-xs text-on-surface-variant">
+            <p class="text-xs text-on-surface-variant font-body">
               {% if forloop.counter == 1 %}Kochi, Kerala{% elif forloop.counter == 2 %}Bangalore, KA{% else %}Hyderabad, TS{% endif %}
             </p>
           </div>
@@ -338,19 +433,29 @@
 </section>
 
 
-<!-- ══════════════════════════════════════════════════════════════════════════
+<!-- ══════════════════════════════════════════════════════════════════
      NEWSLETTER / CTA
-══════════════════════════════════════════════════════════════════════════ -->
-<section class="py-12 bg-surface-container-low">
+══════════════════════════════════════════════════════════════════ -->
+<section class="py-14" style="background:#E3F0F9;">
   <div class="max-w-xl mx-auto px-4 text-center">
-    <span class="material-symbols-outlined text-4xl text-secondary mb-3 block">mail</span>
-    <h2 class="font-display text-2xl text-on-surface mb-2">Join the Baby Hug Family</h2>
-    <p class="text-sm text-on-surface-variant mb-6">Get exclusive offers, new arrivals and parenting tips straight to your inbox.</p>
-    <form class="flex items-center gap-2 bg-white rounded-full px-3 py-1.5 shadow-sm border border-outline-variant/30">
-      <input type="email" placeholder="Enter your email address" class="flex-1 text-sm text-on-surface bg-transparent focus:outline-none px-2">
-      <button type="submit" class="bg-primary text-white px-5 py-2 rounded-full text-xs font-bold hover:bg-on-primary-container transition-colors shrink-0">Subscribe</button>
+    <span class="material-symbols-outlined text-4xl mb-3 block" style="color:#4C759A;">mail</span>
+    <h2 class="font-display text-2xl text-on-surface mb-2"
+        style="font-weight:600; letter-spacing:-0.01em;">Join the Baby Hug Family</h2>
+    <p class="text-sm font-body text-on-surface-variant mb-6">
+      Get exclusive offers, new arrivals and parenting tips straight to your inbox.
+    </p>
+    <form class="flex items-center gap-2 px-3 py-1.5 shadow-sm"
+          style="background:#FFFFFF; border-radius:0.25rem; border:1px solid rgba(160,196,226,0.5);">
+      <input type="email" placeholder="Enter your email address"
+             class="flex-1 text-sm font-body bg-transparent focus:outline-none px-2"
+             style="color:#171c22;" >
+      <button type="submit"
+              class="px-5 py-2 text-xs font-bold font-body rounded transition-all btn-nordic"
+              style="background:#A0C4E2; color:#23282E; border-radius:2px; white-space:nowrap;">
+        Subscribe
+      </button>
     </form>
-    <p class="text-xs text-on-surface-variant mt-3 opacity-70">No spam, unsubscribe anytime.</p>
+    <p class="text-xs font-body text-on-surface-variant mt-3 opacity-70">No spam, unsubscribe anytime.</p>
   </div>
 </section>
 
@@ -358,7 +463,6 @@
 
 {% block extra_js %}
 <script>
-  // Age group data for template context
   const AGE_GROUPS = [
     { value: '0-3M', label: '0–3 Months' },
     { value: '3-6M', label: '3–6 Months' },

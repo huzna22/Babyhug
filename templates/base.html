@@ -5,10 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="{% block meta_description %}Baby Hug – Premium organic baby dresses, accessories & toys for ages 0–4 years. Free shipping over ₹999.{% endblock %}">
-  <title>{% block title %}Baby Hug – Pure Cotton Comfort for Little Smiles{% endblock %}</title>
+  <title>{% block title %}Baby Hug – Nordic Baby Atelier{% endblock %}</title>
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Nordic Fonts: Bricolage Grotesque (headlines) + Hanken Grotesk (body) -->
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
 
   <!-- Tailwind CDN -->
@@ -18,64 +18,62 @@
       theme: {
         extend: {
           colors: {
-            'primary':                '#875200',
+            /* Nordic Baby Atelier Palette */
+            'primary':                '#3f627c',
             'on-primary':             '#ffffff',
-            'primary-container':      '#d9933b',
-            'on-primary-container':   '#533000',
-            'inverse-primary':        '#ffb866',
-            'secondary':              '#865046',
+            'primary-container':      '#a0c4e2',
+            'on-primary-container':   '#2d516b',
+            'inverse-primary':        '#a7cbe9',
+            'secondary':              '#78555b',
             'on-secondary':           '#ffffff',
-            'secondary-container':    '#feb8ab',
-            'on-secondary-container': '#7a473d',
-            'tertiary':               '#4b635a',
+            'secondary-container':    '#ffd2d8',
+            'on-secondary-container': '#7a585d',
+            'tertiary':               '#9c3f52',
             'on-tertiary':            '#ffffff',
-            'tertiary-container':     '#8da79c',
-            'on-tertiary-container':  '#253c34',
-            'surface':                '#fff8f4',
-            'surface-dim':            '#e0d9d4',
-            'surface-bright':         '#fff8f4',
+            'tertiary-container':     '#ffa8b5',
+            'on-tertiary-container':  '#872f43',
+            'surface':                '#f7f9ff',
+            'surface-dim':            '#d6dae2',
+            'surface-bright':         '#f7f9ff',
             'surface-container-lowest': '#ffffff',
-            'surface-container-low':  '#faf2ed',
-            'surface-container':      '#f4ece7',
-            'surface-container-high': '#eee7e2',
-            'surface-container-highest': '#e8e1dc',
-            'on-surface':             '#1e1b18',
-            'on-surface-variant':     '#524437',
-            'inverse-surface':        '#33302d',
-            'inverse-on-surface':     '#f7efea',
-            'outline':                '#847465',
-            'outline-variant':        '#d7c3b1',
-            'surface-tint':           '#875200',
-            'surface-variant':        '#e8e1dc',
-            'background':             '#fff8f4',
-            'on-background':          '#1e1b18',
-            'primary-fixed':          '#ffddba',
-            'primary-fixed-dim':      '#ffb866',
-            'on-primary-fixed':       '#2b1700',
-            'on-primary-fixed-variant': '#673d00',
-            'secondary-fixed':        '#ffdad3',
-            'secondary-fixed-dim':    '#fbb6a8',
-            'on-secondary-fixed':     '#351009',
-            'on-secondary-fixed-variant': '#6a3930',
-            'tertiary-fixed':         '#cde9dc',
-            'tertiary-fixed-dim':     '#b2ccc1',
-            'on-tertiary-fixed':      '#072018',
-            'on-tertiary-fixed-variant': '#344c43',
+            'surface-container-low':  '#f0f4fc',
+            'surface-container':      '#eaeef6',
+            'surface-container-high': '#e4e8f0',
+            'surface-container-highest': '#dee3eb',
+            'on-surface':             '#171c22',
+            'on-surface-variant':     '#42474d',
+            'inverse-surface':        '#2c3137',
+            'inverse-on-surface':     '#edf1f9',
+            'outline':                '#72787d',
+            'outline-variant':        '#c2c7cd',
+            'surface-tint':           '#3f627c',
+            'surface-variant':        '#dee3eb',
+            'background':             '#f7f9ff',
+            'on-background':          '#171c22',
+            /* Extra Nordic accent colours */
+            'powder-blue-light':      '#E3F0F9',
+            'powder-blue-mid':        '#B9D5EB',
+            'powder-blue-deep':       '#4C759A',
+            'petal-pink-soft':        '#FDF0F2',
+            'petal-pink-mid':         '#ECA1AC',
+            'linen-cream':            '#FAF8F5',
+            'surface-clean':          '#FFFFFF',
             'error':                  '#ba1a1a',
             'on-error':               '#ffffff',
             'error-container':        '#ffdad6',
             'on-error-container':     '#93000a',
           },
           fontFamily: {
-            'display':   ['EB Garamond', 'Georgia', 'serif'],
-            'headline':  ['EB Garamond', 'Georgia', 'serif'],
-            'body':      ['Manrope', 'system-ui', 'sans-serif'],
-            'ui':        ['Manrope', 'system-ui', 'sans-serif'],
+            'display':   ['Bricolage Grotesque', 'system-ui', 'sans-serif'],
+            'headline':  ['Bricolage Grotesque', 'system-ui', 'sans-serif'],
+            'body':      ['Hanken Grotesk', 'system-ui', 'sans-serif'],
+            'ui':        ['Hanken Grotesk', 'system-ui', 'sans-serif'],
           },
           borderRadius: {
-            'DEFAULT': '0.5rem',
-            'lg': '1rem',
-            'xl': '1.5rem',
+            'DEFAULT': '0.25rem',
+            'md': '0.375rem',
+            'lg': '0.5rem',
+            'xl': '0.75rem',
             'full': '9999px',
           },
         }
@@ -85,122 +83,207 @@
 
   <style>
     * { box-sizing: border-box; }
-    body { overscroll-behavior: none; font-family: 'Manrope', sans-serif; }
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: #faf2ed; }
-    ::-webkit-scrollbar-thumb { background: #d7c3b1; border-radius: 3px; }
+    body {
+      overscroll-behavior: none;
+      font-family: 'Hanken Grotesk', system-ui, sans-serif;
+      background-color: #FAF8F5;
+      color: #171c22;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: #F0F4FC; }
+    ::-webkit-scrollbar-thumb { background: #B9D5EB; border-radius: 4px; }
+
+    /* Line clamp utilities */
     .line-clamp-1 { display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; }
     .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-    .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 
-    /* Smooth page transitions */
-    main { animation: fadeIn 0.3s ease; }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    /* Page entrance animation */
+    main { animation: slideUp 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
 
-    /* Primary hover glow */
-    .btn-primary:hover { box-shadow: 0 6px 20px rgba(135, 82, 0, 0.3); }
+    /* Primary button - powder blue hover glow */
+    .btn-nordic:hover {
+      box-shadow: 0 8px 24px -4px rgba(160, 196, 226, 0.5);
+    }
 
-    /* Product card hover */
-    .product-card:hover { transform: translateY(-4px); }
-    .product-card { transition: all 0.3s ease; }
+    /* Product card lift */
+    .product-card { transition: all 0.28s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+    .product-card:hover { transform: translateY(-5px); }
+
+    /* Floating label fields */
+    .nordic-input {
+      height: 44px;
+      border-radius: 0.25rem;
+      border: 1px solid rgba(35, 40, 46, 0.16);
+      background: #FFFFFF;
+      padding: 0 0.75rem;
+      font-family: 'Hanken Grotesk', sans-serif;
+      font-size: 14px;
+      color: #171c22;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+    }
+    .nordic-input::placeholder { color: rgba(35, 40, 46, 0.45); }
+    .nordic-input:focus {
+      border-color: #A0C4E2;
+      box-shadow: 0 0 0 2px #A0C4E2;
+    }
+
+    /* Nav active underline */
+    .nav-active {
+      color: #3f627c !important;
+      font-weight: 700 !important;
+      position: relative;
+    }
+    .nav-active::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0; right: 0;
+      height: 2px;
+      background: #A0C4E2;
+      border-radius: 2px;
+    }
+
+    /* Promo ticker */
+    .ticker-wrap { overflow: hidden; white-space: nowrap; }
+
+    /* Selection colour */
+    ::selection { background: rgba(160, 196, 226, 0.35); }
   </style>
 
   {% block extra_head %}{% endblock %}
 </head>
-<body class="bg-background text-on-surface antialiased">
+<body class="bg-linen-cream text-on-surface antialiased">
 
-<!-- ── TOP PROMO BANNER ─────────────────────────────────────────────────── -->
-<div class="bg-gradient-to-r from-blue-50 to-pink-50 text-blue-800 px-4 py-2 text-center text-xs font-semibold tracking-wide flex items-center justify-center gap-2">
+<!-- ── TOP PROMO BANNER ───────────────────────────────────────────────── -->
+<div style="background: linear-gradient(90deg, #E3F0F9 0%, #FDF0F2 100%); color: #4C759A; border-bottom: 1px solid rgba(185,213,235,0.5);"
+     class="px-4 py-2 text-center text-xs font-semibold tracking-wide flex items-center justify-center gap-2 font-body">
   <span class="material-symbols-outlined text-sm leading-none">local_shipping</span>
-  Free Shipping on all orders over ₹999 · Use Code: <span class="font-bold tracking-widest">BABYLOVE</span>
+  Free Shipping on all orders over ₹999 &nbsp;·&nbsp; Use Code:
+  <span class="font-bold tracking-widest bg-powder-blue-mid/20 px-2 py-0.5 rounded" style="color:#23282E;">BABYLOVE</span>
 </div>
 
-<!-- ── HEADER ───────────────────────────────────────────────────────────── -->
-<header class="sticky top-0 z-50 bg-surface/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.05)]">
-  <div class="max-w-[1280px] mx-auto px-4 lg:px-12 py-3 flex flex-col gap-2">
+<!-- ── HEADER ─────────────────────────────────────────────────────────── -->
+<header class="sticky top-0 z-50 bg-linen-cream/95 backdrop-blur-md"
+        style="border-bottom: 1px solid rgba(160,196,226,0.35); box-shadow: 0 2px 12px -2px rgba(35,40,46,0.06);">
+  <div class="max-w-[1360px] mx-auto px-4 lg:px-10 py-3 flex flex-col gap-1.5">
 
     <!-- Row 1: Logo + Search + Icons -->
     <div class="flex items-center justify-between gap-4">
 
       <!-- Logo -->
-      <a href="{% url 'home' %}" class="flex items-center gap-2 shrink-0">
-        <div class="w-9 h-9 rounded-xl bg-primary flex items-center justify-center shadow-sm">
+      <a href="{% url 'home' %}" class="flex items-center gap-2.5 shrink-0 group">
+        <div class="w-9 h-9 rounded-lg flex items-center justify-center transition-all group-hover:scale-105"
+             style="background: linear-gradient(135deg, #A0C4E2, #4C759A);">
           <span class="material-symbols-outlined text-white text-xl">child_care</span>
         </div>
-        <span class="font-display text-xl font-semibold text-primary tracking-tight">Baby Hug</span>
+        <div class="flex flex-col leading-none">
+          <span class="font-display text-lg font-700 text-on-surface tracking-tight" style="font-weight:700; letter-spacing:-0.03em;">Baby Hug</span>
+          <span class="text-[9px] font-body text-on-surface-variant tracking-widest uppercase" style="letter-spacing:0.12em;">Nordic Atelier</span>
+        </div>
       </a>
 
       <!-- Search Bar -->
-      <form action="{% url 'product_list' %}" method="GET" class="flex-1 max-w-xl hidden sm:flex items-center bg-surface-container-low rounded-full px-3 py-1.5 focus-within:ring-2 focus-within:ring-primary/20 transition-all shadow-sm">
-        <span class="material-symbols-outlined text-outline text-lg mr-2">search</span>
-        <input type="text" name="q" value="{{ request.GET.q }}" placeholder="Search baby dresses, rompers, shoes…"
-               class="flex-1 bg-transparent text-sm text-on-surface placeholder-outline focus:outline-none">
-        <button type="submit" class="ml-2 w-7 h-7 rounded-full bg-primary text-white flex items-center justify-center hover:bg-on-primary-container transition-colors">
-          <span class="material-symbols-outlined text-sm">arrow_forward</span>
+      <form action="{% url 'product_list' %}" method="GET"
+            class="flex-1 max-w-2xl hidden sm:flex items-center gap-2"
+            style="background:#FFFFFF; border-radius:0.25rem; border:1px solid rgba(35,40,46,0.16); padding:0 4px 0 12px; height:40px; transition: border-color 0.2s, box-shadow 0.2s;"
+            onfocus="this.style.borderColor='#A0C4E2'; this.style.boxShadow='0 0 0 2px #A0C4E2';"
+            id="search-form">
+        <span class="material-symbols-outlined text-on-surface-variant text-base">search</span>
+        <input type="text" name="q" value="{{ request.GET.q }}"
+               placeholder="Search organic dresses, rompers, shoes…"
+               class="flex-1 bg-transparent text-sm text-on-surface focus:outline-none"
+               style="font-family:'Hanken Grotesk',sans-serif; color:#171c22;"
+               onfocus="document.getElementById('search-form').style.borderColor='#A0C4E2'; document.getElementById('search-form').style.boxShadow='0 0 0 2px #A0C4E2';"
+               onblur="document.getElementById('search-form').style.borderColor='rgba(35,40,46,0.16)'; document.getElementById('search-form').style.boxShadow='none';">
+        <button type="submit"
+                class="h-8 px-3 text-sm font-semibold font-body rounded transition-colors flex items-center gap-1"
+                style="background:#A0C4E2; color:#23282E; border-radius:2px;">
+          <span class="material-symbols-outlined text-base">arrow_forward</span>
         </button>
       </form>
 
       <!-- Action Icons -->
       <div class="flex items-center gap-2 shrink-0">
+
         <!-- Wishlist -->
-        <a href="{% url 'wishlist' %}" class="relative p-2 rounded-full hover:bg-surface-container transition-colors text-on-surface">
+        <a href="{% url 'wishlist' %}"
+           class="relative p-2 rounded transition-colors text-on-surface hover:bg-surface-container"
+           title="Wishlist">
           <span class="material-symbols-outlined text-xl">favorite</span>
           {% if wishlist_count > 0 %}
-          <span class="absolute top-0.5 right-0.5 bg-secondary text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold leading-none">{{ wishlist_count }}</span>
+          <span class="absolute top-0.5 right-0.5 text-[9px] w-4 h-4 rounded-full flex items-center justify-center font-bold leading-none"
+                style="background:#A0C4E2; color:#23282E;">{{ wishlist_count }}</span>
           {% endif %}
         </a>
 
         <!-- Cart -->
-        <a href="{% url 'cart' %}" class="relative flex items-center gap-2 bg-surface-container-low hover:bg-surface-container px-3 py-1.5 rounded-full transition-colors">
+        <a href="{% url 'cart' %}"
+           class="relative flex items-center gap-2 px-3 py-1.5 rounded transition-colors"
+           style="background:#E3F0F9; border:1px solid #B9D5EB;"
+           onmouseover="this.style.background='#B9D5EB'"
+           onmouseout="this.style.background='#E3F0F9'">
           <div class="relative">
             <span class="material-symbols-outlined text-xl text-on-surface">shopping_bag</span>
             {% if cart_count > 0 %}
-            <span class="absolute -top-1.5 -right-1.5 bg-primary-container text-on-primary-container text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">{{ cart_count }}</span>
+            <span class="absolute -top-1.5 -right-1.5 text-[9px] w-4 h-4 rounded-full flex items-center justify-center font-bold"
+                  style="background:#A0C4E2; color:#23282E;">{{ cart_count }}</span>
             {% endif %}
           </div>
           <div class="hidden sm:flex flex-col leading-none">
-            <span class="text-[10px] text-on-surface-variant">Cart</span>
-            <span class="text-sm font-bold text-on-surface">₹{{ cart_total|floatformat:0 }}</span>
+            <span class="text-[10px] text-on-surface-variant font-body">Cart</span>
+            <span class="text-sm font-bold text-on-surface font-body">₹{{ cart_total|floatformat:0 }}</span>
           </div>
         </a>
 
         <!-- Profile -->
         {% if user.is_authenticated %}
         <div class="relative group">
-          <button class="flex items-center gap-1.5 p-1.5 rounded-full hover:bg-surface-container transition-colors">
-            <div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-primary font-bold text-sm">
+          <button class="flex items-center gap-1.5 p-1.5 rounded transition-colors hover:bg-surface-container">
+            <div class="w-8 h-8 rounded flex items-center justify-center font-bold text-sm font-body"
+                 style="background:#E3F0F9; color:#4C759A; border:1.5px solid #B9D5EB;">
               {{ user.first_name|first|upper }}{% if not user.first_name %}{{ user.username|first|upper }}{% endif %}
             </div>
           </button>
           <!-- Dropdown -->
-          <div class="absolute right-0 top-full mt-2 w-48 bg-surface-container-lowest rounded-xl shadow-xl border border-outline-variant/30 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50 overflow-hidden">
-            <div class="px-4 py-3 border-b border-outline-variant/20">
-              <p class="text-sm font-semibold text-on-surface truncate">{{ user.get_full_name|default:user.username }}</p>
-              <p class="text-xs text-on-surface-variant truncate">{{ user.email }}</p>
+          <div class="absolute right-0 top-full mt-2 w-52 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50 overflow-hidden"
+               style="background:#FFFFFF; border:1px solid rgba(160,196,226,0.35); box-shadow:0 20px 48px -8px rgba(35,40,46,0.12);">
+            <div class="px-4 py-3" style="border-bottom:1px solid rgba(160,196,226,0.25);">
+              <p class="text-sm font-semibold text-on-surface font-body truncate">{{ user.get_full_name|default:user.username }}</p>
+              <p class="text-xs text-on-surface-variant font-body truncate">{{ user.email }}</p>
             </div>
-            <a href="{% url 'profile' %}" class="flex items-center gap-2 px-4 py-2.5 text-sm hover:bg-surface-container transition-colors">
+            <a href="{% url 'profile' %}" class="flex items-center gap-2 px-4 py-2.5 text-sm font-body hover:bg-surface-container-low transition-colors text-on-surface">
               <span class="material-symbols-outlined text-base text-on-surface-variant">person</span> My Profile
             </a>
-            <a href="{% url 'my_orders' %}" class="flex items-center gap-2 px-4 py-2.5 text-sm hover:bg-surface-container transition-colors">
+            <a href="{% url 'my_orders' %}" class="flex items-center gap-2 px-4 py-2.5 text-sm font-body hover:bg-surface-container-low transition-colors text-on-surface">
               <span class="material-symbols-outlined text-base text-on-surface-variant">package_2</span> My Orders
             </a>
-            <a href="{% url 'wishlist' %}" class="flex items-center gap-2 px-4 py-2.5 text-sm hover:bg-surface-container transition-colors">
+            <a href="{% url 'wishlist' %}" class="flex items-center gap-2 px-4 py-2.5 text-sm font-body hover:bg-surface-container-low transition-colors text-on-surface">
               <span class="material-symbols-outlined text-base text-on-surface-variant">favorite</span> Wishlist
             </a>
             {% if user.is_staff %}
-            <a href="/admin/" class="flex items-center gap-2 px-4 py-2.5 text-sm hover:bg-surface-container transition-colors text-primary font-semibold">
+            <a href="/admin/" class="flex items-center gap-2 px-4 py-2.5 text-sm font-body hover:bg-surface-container-low transition-colors font-semibold"
+               style="color:#3f627c;">
               <span class="material-symbols-outlined text-base">admin_panel_settings</span> Admin Panel
             </a>
             {% endif %}
-            <div class="border-t border-outline-variant/20">
-              <a href="{% url 'logout' %}" class="flex items-center gap-2 px-4 py-2.5 text-sm hover:bg-surface-container transition-colors text-error">
+            <div style="border-top:1px solid rgba(160,196,226,0.25);">
+              <a href="{% url 'logout' %}" class="flex items-center gap-2 px-4 py-2.5 text-sm font-body hover:bg-surface-container-low transition-colors text-error">
                 <span class="material-symbols-outlined text-base">logout</span> Logout
               </a>
             </div>
           </div>
         </div>
         {% else %}
-        <a href="{% url 'login' %}" class="flex items-center gap-1.5 bg-primary text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-on-primary-container transition-colors shadow-sm">
+        <a href="{% url 'login' %}"
+           class="flex items-center gap-1.5 px-4 py-2 rounded text-sm font-semibold font-body transition-all btn-nordic"
+           style="background:#A0C4E2; color:#23282E; border-radius:0.25rem;">
           <span class="material-symbols-outlined text-base">login</span>
           <span class="hidden sm:inline">Sign In</span>
         </a>
@@ -209,28 +292,58 @@
     </div>
 
     <!-- Row 2: Navigation -->
-    <nav class="flex items-center justify-center gap-5 overflow-x-auto py-0.5 scrollbar-hide">
-      <a href="{% url 'home' %}" class="text-xs font-semibold whitespace-nowrap {% if request.resolver_match.url_name == 'home' %}text-primary{% else %}text-on-surface-variant hover:text-on-surface{% endif %} transition-colors">Home</a>
-      <a href="{% url 'product_list' %}" class="text-xs font-semibold whitespace-nowrap text-on-surface-variant hover:text-on-surface transition-colors">All Products</a>
-      <a href="{% url 'product_list' %}?category=baby-dresses" class="text-xs font-semibold whitespace-nowrap text-on-surface-variant hover:text-on-surface transition-colors">Baby Dresses</a>
-      <a href="{% url 'product_list' %}?category=rompers-sets" class="text-xs font-semibold whitespace-nowrap text-on-surface-variant hover:text-on-surface transition-colors">Rompers & Sets</a>
-      <a href="{% url 'product_list' %}?category=baby-shoes" class="text-xs font-semibold whitespace-nowrap text-on-surface-variant hover:text-on-surface transition-colors">Baby Shoes</a>
-      <a href="{% url 'product_list' %}?category=accessories" class="text-xs font-semibold whitespace-nowrap text-on-surface-variant hover:text-on-surface transition-colors">Accessories</a>
-      <a href="{% url 'product_list' %}?category=toys" class="text-xs font-semibold whitespace-nowrap text-on-surface-variant hover:text-on-surface transition-colors">Toys</a>
-      <a href="{% url 'product_list' %}?sort=newest" class="text-xs font-semibold whitespace-nowrap text-secondary hover:text-on-secondary-fixed-variant transition-colors">New Arrivals ✦</a>
-      <a href="{% url 'contact' %}" class="text-xs font-semibold whitespace-nowrap text-on-surface-variant hover:text-on-surface transition-colors">Contact</a>
+    <nav class="flex items-center justify-center gap-6 overflow-x-auto py-0.5">
+      <a href="{% url 'home' %}"
+         class="text-xs font-semibold whitespace-nowrap font-body transition-colors relative pb-1
+                {% if request.resolver_match.url_name == 'home' %}nav-active{% else %}text-on-surface-variant hover:text-on-surface{% endif %}">
+        Home
+      </a>
+      <a href="{% url 'product_list' %}"
+         class="text-xs font-semibold whitespace-nowrap font-body transition-colors relative pb-1
+                {% if request.resolver_match.url_name == 'product_list' %}nav-active{% else %}text-on-surface-variant hover:text-on-surface{% endif %}">
+        All Products
+      </a>
+      <a href="{% url 'product_list' %}?category=baby-dresses"
+         class="text-xs font-semibold whitespace-nowrap font-body text-on-surface-variant hover:text-on-surface transition-colors">
+        Baby Dresses
+      </a>
+      <a href="{% url 'product_list' %}?category=rompers-sets"
+         class="text-xs font-semibold whitespace-nowrap font-body text-on-surface-variant hover:text-on-surface transition-colors">
+        Rompers & Sets
+      </a>
+      <a href="{% url 'product_list' %}?category=baby-shoes"
+         class="text-xs font-semibold whitespace-nowrap font-body text-on-surface-variant hover:text-on-surface transition-colors">
+        Baby Shoes
+      </a>
+      <a href="{% url 'product_list' %}?category=accessories"
+         class="text-xs font-semibold whitespace-nowrap font-body text-on-surface-variant hover:text-on-surface transition-colors">
+        Accessories
+      </a>
+      <a href="{% url 'product_list' %}?category=toys"
+         class="text-xs font-semibold whitespace-nowrap font-body text-on-surface-variant hover:text-on-surface transition-colors">
+        Toys
+      </a>
+      <a href="{% url 'product_list' %}?sort=newest"
+         class="text-xs font-semibold whitespace-nowrap font-body transition-colors"
+         style="color:#9c3f52;">
+        New Arrivals ✦
+      </a>
+      <a href="{% url 'contact' %}"
+         class="text-xs font-semibold whitespace-nowrap font-body text-on-surface-variant hover:text-on-surface transition-colors">
+        Contact
+      </a>
     </nav>
   </div>
 </header>
 
-<!-- ── MESSAGES ─────────────────────────────────────────────────────────── -->
+<!-- ── FLASH MESSAGES ─────────────────────────────────────────────────── -->
 {% if messages %}
-<div class="max-w-[1280px] mx-auto px-4 lg:px-12 pt-4 space-y-2 z-40 relative">
+<div class="max-w-[1360px] mx-auto px-4 lg:px-10 pt-4 space-y-2 z-40 relative">
   {% for message in messages %}
-  <div class="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium shadow-sm
-    {% if message.tags == 'success' %}bg-tertiary-fixed text-on-tertiary-fixed border border-tertiary/20
+  <div class="flex items-center gap-3 px-4 py-3 rounded text-sm font-medium font-body
+    {% if message.tags == 'success' %}bg-surface-container-low text-on-surface border border-powder-blue-mid/40
     {% elif message.tags == 'error' %}bg-error-container text-on-error-container border border-error/20
-    {% else %}bg-primary-fixed text-on-primary-fixed border border-primary/20{% endif %}">
+    {% else %}bg-powder-blue-light text-on-surface border border-powder-blue-mid/40{% endif %}">
     <span class="material-symbols-outlined text-base">
       {% if message.tags == 'success' %}check_circle{% elif message.tags == 'error' %}error{% else %}info{% endif %}
     </span>
@@ -243,44 +356,51 @@
 </div>
 {% endif %}
 
-<!-- ── MAIN CONTENT ──────────────────────────────────────────────────────── -->
+<!-- ── MAIN CONTENT ────────────────────────────────────────────────────── -->
 <main>
   {% block content %}{% endblock %}
 </main>
 
-<!-- ── FOOTER ───────────────────────────────────────────────────────────── -->
-<footer class="bg-inverse-surface text-inverse-on-surface mt-16">
-  <div class="max-w-[1280px] mx-auto px-4 lg:px-12 py-12">
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- ── FOOTER ─────────────────────────────────────────────────────────── -->
+<footer style="background:#2c3137; color:#edf1f9; margin-top:5rem;">
+  <div class="max-w-[1360px] mx-auto px-4 lg:px-10 py-14">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
 
       <!-- Brand -->
       <div class="space-y-4">
-        <div class="flex items-center gap-2">
-          <div class="w-9 h-9 rounded-xl bg-primary flex items-center justify-center">
+        <div class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-lg flex items-center justify-center" style="background:linear-gradient(135deg,#A0C4E2,#4C759A);">
             <span class="material-symbols-outlined text-white text-xl">child_care</span>
           </div>
-          <span class="font-display text-xl font-semibold text-inverse-primary">Baby Hug</span>
+          <div>
+            <p class="font-display font-bold text-lg text-inverse-on-surface" style="letter-spacing:-0.02em;">Baby Hug</p>
+            <p class="text-[9px] font-body tracking-widest uppercase opacity-60">Nordic Atelier</p>
+          </div>
         </div>
-        <p class="text-sm text-inverse-on-surface/70 leading-relaxed">
-          Premium organic baby dresses & accessories for ages 0–4 years. GOTS certified, dermatologist approved.
+        <p class="text-sm font-body leading-relaxed" style="color:rgba(237,241,249,0.65);">
+          Scandinavian-inspired premium organic babywear for ages 0–4 years.
+          GOTS certified, dermatologist approved.
         </p>
-        <div class="flex items-center gap-3 pt-2">
-          <a href="#" class="w-8 h-8 rounded-full bg-inverse-on-surface/10 hover:bg-inverse-on-surface/20 flex items-center justify-center transition-colors">
-            <span class="material-symbols-outlined text-sm">language</span>
+        <div class="flex items-center gap-2 pt-1">
+          <a href="#" class="w-8 h-8 rounded flex items-center justify-center transition-colors" style="background:rgba(237,241,249,0.1);"
+             onmouseover="this.style.background='rgba(160,196,226,0.2)'" onmouseout="this.style.background='rgba(237,241,249,0.1)'">
+            <span class="material-symbols-outlined text-sm" style="color:#A0C4E2;">language</span>
           </a>
-          <a href="#" class="w-8 h-8 rounded-full bg-inverse-on-surface/10 hover:bg-inverse-on-surface/20 flex items-center justify-center transition-colors">
-            <span class="material-symbols-outlined text-sm">call</span>
+          <a href="#" class="w-8 h-8 rounded flex items-center justify-center transition-colors" style="background:rgba(237,241,249,0.1);"
+             onmouseover="this.style.background='rgba(160,196,226,0.2)'" onmouseout="this.style.background='rgba(237,241,249,0.1)'">
+            <span class="material-symbols-outlined text-sm" style="color:#A0C4E2;">call</span>
           </a>
-          <a href="#" class="w-8 h-8 rounded-full bg-inverse-on-surface/10 hover:bg-inverse-on-surface/20 flex items-center justify-center transition-colors">
-            <span class="material-symbols-outlined text-sm">mail</span>
+          <a href="#" class="w-8 h-8 rounded flex items-center justify-center transition-colors" style="background:rgba(237,241,249,0.1);"
+             onmouseover="this.style.background='rgba(160,196,226,0.2)'" onmouseout="this.style.background='rgba(237,241,249,0.1)'">
+            <span class="material-symbols-outlined text-sm" style="color:#A0C4E2;">mail</span>
           </a>
         </div>
       </div>
 
       <!-- Shop Links -->
       <div class="space-y-3">
-        <h4 class="font-semibold text-sm text-inverse-on-surface tracking-wide uppercase">Shop</h4>
-        <ul class="space-y-2 text-sm text-inverse-on-surface/70">
+        <h4 class="font-body font-semibold text-xs tracking-widest uppercase" style="color:rgba(237,241,249,0.5);">Shop</h4>
+        <ul class="space-y-2 text-sm font-body" style="color:rgba(237,241,249,0.7);">
           <li><a href="{% url 'product_list' %}" class="hover:text-inverse-on-surface transition-colors">All Products</a></li>
           <li><a href="{% url 'product_list' %}?category=baby-dresses" class="hover:text-inverse-on-surface transition-colors">Baby Dresses</a></li>
           <li><a href="{% url 'product_list' %}?category=rompers-sets" class="hover:text-inverse-on-surface transition-colors">Rompers & Sets</a></li>
@@ -292,8 +412,8 @@
 
       <!-- Account Links -->
       <div class="space-y-3">
-        <h4 class="font-semibold text-sm text-inverse-on-surface tracking-wide uppercase">Account</h4>
-        <ul class="space-y-2 text-sm text-inverse-on-surface/70">
+        <h4 class="font-body font-semibold text-xs tracking-widest uppercase" style="color:rgba(237,241,249,0.5);">Account</h4>
+        <ul class="space-y-2 text-sm font-body" style="color:rgba(237,241,249,0.7);">
           <li><a href="{% url 'login' %}" class="hover:text-inverse-on-surface transition-colors">Sign In</a></li>
           <li><a href="{% url 'register' %}" class="hover:text-inverse-on-surface transition-colors">Create Account</a></li>
           <li><a href="{% url 'my_orders' %}" class="hover:text-inverse-on-surface transition-colors">My Orders</a></li>
@@ -302,41 +422,41 @@
         </ul>
       </div>
 
-      <!-- Trust & Support -->
+      <!-- Support + Trust -->
       <div class="space-y-3">
-        <h4 class="font-semibold text-sm text-inverse-on-surface tracking-wide uppercase">Support</h4>
-        <ul class="space-y-2 text-sm text-inverse-on-surface/70">
+        <h4 class="font-body font-semibold text-xs tracking-widest uppercase" style="color:rgba(237,241,249,0.5);">Support</h4>
+        <ul class="space-y-2 text-sm font-body" style="color:rgba(237,241,249,0.7);">
           <li><a href="{% url 'contact' %}" class="hover:text-inverse-on-surface transition-colors">Contact Us</a></li>
           <li><a href="#" class="hover:text-inverse-on-surface transition-colors">Shipping Policy</a></li>
           <li><a href="#" class="hover:text-inverse-on-surface transition-colors">Returns & Exchanges</a></li>
           <li><a href="#" class="hover:text-inverse-on-surface transition-colors">Size Guide</a></li>
           <li><a href="#" class="hover:text-inverse-on-surface transition-colors">Privacy Policy</a></li>
         </ul>
-
-        <!-- Trust badges -->
+        <!-- Trust Badges -->
         <div class="pt-3 grid grid-cols-2 gap-2">
-          <div class="flex items-center gap-1.5 bg-inverse-on-surface/10 rounded-lg px-2 py-1.5">
-            <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm">verified_user</span>
-            <span class="text-[10px] text-inverse-on-surface/80 leading-tight">Secure<br>Payments</span>
+          <div class="flex items-center gap-1.5 rounded px-2 py-2" style="background:rgba(237,241,249,0.08);">
+            <span class="material-symbols-outlined text-sm" style="color:#A0C4E2;">verified_user</span>
+            <span class="text-[10px] font-body leading-tight" style="color:rgba(237,241,249,0.75);">Secure<br>Payments</span>
           </div>
-          <div class="flex items-center gap-1.5 bg-inverse-on-surface/10 rounded-lg px-2 py-1.5">
-            <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm">eco</span>
-            <span class="text-[10px] text-inverse-on-surface/80 leading-tight">100%<br>Organic</span>
+          <div class="flex items-center gap-1.5 rounded px-2 py-2" style="background:rgba(237,241,249,0.08);">
+            <span class="material-symbols-outlined text-sm" style="color:#A0C4E2;">eco</span>
+            <span class="text-[10px] font-body leading-tight" style="color:rgba(237,241,249,0.75);">100%<br>Organic</span>
           </div>
         </div>
       </div>
     </div>
 
     <!-- Bottom Bar -->
-    <div class="mt-10 pt-6 border-t border-inverse-on-surface/10 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-inverse-on-surface/50">
-      <p>© 2024 Baby Hug. All rights reserved. | Crafted with ♥ in India</p>
+    <div class="mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs font-body"
+         style="border-top:1px solid rgba(237,241,249,0.1); color:rgba(237,241,249,0.4);">
+      <p>© 2024 Baby Hug · Nordic Atelier. All rights reserved. Crafted with ♥ in India</p>
       <p>Made by Huzna Shajahan · MCA Mini Project</p>
     </div>
   </div>
 </footer>
 
 <script>
-  // Auto-dismiss flash messages after 5 seconds
+  // Auto-dismiss flash messages after 5s
   setTimeout(() => {
     document.querySelectorAll('[data-auto-dismiss]').forEach(el => el.remove());
   }, 5000);

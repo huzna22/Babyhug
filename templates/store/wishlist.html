@@ -1,52 +1,73 @@
 {% extends 'base.html' %}
-{% block title %}My Wishlist – Baby Hug{% endblock %}
+{% block title %}My Wishlist – Baby Hug Nordic Atelier{% endblock %}
 
 {% block content %}
-<div class="max-w-[1280px] mx-auto px-4 lg:px-12 py-8">
-  <h1 class="font-display text-3xl text-on-surface mb-8">My Wishlist
-    {% if items %}<span class="text-on-surface-variant text-2xl font-normal">({{ items.count }})</span>{% endif %}
-  </h1>
+<div class="max-w-[1360px] mx-auto px-4 lg:px-10 py-8">
+
+  <!-- Page Header -->
+  <div class="mb-8">
+    <h1 class="font-display text-3xl text-on-surface" style="font-weight:600; letter-spacing:-0.02em;">
+      My Wishlist
+      {% if items %}
+      <span class="font-body text-xl text-on-surface-variant font-normal">({{ items.count }})</span>
+      {% endif %}
+    </h1>
+    <p class="font-body text-sm text-on-surface-variant mt-1">Items you've saved for later</p>
+  </div>
 
   {% if items %}
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-5">
     {% for wish in items %}
-    <div class="bg-surface-container-lowest rounded-2xl p-3 shadow-sm hover:shadow-lg transition-all group flex flex-col">
-      <div class="relative aspect-[4/5] rounded-xl overflow-hidden bg-surface-container-low mb-3">
+    <div class="bg-surface-clean flex flex-col rounded-lg transition-all"
+         style="border:1px solid rgba(160,196,226,0.35); box-shadow:0 2px 6px rgba(35,40,46,0.03);"
+         onmouseover="this.style.boxShadow='0 8px 24px -4px rgba(160,196,226,0.4)'"
+         onmouseout="this.style.boxShadow='0 2px 6px rgba(35,40,46,0.03)'">
+      <div class="relative aspect-[4/5] overflow-hidden" style="border-radius:0.5rem 0.5rem 0 0;">
         {% if wish.product.image %}
-        <img src="{{ wish.product.image.url }}" alt="{{ wish.product.name }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <img src="{{ wish.product.image.url }}" alt="{{ wish.product.name }}"
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
         {% else %}
-        <div class="w-full h-full flex items-center justify-center">
-          <span class="material-symbols-outlined text-5xl text-on-surface-variant/20">checkroom</span>
+        <div class="w-full h-full flex items-center justify-center" style="background:linear-gradient(135deg,#E3F0F9,#FDF0F2);">
+          <span class="material-symbols-outlined text-5xl" style="color:rgba(160,196,226,0.5);">checkroom</span>
         </div>
         {% endif %}
         <!-- Remove from wishlist -->
         <form action="{% url 'toggle_wishlist' wish.product.pk %}" method="POST" class="absolute top-2 right-2">
           {% csrf_token %}
-          <button type="submit" class="w-8 h-8 rounded-full bg-white/90 text-secondary flex items-center justify-center shadow-sm hover:scale-110 transition-transform">
-            <span class="material-symbols-outlined text-base" style="font-variation-settings:'FILL' 1;">favorite</span>
+          <button type="submit"
+                  class="w-8 h-8 flex items-center justify-center shadow-sm transition-transform hover:scale-110"
+                  style="background:rgba(250,248,245,0.92); border-radius:0.25rem; border:1px solid rgba(236,161,172,0.4);">
+            <span class="material-symbols-outlined text-base" style="font-variation-settings:'FILL' 1; color:#9c3f52;">favorite</span>
           </button>
         </form>
       </div>
-      <div class="flex-1 flex flex-col">
-        <h3 class="font-display text-base text-on-surface line-clamp-1">
-          <a href="{% url 'product_detail' wish.product.slug %}" class="hover:text-primary transition-colors">{{ wish.product.name }}</a>
+
+      <div class="flex-1 flex flex-col p-3">
+        <h3 class="font-body text-sm text-on-surface line-clamp-1" style="font-weight:600;">
+          <a href="{% url 'product_detail' wish.product.slug %}" class="hover:text-primary transition-colors">
+            {{ wish.product.name }}
+          </a>
         </h3>
-        <p class="text-sm font-bold text-on-surface mt-1">₹{{ wish.product.price|floatformat:0 }}</p>
+        <p class="text-sm font-bold text-on-surface font-body mt-1">₹{{ wish.product.price|floatformat:0 }}</p>
         {% if not wish.product.is_in_stock %}
-        <span class="text-xs text-error font-semibold mt-1">Out of Stock</span>
+        <span class="text-xs font-semibold font-body mt-1" style="color:#ba1a1a;">Out of Stock</span>
         {% endif %}
+
         <div class="mt-3 flex gap-2">
           {% if wish.product.is_in_stock %}
           <form action="{% url 'move_to_cart' wish.pk %}" method="POST" class="flex-1">
             {% csrf_token %}
-            <button type="submit" class="w-full py-2 rounded-full text-xs font-semibold transition-colors flex items-center justify-center gap-1"
-                    style="background: #4C759A; color: white;">
+            <button type="submit"
+                    class="w-full py-2 text-xs font-semibold font-body rounded transition-all btn-nordic flex items-center justify-center gap-1"
+                    style="background:#A0C4E2; color:#23282E; border-radius:0.25rem;">
               <span class="material-symbols-outlined text-sm">shopping_bag</span> Move to Cart
             </button>
           </form>
           {% endif %}
           <a href="{% url 'product_detail' wish.product.slug %}"
-             class="px-3 py-2 rounded-full text-xs font-semibold border border-outline-variant/50 text-on-surface-variant hover:bg-surface-container transition-colors">
+             class="px-3 py-2 text-xs font-semibold font-body rounded transition-colors"
+             style="border:1px solid rgba(160,196,226,0.5); color:#42474d; border-radius:0.25rem;"
+             onmouseover="this.style.background='#E3F0F9'" onmouseout="this.style.background='transparent'">
             View
           </a>
         </div>
@@ -54,12 +75,22 @@
     </div>
     {% endfor %}
   </div>
+
   {% else %}
+  <!-- Empty Wishlist -->
   <div class="flex flex-col items-center justify-center py-24 text-center">
-    <span class="material-symbols-outlined text-8xl text-outline/40 mb-6">favorite</span>
-    <h2 class="font-display text-2xl text-on-surface mb-2">Your wishlist is empty</h2>
-    <p class="text-on-surface-variant mb-8">Save your favourite items here so you can find them easily later.</p>
-    <a href="{% url 'product_list' %}" class="bg-primary text-white px-8 py-3 rounded-full font-bold text-sm hover:bg-on-primary-container transition-colors shadow-lg">
+    <div class="w-24 h-24 rounded-lg flex items-center justify-center mb-6"
+         style="background:#FDF0F2; border:1px solid rgba(236,161,172,0.4);">
+      <span class="material-symbols-outlined text-5xl" style="color:rgba(236,161,172,0.7);">favorite</span>
+    </div>
+    <h2 class="font-display text-2xl text-on-surface mb-2"
+        style="font-weight:600; letter-spacing:-0.01em;">Your wishlist is empty</h2>
+    <p class="font-body text-on-surface-variant mb-8 max-w-sm">
+      Save your favourite items here so you can find them easily later.
+    </p>
+    <a href="{% url 'product_list' %}"
+       class="px-8 py-3 rounded font-bold text-sm font-body transition-all btn-nordic"
+       style="background:#A0C4E2; color:#23282E; border-radius:0.25rem;">
       Explore Products
     </a>
   </div>
