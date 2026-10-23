@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h1 align="center">
   <img src="https://img.shields.io/badge/Baby%20Hug-%F0%9F%91%B6-D9933B?style=for-the-badge" alt="Baby Hug"/>
 </h1>
@@ -322,3 +323,7 @@ Baby Hug E-Commerce Platform
 ## 📄 License
 
 This project is submitted as an academic mini-project. All rights reserved © 2024 Huzna Shajahan.
+=======
+# Babyhug
+The rapid growth of e-commerce has changed the way customers purchase baby products by providing convenient online platforms accessible from anywhere. Baby Hug – Online Baby Dresses and Accessories Website is a web-based e-commerce application developed to simplify the process of purchasing baby dresses and accessories online.
+>>>>>>> 433d0e9d6057483c50ec7205f4b49316fc21cfcb
